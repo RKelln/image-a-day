@@ -1,0 +1,22 @@
+.DS_Store
+log/***
+tmp/**/*
+tmp/
+releases/*
+
+# IDE settings files
+.loadpath
+.project
+.settings/***
+*.kdev*
+
+# ignore rspec failed test development files
+# i.e. script/spec -f failing_example:failed_tests
+failed_test*
+
+# sass
+.sass-cache
+.sass-cache/***
+
+# cucumber rerun file
+rerun.txt

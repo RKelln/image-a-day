@@ -1,0 +1,19 @@
+%h1 Listing images
+
+%table
+  %tr
+    %th Filename
+    %th Description
+    %th Date
+    %th
+
+  - @images.each do |image|
+    %tr
+      %td= link_to "#{image.filename}", image
+      %td= image.description
+      %td= image.date
+      %td= link_to 'Delete', image, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'Upload image', images_upload_path

@@ -1,0 +1,26 @@
+%p
+  %b Filename:
+  = @image.filename
+%p
+  %b Description:
+  = @image.description
+%p
+  %b Date:
+  = @image.date
+
+%p
+  %b Comments:
+  - @image.comments.each do |comment|
+    %p
+      %td
+      = comment.created_at
+      %td
+      = comment.text
+      %td
+      - if comment.user_id == current_user.id
+        = link_to "Delete", comment, :confirm => 'Are you sure?', :method => :delete
+
+%p
+= render 'comments/form', {:comment_resource => [@image, @image.comments.build]}
+
+= link_to 'Back', images_path

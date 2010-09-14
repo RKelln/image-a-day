@@ -1,0 +1,6 @@
+%h1= @user.email
+%b images
+- @user.images.each do |image|
+  %p
+    %td= link_to "#{image.filename}", image
+    %td= image.description

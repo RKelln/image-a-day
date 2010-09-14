@@ -1,0 +1,34 @@
+= form_for @image, :html => { :method => :post, :id => 'uploadForm', :multipart => true } do |f|
+  -if @image.errors.any?
+    #errorExplanation
+      %h2= "#{pluralize(@image.errors.count, "error")} prohibited this image from being saved:"
+      %ul
+        - @image.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.file_field :uploaded_data
+  .field
+    = f.label :description
+    = f.text_area :description
+  .actions
+    = f.submit 'Upload'
+
+- content_for :end_scripts do
+  :javascript
+    log('logging test');
+    $('#uploadForm input').change(function(){
+      $(this).parent().ajaxSubmit({
+        beforeSubmit: function(a,f,o) {
+          o.dataType = 'json';
+        },
+        complete: function(XMLHttpRequest, textStatus) {
+          // XMLHttpRequest.responseText will contain the URL of the uploaded image.
+          // Put it in an image element you create, or do with it what you will
+          // For example, if you have an image elemnt with id "my_image", then
+          log('UPLOADED IMAGE ' + XMLHttpRequest.responseText);
+          //$('#my_image').attr('src', XMLHttpRequest.responseText);
+          // Will set that image tag to display the uploaded image.
+        },
+      });
+    });

@@ -1,0 +1,12 @@
+/= form_for comment_resource, :remote => true do |f|
+= form_for comment_resource do |f|
+  -# if @comment.errors.any?
+    #errorExplanation
+      %h2= "#{pluralize(@comment.errors.count, "error")} prohibited this comment from being saved:"
+      %ul
+        - @comment.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.text_area :text
+  .actions
+    = f.submit 'Comment'

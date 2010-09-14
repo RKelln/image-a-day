@@ -1,18 +1,12 @@
 %h1 Listing images
 
-%table
-  %tr
-    %th Filename
-    %th Description
-    %th Date
-    %th
-
-  - @images.each do |image|
-    %tr
-      %td= link_to "#{image.filename}", image
-      %td= image.description
-      %td= image.date
-      %td= link_to 'Delete', image, :confirm => 'Are you sure?', :method => :delete
+- @images.each do |image|
+  %p
+    = link_to image do
+      %img(src="#{image.data.url(:icon)}")
+    = image.description
+    = image.date
+    = link_to 'Delete', image, :confirm => 'Are you sure?', :method => :delete
 
 %br
 

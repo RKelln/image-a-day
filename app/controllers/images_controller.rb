@@ -47,7 +47,7 @@ class ImagesController < ApplicationController
     if @image.save
       redirect_to @image, :notice => 'Image uploaded'
     else
-      render :action => 'new'
+      render :action => 'upload'
     end
   end
 

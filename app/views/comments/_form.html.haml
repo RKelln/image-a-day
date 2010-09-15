@@ -7,6 +7,6 @@
         - @comment.errors.full_messages.each do |msg|
           %li= msg
   .field
-    = f.text_area :text
+    = f.text_area :text, :rows => 0, :cols => 0
   .actions
     = f.submit 'Comment'

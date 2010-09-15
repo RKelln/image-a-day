@@ -13,6 +13,6 @@
       %td
       - if comment.user_id == current_user.id
         = link_to "Delete", comment, :confirm => 'Are you sure?', :method => :delete
-  %p
+  #wall.comments
     %h2 Add a comment:
     = render 'comments/form', {:comment_resource => Comment.new}

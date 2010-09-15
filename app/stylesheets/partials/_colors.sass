@@ -1,0 +1,18 @@
+// Colors variabless ----------------------------------------------
+
+$base: #4c4c4c
+$font-color: #444444
+$link-color: #607890
+$selected-font-color: white
+$selected-background-color: #ff5e99
+
+// Color styles ----------------------------------------------------
+
+body, select, input, textarea
+  color: $font-color
+
+a
+  &:link, &:visited
+    color: $link-color
+  &:focus, &:hover, &:active
+    color: complement($link-color)

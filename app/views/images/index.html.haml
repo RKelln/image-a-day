@@ -1,12 +1,7 @@
 %h1 Listing images
 
 - @images.each do |image|
-  %p
-    = link_to image do
-      %img(src="#{image.data.url(:icon)}")
-    = image.description
-    = image.date
-    = link_to 'Delete', image, :confirm => 'Are you sure?', :method => :delete
+  = render image
 
 %br
 

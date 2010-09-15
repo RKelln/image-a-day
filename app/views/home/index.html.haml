@@ -3,16 +3,3 @@
 - if user_signed_in?
   = link_to "My Images", images_path
   = link_to "Everyone", users_path
-  - comments = Comment.where(:image_id => nil)
-  - comments.each do |comment|
-    %p
-      %td
-      = comment.created_at
-      %td
-      = comment.text
-      %td
-      - if comment.user_id == current_user.id
-        = link_to "Delete", comment, :confirm => 'Are you sure?', :method => :delete
-  #wall.comments
-    %h2 Add a comment:
-    = render 'comments/form', {:comment_resource => Comment.new}

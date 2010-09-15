@@ -1,0 +1,15 @@
+.imagebox
+  - if current_page?(image) 
+    %img(src="#{image.data.url}")
+  - else
+    = link_to image do
+      %img(src="#{image.data.url(:icon)}")
+%details
+  %summary
+    %span.byline(title="#{image.user.name}")
+      = image.user.nickname
+    %span.date
+      = image.date
+    = image.description
+- if image.user_id == current_user.id
+  = link_to 'Delete', image, :confirm => 'Are you sure?', :method => :delete

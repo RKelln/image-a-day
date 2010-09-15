@@ -7,10 +7,12 @@
       %header#header
         = render :partial => 'layouts/header'
         
-      #main
+      %section#main
         = render :partial => 'layouts/flashes'
-        = yield
-        
+        %article#content
+          = yield
+        #wall.comments
+          = render :partial => 'layouts/comments'
       %footer#footer
         = render :partial => 'layouts/footer'
         

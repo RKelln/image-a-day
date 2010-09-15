@@ -34,18 +34,14 @@ html
   text-rendering: optimizeLegibility
   -webkit-font-smoothing: antialiased
 
-// body --------------------------------------------------------------
 
-body
-  @extend .serif
-  color: $base
 
 // Selected Text -----------------------------------------------------
 // -moz- must be declared separately
 
 =accessible-color($background: white)
   @if lightness($background) >= 65%
-    color: $base
+    color: $font-color
   @else
     color: white
 
@@ -237,11 +233,13 @@ label
   width: 100%
   margin-top: 0
   border-color: $base
-  height: $base-line-height / 14px * 1.5
+  //height: $base-line-height / 14px * 1.5
+  height: $base-line-height * 1.5
 
 textarea
   @extend .textinput
-  height: $base-line-height / 14px * 6.5
+  //height: $base-line-height / 14px * 6.5
+  height: $base-line-height * 3.5
   vertical-align: text-bottom
 
 input

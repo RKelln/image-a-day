@@ -1,0 +1,32 @@
+# Jammit config:
+# http://documentcloud.github.com/jammit/
+# example: http://gist.github.com/237848
+
+package_assets: on # (on, off, always)
+embed_assets: on # (on, off, datauri)
+compress_assets: on # (on, off)
+gzip_assets: on # (on, off)
+#template_function: _.template # (defaults to the built-in micro-templating)
+#package_path: assets # (defaults to assets)
+javascript_compressor: yui # (yui, closure)
+#compressor_options:
+#  compilation_level: ADVANCED_OPTIMIZATIONS
+  
+javascripts:
+  head_scripts:
+    - public/javascripts/modernizer.js
+  end_scripts:
+    - public/javascripts/rails.js    
+    - public/javascripts/jquery.form.js
+    - public/javascripts/plugins.js
+    - public/javascripts/application.js    
+
+stylesheets:
+  screen:
+    - public/stylesheets/screen.css
+  print:
+    - public/stylesheets/print.css
+  ie:
+    - public/stylesheets/ie.css
+  handheld:
+    - public/stylesheets/handheld.css

@@ -1,0 +1,12 @@
+-# Jammit stylesheet packaging
+= include_stylesheets :screen, :media => 'screen, projection'
+= include_stylesheets :print, :media => 'print'
+
+/[if IE]
+  = include_stylesheets :ie, :media => 'all', :embed_assets => false
+  
+-# Uncomment if you are specifically targeting less enabled mobile browsers
+-#= include_stylesheets :handheld, :media => 'handheld'
+
+-# Append your own using content_for :stylesheets
+= yield :stylesheets

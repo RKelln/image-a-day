@@ -1,0 +1,11 @@
+/* line 1, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_handheld.scss */
+* {
+  float: none;
+  background: #fff;
+  color: #000;
+}
+
+/* line 8, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_handheld.scss */
+body {
+  font-size: 80%;
+}

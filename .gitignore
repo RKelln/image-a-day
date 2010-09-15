@@ -3,6 +3,8 @@ log/***
 tmp/**/*
 tmp/
 releases/*
+public/system
+public/system/***
 
 # IDE settings files
 .loadpath

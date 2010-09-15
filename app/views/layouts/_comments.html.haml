@@ -1,0 +1,13 @@
+- comments ||= Comment.where(:image_id => nil)
+- comment_resource ||= Comment.new
+- comments.each do |comment|
+  %p
+    %td
+    = comment.created_at
+    %td
+    = comment.text
+    %td
+    - if comment.user_id == current_user.id
+      = link_to "Delete", comment, :confirm => 'Are you sure?', :method => :delete
+%h2 Add a comment:
+= render 'comments/form', {:comment_resource => comment_resource}

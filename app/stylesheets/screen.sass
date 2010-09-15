@@ -42,15 +42,39 @@
 body
 
 #container
+  
+// debugging
+#container *
+  background-color: rgba(0,0,0,.125)
+
 
 header
-  
+  +full
+  #title
+    +alpha
+    +columns(4)
+    +adjust-font-size-to(32px)
+    +trailer(1,32px)
+    
+  #nav
+    +omega
+    +columns(8)
+    
+    ul
+      +horizontal_list
+      #user
+        float: right
   
 #main
+  +full
+  #content
+    +columns(8)
   #wall
     +columns(4)
+    +omega
 
 footer
+  +full
+
+.comments textarea
   
-
-

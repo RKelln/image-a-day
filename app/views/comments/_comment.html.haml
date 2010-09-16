@@ -1,0 +1,16 @@
+- if comment.user
+  .comment
+    = render 'layouts/details', {:subject => comment}
+    -# test
+      %ul.info
+        %li.user
+          = comment.user.nickname
+        %li.date
+          (#{time_ago_in_words(comment.created_at)} ago)
+        - if comment.user_id == current_user.id
+          %li
+            Edit
+          %li
+            = link_to "Delete", comment, :confirm => 'Are you sure?', :method => :delete
+      %p
+        = comment.text

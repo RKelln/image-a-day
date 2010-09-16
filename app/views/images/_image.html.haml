@@ -1,15 +1,11 @@
-.imagebox
+.image
   - if current_page?(image) 
-    %img(src="#{image.data.url}")
+    .fullsize
+      %img(src="#{image.data.url}" class="fullsize")
   - else
-    = link_to image do
-      %img(src="#{image.data.url(:icon)}")
-%details
-  %summary
-    %span.byline(title="#{image.user.name}")
-      = image.user.nickname
-    %span.date
-      = image.date
-    = image.description
-- if image.user_id == current_user.id
-  = link_to 'Delete', image, :confirm => 'Are you sure?', :method => :delete
+    .icon
+      = link_to image do
+        %img(src="#{image.data.url(:icon)}" class="icon")
+  %details
+    %summary
+      = render 'layouts/details', {:subject => image}

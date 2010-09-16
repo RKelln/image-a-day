@@ -1,0 +1,8 @@
+- comments ||= Comment.where(:image_id => nil)
+- comment_resource ||= Comment.new
+
+%h2.input_prompt Add a comment:
+= render 'comments/form', {:comment_resource => comment_resource}
+
+- comments.each do |comment|
+  = render comment

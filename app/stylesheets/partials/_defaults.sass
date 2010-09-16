@@ -10,7 +10,7 @@
 @import partials/base
 @import partials/fonts
 @import partials/colors
-//@import susy/reset
+@import partials/helpers 
 
 @import compass/css3
 
@@ -23,7 +23,7 @@
 +html5-boilerplate-reset
 +html5-boilerplate-styles
 +html5-boilerplate-helpers
-+html5-boilerplate-media
+//+html5-boilerplate-media
 
 // Reset -------------------------------------------------------------
 //+html5-boilerplate-reset
@@ -34,7 +34,8 @@ html
   text-rendering: optimizeLegibility
   -webkit-font-smoothing: antialiased
 
-
+body
+  +susy
 
 // Selected Text -----------------------------------------------------
 // -moz- must be declared separately
@@ -233,14 +234,16 @@ label
   width: 100%
   margin-top: 0
   border-color: $base
-  //height: $base-line-height / 14px * 1.5
-  height: $base-line-height * 1.5
+  height: $base-line-height / 14px * 1.5em
+  //height: $base-line-height * 1.5
 
 textarea
   @extend .textinput
-  //height: $base-line-height / 14px * 6.5
-  height: $base-line-height * 3.5
+  +trailer(0)
+  height: $base-line-height / 14px * 3em
   vertical-align: text-bottom
+  // RK: strange rendering bug below textarea, but this seems to fix it 
+  margin-bottom: -0.18em
 
 input
   &[type=text], &[type=password], &[type=email], &[type=url], &[type=tel],

@@ -2,7 +2,8 @@
 = render @image
 
 .comments
-  = render 'layouts/comments', {:comments => @image.comments, 
-                                :comment_resource => [@image, @image.comments.build]}
+  = render('comments/comment_section',
+            {:comments => @image.comments,
+            :comment_resource => [@image, @image.comments.build]})
 
 = link_to 'Back', images_path

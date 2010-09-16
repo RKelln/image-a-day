@@ -5,8 +5,9 @@ class ImagesController < ApplicationController
   # GET /images
   # GET /images.xml
   def index
-    @user = current_user
-    @images = @user.images
+    @images = Image.where(params_where)
+    #@user = current_user
+    #@images = @user.images
 
     respond_with @images
   end
@@ -22,8 +23,7 @@ class ImagesController < ApplicationController
   # GET /images/1
   # GET /images/1.xml
   def show
-    #@image = Image.where(params_where)
-    @image = Image.where(:id => params[:id])
+    @image = Image.find(params[:id])
 
     respond_with @image
   end
@@ -67,14 +67,22 @@ class ImagesController < ApplicationController
   
   def params_where
     pr = params
+    
     pr.delete 'controller'
     pr.delete 'action'
+    
+    pr[:user_id]=current_user.id unless pr[:user_id]
+    
     if pr[:year]
-      #params[:date] = Time.utc(params[:year], params[:month], params[:day])
-      pr[:date] = "#{pr[:year]}-#{pr[:month]}-#{pr[:day]}"
+      params[:date] = Time.utc(params[:year], params[:month], params[:day])
+      #pr[:date] = "#{pr[:year]}-#{pr[:month]}-#{pr[:day]}"
       pr.delete(:year)
       pr.delete(:month)
       pr.delete(:day)
+    elsif pr[:start_date]
+      pr[:date] = "#{pr[:start_date]}".."#{pr[:end_date]}"
+      pr.delete(:start_date)
+      pr.delete(:end_date)
     end
     
     return pr

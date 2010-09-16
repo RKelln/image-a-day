@@ -40,41 +40,114 @@
 /* Styles --------------------------------------------------------------
 
 body
+  +susy
 
 #container
-  
+
 // debugging
 #container *
   background-color: rgba(0,0,0,.125)
 
+$content-cols: 8
+$comments-cols: 4
 
-header
+#header
   +full
   #title
-    +alpha
-    +columns(4)
+    +columns(4, $total-cols)
     +adjust-font-size-to(32px)
     +trailer(1,32px)
-    
+
   #nav
-    +omega
-    +columns(8)
-    
+    +columns($content-cols, $total-cols)
+    +omega($total-cols)
+    +leader
     ul
-      +horizontal_list
+      +horizontal_list(1em)
+      li
+        width: $col-width
+        text-align: center
+        padding-right: 0
       #user
+        width: auto
         float: right
-  
+        text-align: right
+
 #main
   +full
+  #flash
+    +columns($total-cols)
+    +omega($total-cols)
   #content
-    +columns(8)
+    +columns($content-cols, $total-cols)
   #wall
-    +columns(4)
-    +omega
+    +columns($comments-cols, $total-cols)
+    +omega($total-cols)
 
-footer
+#footer
   +full
 
-.comments textarea
-  
+
+//.Devise /////////////////////////////////////////////////////
+
+#login, #signup
+  +columns(5,12)
+  +prepend(3,12)
+  +rhythm-borders
+
+// Comments ///////////////////////////////////////////////////
+
+.input_prompt
+  margin-bottom: 0
+
+#new_comment
+  +full(4)
+  .controls
+    +full(4)
+    +trailer
+    text-align: right
+  input
+    +adjust-font-size-to(12px)
+    +box-sizing(border-box)
+    //padding: 0
+    //margin: 0
+    //margin-top: -0.25em
+
+.comment, summary
+  +full(4)
+  +trailing-border(1px, 0)
+  p
+    +full(4)
+    +trailer(0)
+    padding-left: $gutter-width
+  .info
+    +full(4)
+    +horizontal_list(4px)
+    +adjust-font-size-to(12px)
+    //+omega(4)
+    .user
+      font-weight: bold
+    .date
+      font-style: italic
+
+// Images controller //////////////////////////////////////////
+
+.images
+  .image
+    +full($content-cols)
+    & > div
+      +full($content-cols)
+    & > details
+      +full($content-cols)
+      +trailer
+    .icon
+      +columns(1, $content-cols)
+      img
+        min-height: 1.5em
+        max-height: 3em
+        min-width: 3em
+        max-width: $col-width
+      & + details
+        +columns(7, $content-cols)
+        +omega($content-cols)
+        clear: none

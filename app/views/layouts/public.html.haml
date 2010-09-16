@@ -5,15 +5,12 @@
   %body{ :class => "#{controller.controller_name}" }
     #container
       %header#header
-        = render :partial => 'layouts/header'
-        
-      %section#main
+        %h1#title
+          = site_title
+      #main
         = render :partial => 'layouts/flashes'
-        %article#content
-          = yield
-        #wall.comments
-          = render :partial => 'comments/comment_section'
-            
+        = yield
+        
       %footer#footer
         = render :partial => 'layouts/footer'
         

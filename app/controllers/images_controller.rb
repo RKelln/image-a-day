@@ -1,6 +1,6 @@
 class ImagesController < ApplicationController
   before_filter :authenticate_user!
-  respond_to :html, :xml, :json
+  respond_to :html, :xml
   
   # GET /images
   # GET /images.xml
@@ -22,7 +22,8 @@ class ImagesController < ApplicationController
   # GET /images/1
   # GET /images/1.xml
   def show
-    @image = Image.find(params[:id])
+    #@image = Image.where(params_where)
+    @image = Image.where(:id => params[:id])
 
     respond_with @image
   end
@@ -60,5 +61,22 @@ class ImagesController < ApplicationController
     flash[:notice] = 'Deleted image'
 
     respond_with @image
+  end
+
+  private
+  
+  def params_where
+    pr = params
+    pr.delete 'controller'
+    pr.delete 'action'
+    if pr[:year]
+      #params[:date] = Time.utc(params[:year], params[:month], params[:day])
+      pr[:date] = "#{pr[:year]}-#{pr[:month]}-#{pr[:day]}"
+      pr.delete(:year)
+      pr.delete(:month)
+      pr.delete(:day)
+    end
+    
+    return pr
   end
 end

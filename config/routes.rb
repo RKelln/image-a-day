@@ -8,6 +8,7 @@ ImageADay::Application.routes.draw do
   get 'images/upload' # this is only here to make images_upload_path work.  A mystery!
   resources :images, :only => [:index, :show, :new, :create, :destroy] do
       collection do
+        #match "/:year(/:month(/:day))" => :show
         get :upload
         get :week
       end
@@ -17,7 +18,9 @@ ImageADay::Application.routes.draw do
   
   resources :comments, :only => [:index, :new, :create, :destroy]
   
-  resources :users, :only => [:index, :show]
+  resources :users, :only => [:index, :show] do
+    resources :images
+  end
 
 
   # The priority is based upon order of creation:

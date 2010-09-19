@@ -29,13 +29,22 @@ class Image < ActiveRecord::Base
   
   scope :recent, where('date >= ?', 1.day.ago).order(:date).reverse_order.limit(1)
   
+  class AbsentImage
+    attr_accessor :upload_path
+    
+    def initialize(upload_path)
+      @upload_path = upload_path
+    end
+  end
+  
   private
   
   def self.date_matrix(images, last_date, days)
     matrix = []
     (0..days).each do |d|
-      matrix[d] = images.where(:date => last_date - d.days)
-      matrix[d] = nil if matrix[d].empty?
+      date = last_date - d.days
+      matrix[d] = images.where(:date => date)
+      matrix[d] = AbsentImage.new(date.to_s) if matrix[d].empty?
     end
     return matrix
   end

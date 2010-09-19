@@ -2,12 +2,11 @@ class ImagesController < ApplicationController
   before_filter :authenticate_user!
   respond_to :html, :xml
   
-  # GET /images
-  # GET /images.xml
+  # GET (/user/:user_id)/images
+  # GET (/user/:user_id)/images/:year(/:month(/:day))
+  # GET (/user/:user_id)/images?start_date=:start_date&end_date=:end_date
   def index
     @images = Image.where(params_where)
-    #@user = current_user
-    #@images = @user.images
 
     respond_with @images
   end
@@ -17,11 +16,9 @@ class ImagesController < ApplicationController
     @images = @user.images.order('date DESC').limit(1)
 
     respond_with @images
-    #render :action => 'index'
   end
   
   # GET /images/1
-  # GET /images/1.xml
   def show
     @image = Image.find(params[:id])
 
@@ -29,7 +26,6 @@ class ImagesController < ApplicationController
   end
 
   # GET /images/upload
-  # GET /images/upload.xml
   def upload
     @image = Image.new
     
@@ -37,7 +33,6 @@ class ImagesController < ApplicationController
   end
 
   # POST /images
-  # POST /images.xml
   def create
     @image = Image.new(params[:image])
     @image.user_id = current_user.id
@@ -53,7 +48,6 @@ class ImagesController < ApplicationController
   end
 
   # DELETE /images/1
-  # DELETE /images/1.xml
   def destroy
     @image = Image.find(params[:id])
     @image.destroy
@@ -64,7 +58,8 @@ class ImagesController < ApplicationController
   end
 
   private
-  
+
+  # massage incoming params into a meaningful index by context
   def params_where
     pr = params
     
@@ -75,12 +70,11 @@ class ImagesController < ApplicationController
     
     if pr[:year]
       params[:date] = Time.utc(params[:year], params[:month], params[:day])
-      #pr[:date] = "#{pr[:year]}-#{pr[:month]}-#{pr[:day]}"
       pr.delete(:year)
       pr.delete(:month)
       pr.delete(:day)
     elsif pr[:start_date]
-      pr[:date] = "#{pr[:start_date]}".."#{pr[:end_date]}"
+      pr[:date] = pr[:start_date]..pr[:end_date]
       pr.delete(:start_date)
       pr.delete(:end_date)
     end

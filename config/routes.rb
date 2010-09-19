@@ -5,11 +5,14 @@ ImageADay::Application.routes.draw do
 
   get 'home/index'
 
-  get 'images/upload' # this is only here to make images_upload_path work.  A mystery!
   resources :images, :only => [:index, :show, :new, :create, :destroy] do
       collection do
         match "/:year(/:month(/:day))" => :index, :constraints => {:year => /\d{4}/}
+
         get :upload
+        match "upload/:year/:month/:day" => :upload, :constraints => {:year => /\d{4}/}
+        # TODO: named route for upload by date
+        
         get :week
       end
       

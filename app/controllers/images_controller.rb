@@ -26,8 +26,15 @@ class ImagesController < ApplicationController
   end
 
   # GET /images/upload
+  # GET /images/upload/:year/:month/:day
   def upload
     @image = Image.new
+    if params[:year]
+      @image.date = Time.utc(params[:year], params[:month], params[:day])
+    else
+      @image.date = Time.now
+      # TODO: bedtime!
+    end
     
     respond_with @image
   end
@@ -36,9 +43,6 @@ class ImagesController < ApplicationController
   def create
     @image = Image.new(params[:image])
     @image.user_id = current_user.id
-    now = Time.now
-    today = Time.utc(now.year,now.month,now.day)
-    @image.date = today
     
     if @image.save
       redirect_to @image, :notice => 'Image uploaded'

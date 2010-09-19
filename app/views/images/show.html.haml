@@ -4,6 +4,6 @@
 .comments
   = render('comments/comment_section',
             {:comments => @image.comments,
-            :comment_resource => [@image, @image.comments.build]})
+             :comment_resource => [@image, @image.comments.build]})
 
 = link_to 'Back', images_path

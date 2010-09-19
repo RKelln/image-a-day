@@ -36,6 +36,28 @@
   // Pass in false if you don't want iOS and WinMobile to mobile-optimize the text for you
   +media-mobile(true)
 
+/* mixins --------------------------------------------------------------
+
+// used for interactive control links
+= control-link
+  cursor: pointer
+  text-decoration: underline
+  // TODO: hover, nice cenroation than underline, etc
+
+// Used to override control-link styles when the control is inactive
+= control-link-inactive
+  text-decoration: none
+  font-style: italics
+  cursor: default
+  
+  // TODO: import some styles from control-link, impove this style
+
+
+.control-link
+  +control-link
+
+.control-link.inactive
+  +control-link-inactive
 
 /* Styles --------------------------------------------------------------
 
@@ -43,7 +65,7 @@ body
   +susy
 
 #container
-
+  
 // debugging
 #container *
   background-color: rgba(0,0,0,.125)
@@ -151,3 +173,7 @@ $comments-cols: 4
         +columns(7, $content-cols)
         +omega($content-cols)
         clear: none
+
+// Other modules --------------------------------------------------
+$image-height: 20
+@import partials/gallery

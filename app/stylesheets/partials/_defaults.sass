@@ -7,11 +7,13 @@
 
 // Imports -----------------------------------------------------------
 
+// local utils and base
 @import partials/base
 @import partials/fonts
 @import partials/colors
 @import partials/helpers 
 
+// compass utilities
 @import compass/css3
 
 // Now you can choose to include the whole
@@ -24,9 +26,6 @@
 +html5-boilerplate-styles
 +html5-boilerplate-helpers
 //+html5-boilerplate-media
-
-// Reset -------------------------------------------------------------
-//+html5-boilerplate-reset
 
 // html --------------------------------------------------------------
 html
@@ -234,13 +233,12 @@ label
   width: 100%
   margin-top: 0
   border-color: $base
-  height: $base-line-height / 14px * 1.5em
-  //height: $base-line-height * 1.5
+  height: ($base-line-height / 14px) * 1.5em
 
 textarea
   @extend .textinput
   +trailer(0)
-  height: $base-line-height / 14px * 3em
+  height: ($base-line-height / 14px) * 3em
   vertical-align: text-bottom
   // RK: strange rendering bug below textarea, but this seems to fix it 
   margin-bottom: -0.18em
@@ -291,32 +289,4 @@ sup
 
 +ie-hacks
 
-//--------------------------------
-// Helpers
-//--------------------------------
-.ir
-  +image-replacement
-
-.hidden
-  +hidden
-
-.visuallyhidden
-  +visually-hidden
-
-.clearfix
-  +pie-clearfix
-  // defined by compass core
-
-
-// Add the 'required' attribute on your
-// inputs if you want to use these
-input:valid, textarea:valid
-
-input:invalid, textarea:invalid
-  +border-radius(1px)
-  +box-shadow(red, 0, 0, 5px, 0)
-
-.no-boxshadow input:invalid,
-.no-boxshadow textarea:invalid
-  background-color: #f0dddd
 

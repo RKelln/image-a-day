@@ -1,5 +1,73 @@
-%h1 Image-A-Day Home
 
+#gallery.ad-gallery
+  .ad-controls
+  .ad-image-wrapper
+  .description
+  .ad-nav
+    .ad-thumbs
+      %ul.ad-thumb-list
+        - for image in @images do
+          %li
+            %a(href="#{image.data.url}" data-image-id="#{image.id}")
+              %img(src="#{image.data.url(:icon)}"
+                   longdesc="#{image_path(image)}"
+                   alt="#{image.description}"
+                   title="#{image.user.nickname}")
+  .comments
+    - for image in @images do
+      %div(data-image-id="#{image.id}")
+        = render('comments/comment_section',
+              {:comments => image.comments,
+               :comment_resource => [image, image.comments.build]})
+             
 - if user_signed_in?
   = link_to "My Images", images_path
   = link_to "Everyone", users_path
+  
+- content_for (:javascripts) do
+  :javascript
+    // anytime someone starts typing in a images comment box, 
+    // stop the slideshow
+    // TODO: implement
+    
+    $('.ad-gallery').adGallery({
+       //loader_image: 'loader.gif',
+       //start_at_index: 0,
+       description_wrapper: $('.description'),
+       thumb_opacity: 1,
+       animate_first_image: true,
+       //animation_speed: 400,
+       //width: false,
+       //height: false,
+       //display_next_and_prev: true,
+       //display_back_and_forward: true,
+       //scroll_jump: 0, // If 0, it jumps the width of the container
+       slideshow: {
+         enable: true,
+         autostart: true,
+         speed: 10000,
+         start_label: 'Start',
+         stop_label: 'Stop',
+         stop_on_scroll: true,
+         countdown_prefix: '(',
+         countdown_sufix: ')',
+         onStart: false,
+         onStop: false
+       },
+       effect: 'fade', //'slide-hori', 'slide-vert', 'fade', or 'resize', 'none'
+       //enable_keyboard_move: true,
+       //cycle: true,
+       callbacks: {
+         //  init: false,
+         afterImageVisible: function() {
+           // display comments
+           // find active image
+           var active_image = $("#gallery .ad-thumbs .ad-active").attr('data-image-id');
+           $('#gallery .comments [data-image-id="'+ active_image +'"]').show();
+         },
+         beforeImageVisible: function() {
+           // hide all comments
+           $('#gallery .comments [data-image-id]').hide();
+         }
+       }
+    });

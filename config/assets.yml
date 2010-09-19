@@ -18,12 +18,14 @@ javascripts:
   end_scripts:
     - public/javascripts/rails.js    
     - public/javascripts/jquery.form.js
-    - public/javascripts/plugins.js
-    - public/javascripts/application.js    
+#    - public/javascripts/plugins.js
+    - public/javascripts/application.js
+    - public/javascripts/gallery/jquery.ad-gallery.js    
 
 stylesheets:
   screen:
     - public/stylesheets/screen.css
+#    - public/stylesheets/gallery.css
   print:
     - public/stylesheets/print.css
   ie:

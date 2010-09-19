@@ -1,0 +1,177 @@
+$image-height: 16 !default
+$gallery-path: "gallery/" !default
+
+.ad-gallery
+  width: 100%
+  margin: 0
+  padding: 0
+  *
+    margin: 0
+    padding: 0
+  .ad-image-wrapper
+    width: 100%
+    +height($image-height)
+    margin-bottom: 0
+    position: relative
+    overflow: hidden
+    .ad-loader
+      position: absolute
+      z-index: 10
+      top: 48%
+      left: 48%
+      border: 1px solid #CCC
+    .ad-next
+      position: absolute
+      right: 0
+      top: 0
+      width: 25%
+      height: 100%
+      cursor: pointer
+      display: block
+      z-index: 100
+    .ad-prev
+      position: absolute
+      left: 0
+      top: 0
+      width: 25%
+      height: 100%
+      cursor: pointer
+      display: block
+      z-index: 100
+      /* Or else IE will hide it
+      background: url(non-existing.jpg)
+    .ad-next
+      /* Or else IE will hide it
+      background: url(non-existing.jpg)
+    .ad-prev .ad-prev-image
+      background: image_url($gallery-path + "ad_prev.png")
+      width: 30px
+      height: 30px
+      display: none
+      position: absolute
+      top: 47%
+      left: 0
+      z-index: 101
+    .ad-next .ad-next-image
+      background: image_url($gallery-path + "ad_prev.png")
+      width: 30px
+      height: 30px
+      display: none
+      position: absolute
+      top: 47%
+      left: 0
+      z-index: 101
+      background: image_url($gallery-path + "ad_next.png")
+      width: 30px
+      height: 30px
+      right: 0
+      left: auto
+    .ad-image
+      position: absolute
+      overflow: hidden
+      top: 0
+      left: 0
+      z-index: 9
+      a img
+        border: 0
+      .ad-image-description
+        position: absolute
+        bottom: 0px
+        left: 0px
+        padding: 7px
+        text-align: left
+        width: 100%
+        z-index: 2
+        background: image_url($gallery-path + "opa75.png")
+        color: #000
+
+//* html .ad-gallery .ad-image-wrapper .ad-image .ad-image-description
+//  background: none
+//  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader (enabled=true, sizingMethod=scale, src='opa75.png')
+
+.ad-gallery
+  .ad-description-title
+    display: block
+  .ad-controls
+    +full($content-cols)
+    *
+      +adjust-font-size-to(14px, 1)
+  .ad-info
+    float: left
+  .ad-slideshow-controls
+    float: right
+    .ad-slideshow-start, .ad-slideshow-stop
+      padding-left: $gutter-width
+      cursor: pointer
+    .ad-slideshow-countdown
+      padding-left: $gutter-width
+  .ad-slideshow-start
+    +control-link
+  .ad-slideshow-stop
+    +control-link-inactive
+  .ad-slideshow-running .ad-slideshow-start
+    +control-link-inactive
+  .ad-slideshow-running .ad-slideshow-stop
+    +control-link
+  
+  .ad-nav
+    +full($content-cols)
+    +height(2)
+    +trailer
+  .ad-forward, .ad-back
+    position: absolute
+    top: 0
+    height: 100%
+    z-index: 10
+
+/* IE 6 doesn't like height: 100%
+
+* html .ad-gallery .ad-forward
+  height: 100px
+
+.ad-gallery
+  .ad-back
+    height: 100px
+    cursor: pointer
+    left: -20px
+    width: 13px
+    display: block
+    background: image_url($gallery-path + "ad_scroll_back.png") 0px 22px no-repeat
+  .ad-forward
+    cursor: pointer
+    display: block
+    right: -20px
+    width: 13px
+    background: image_url($gallery-path + "ad_scroll_forward.png") 0px 22px no-repeat
+  .ad-nav .ad-thumbs
+    overflow: hidden
+    width: 100%
+  .ad-thumbs
+    +full($content-cols)
+    +height(3)
+    .ad-thumb-list
+      +height(3)
+      float: left
+      width: 9000px
+      list-style: none
+    li
+      float: left
+      padding-right: $gutter-width
+      height: $col-width
+      width: $col-width
+      a
+        display: block
+        img
+          border: 1px solid black
+          display: block
+          width: 100%
+          height: 100%
+        &.ad-active img
+          border: 1px solid white
+
+/* Can't do display none, since Opera won't load the images then
+
+.ad-preloads
+  position: absolute
+  left: -9000px
+  top: -9000px

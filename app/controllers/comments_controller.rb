@@ -27,7 +27,23 @@ class CommentsController < ApplicationController
     end
   end
 
-  # DELETE /comments/1
+  # TODO: remove this action once comments are ajax
+  # GET /comments/:id/edit/
+  def edit
+    @comment = Comment.find(params[:id])
+  end
+  
+  # PUT /comments/:id/update
+  def update
+    @comment = Comment.find(params[:id])
+    if @comment.update_attributes(params[:comment])
+      redirect_to :back, :notice => 'Comment was successfully updated.'
+    else
+      render :action => "edit"
+    end
+  end
+  
+  # DELETE /comments/:id
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy

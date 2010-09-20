@@ -7,7 +7,7 @@
     (#{time_ago_in_words(subject.created_at)} ago)
   - if subject.user_id == current_user.id
     %li<
-      Edit
+      = link_to 'Edit', edit_comment_path(subject)
     %li<
       = link_to "Delete", subject, :confirm => 'Are you sure?', :method => :delete
   = yield(:info_content)

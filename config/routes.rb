@@ -19,7 +19,7 @@ ImageADay::Application.routes.draw do
       resources :comments, :only => [:new, :create]
   end
   
-  resources :comments, :only => [:index, :new, :create, :destroy]
+  resources :comments, :only => [:index, :new, :create, :edit, :update, :destroy]
   
   resources :users, :only => [:index, :show] do
     resources :images do

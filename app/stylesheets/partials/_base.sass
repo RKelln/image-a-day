@@ -4,19 +4,72 @@
 //  Site: susy.oddbird.net
 //**
 
-// Grid --------------------------------------------------------------
+// VARIABLES //////////////////////////////////////////////////////////
+
+// Grid ---------------------------------------------------------------
 
 $total-cols: 12
 $col-width: 4em
 $gutter-width: 1em
 $side-gutter-width: $gutter-width
 
+// Colors -------------------------------------------------------------
+
+$base-color: #222222
+$splash-color: #52AD4B
+$border-color: darken($base-color,  3%)
+$highlight-color: lighten($base-color, 5%)
+$font-color: #CCCCCC
+$link-color: #607890
+$selected-font-color: white
+$selected-background-color: #ff5e99
+$error-color: #FF4E4E
+
+// Fonts --------------------------------------------------------------
+
+$base-font-size: 16px
+$base-line-height: 24px
+// $base-line-height: 1.231 // html5boilerplate
+
+$base-font-family: unquote("sans-serif")
+
+$default-text-shadow-color: darken($font-color, 90%)
+$default-text-shadow-h-offset: 1px
+$default-text-shadow-v-offset: 1px
+$default-text-shadow-blur: 1px
+
+
+// CSS 3 --------------------------------------------------------------
+// other overrides for compass css 3 utilities
+
+// border-radius
+$default-border-radius: 0.33em
+
+// box shadow
+$default-box-shadow-color: rgba(0,0,0,0.6)
+$default-box-shadow-h-offset: 1px
+$default-box-shadow-v-offset: 1px 
+$default-box-shadow-blur: 5px
+
+
+// Imports ------------------------------------------------------------
+
+
 // Don't move this @import above the GRID and FONT-SIZE variables.
 @import susy/susy
 @import html5-boilerplate
 
+// reset before anything else
++html5-boilerplate-reset
++susy
 
-// Sizes  -------------------------------------------------------------
-$list-left-margin: 1.8em
+// local utils
+@import partials/fonts
+@import partials/helpers
+@import partials/colors
 
+@import compass/css3
 
+//+html5-boilerplate-styles
++html5-boilerplate-helpers
+//+html5-boilerplate-media

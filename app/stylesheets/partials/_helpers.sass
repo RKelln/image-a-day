@@ -29,6 +29,17 @@
       $max: #{$base-line-height / $fontsize * $max}em
     max-height: $max
 
+= box-glow($color: $link_color)
+  +box-shadow($color, 0, 0, 0.5em)
+
+// pass in the same color as the background
+= fuzzy-border($color)
+  background-color: $color
+  +border-radius
+  +box-shadow($color, 0, 0, 2px)
+
+
+// Class Styles
 
 .ir
   +image-replacement
@@ -49,9 +60,30 @@
 input:valid, textarea:valid
 
 input:invalid, textarea:invalid
-  +border-radius(1px)
+  +border-radius
   +box-shadow(red, 0, 0, 5px, 0)
 
 .no-boxshadow input:invalid,
 .no-boxshadow textarea:invalid
   background-color: #f0dddd
+
+= control-link
+  text-align: middle
+  padding: 0 0.5em
+  border-width: 1px
+  border-style: solid
+  position: relative
+  top: -0.1em
+  +border-radius
+  +adjust-font-size-to(12px)
+  +sans-family
+
+.control-link
+  cursor: pointer
+  +control-link
+  
+  
+.control-link-inactive
+  cursor: default
+  +control-link
+  

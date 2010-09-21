@@ -6,26 +6,9 @@
 // And many others, less directly...
 
 // Imports -----------------------------------------------------------
-
-// local utils and base
+// base always first
 @import partials/base
-@import partials/fonts
-@import partials/colors
-@import partials/helpers 
 
-// compass utilities
-@import compass/css3
-
-// Now you can choose to include the whole
-// enchilada by uncommeting this line
-//@include html5-boilerplate;
-
-// Or, you can pick and choose only the
-// sections you want to include
-+html5-boilerplate-reset
-+html5-boilerplate-styles
-+html5-boilerplate-helpers
-//+html5-boilerplate-media
 
 // html --------------------------------------------------------------
 html
@@ -33,8 +16,13 @@ html
   text-rendering: optimizeLegibility
   -webkit-font-smoothing: antialiased
 
-body
-  +susy
+//body
+//  +susy
+
+// change '.container' to match your HTML container element
+// or @extend it to apply multiple containers on your site.
+.container
+  +container
 
 // Selected Text -----------------------------------------------------
 // -moz- must be declared separately
@@ -60,10 +48,11 @@ body
 a
   &:link, &:visited, &:hover, &:active
     outline: none
+    text-decoration: none
   &:focus, &:hover, &:active
     text-decoration: none
   &:focus
-    outline: thin dotted
+    //outline: thin dotted
 
 // Headings --------------------------------------------------------------
 
@@ -226,13 +215,12 @@ label
 // box-sizing helps us control the width of inputs
 // which are otherwise very hard to manage in the grid.
 .textinput
-  +debug-vertical-alignment
+  //+debug-vertical-alignment
   +rhythm-borders(1px, 0.25, 14px)
   +trailer(0.5)
   +box-sizing(border-box)
   width: 100%
   margin-top: 0
-  border-color: $base
   height: ($base-line-height / 14px) * 1.5em
 
 textarea
@@ -259,21 +247,7 @@ button
   overflow: visible
 
 /////////////////////////////////////////
-
-ul, ol
-  margin-left: $list-left-margin
-
-ol
-  list-style-type: decimal
-
-td, td img
-  vertical-align: top
-
-sub
-  +sub
-
-sup
-  +sup
+// HTML5 boilerplate extras 
 
 +accessible-focus
 

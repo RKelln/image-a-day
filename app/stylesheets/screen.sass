@@ -3,22 +3,8 @@
 // Imports --------------------------------------------------------------
 
 @import partials/defaults
-
-/* Layout --------------------------------------------------------------
-
-+susy
-
-// change '.container' to match your HTML container element
-// or @extend it to apply multiple containers on your site.
-#container
-  +container
-  +show-grid("grid.png")
-
-
-// show-grid loads a 64+16x24 grid image by default
-// For other grid settings, run `compass grid-img 30+10x20`
-// Where 30 is the column width, 10 is the gutter width,
-// and 20 is the (optional) line-height.
+// comment out to turn of debugging
+//@import partials/debug
 
 //--------------------------------
 // Media
@@ -36,50 +22,27 @@
   // Pass in false if you don't want iOS and WinMobile to mobile-optimize the text for you
   +media-mobile(true)
 
-/* mixins --------------------------------------------------------------
-
-// used for interactive control links
-= control-link
-  cursor: pointer
-  text-decoration: underline
-  // TODO: hover, nice cenroation than underline, etc
-
-// Used to override control-link styles when the control is inactive
-= control-link-inactive
-  text-decoration: none
-  font-style: italics
-  cursor: default
-  
-  // TODO: import some styles from control-link, impove this style
-
-
-.control-link
-  +control-link
-
-.control-link.inactive
-  +control-link-inactive
-
 /* Styles --------------------------------------------------------------
+
+$content-cols: 8
+$comments-cols: 4
+$default-border-radius: 0.2em
 
 body
   +susy
 
-#container
-  
-// debugging
-#container *
-  background-color: rgba(0,0,0,.125)
-
-$content-cols: 8
-$comments-cols: 4
-
 #header
-  +full
+  +full($total-cols)
+  +height(2)
   #title
     +columns(4, $total-cols)
     +adjust-font-size-to(32px)
     +trailer(1,32px)
-
+    
+    // HACK: align to bottom of nav (and shift in a gutter width)
+    position: relative
+    bottom: -0.2em
+    left: 16px
   #nav
     +columns($content-cols, $total-cols)
     +omega($total-cols)
@@ -94,12 +57,22 @@ $comments-cols: 4
         width: auto
         float: right
         text-align: right
+        margin-right: $gutter-width
+        .control-link
+          margin-left: $gutter-width
 
 #main
   +full
   #flash
     +columns($total-cols)
-    +omega($total-cols)
+    z-index: 9999
+    div
+      +border-radius($default-border-radius)
+      padding-left: $gutter-width
+      padding-right: $gutter-width
+    p
+      text-align: center
+      margin: 0
   #content
     +columns($content-cols, $total-cols)
   #wall
@@ -122,7 +95,7 @@ $comments-cols: 4
 .input_prompt
   margin-bottom: 0
 
-#new_comment
+.new_comment
   +full(4)
   .controls
     +full(4)
@@ -131,9 +104,6 @@ $comments-cols: 4
   input
     +adjust-font-size-to(12px)
     +box-sizing(border-box)
-    //padding: 0
-    //margin: 0
-    //margin-top: -0.25em
 
 .comment, summary
   +full(4)
@@ -175,5 +145,9 @@ $comments-cols: 4
         clear: none
 
 // Other modules --------------------------------------------------
-$image-height: 20
+$image-height: 18
 @import partials/gallery
+
+.gallery .description
+  +full($content-cols)
+  

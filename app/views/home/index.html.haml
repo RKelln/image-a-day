@@ -1,8 +1,8 @@
 
 #gallery.ad-gallery
-  .ad-controls
   .ad-image-wrapper
   .description
+  .ad-controls
   .ad-nav
     .ad-thumbs
       %ul.ad-thumb-list
@@ -19,10 +19,11 @@
         = render('comments/comment_section',
               {:comments => image.comments,
                :comment_resource => [image, image.comments.build]})
-             
+
+.additional-controls
 - if user_signed_in?
-  = link_to "My Images", images_path
-  = link_to "Everyone", users_path
+  = link_to "My Images", images_path, :class => "control-link"
+  = link_to "Everyone", users_path, :class => "control-link"
   
 - content_for (:javascripts) do
   :javascript

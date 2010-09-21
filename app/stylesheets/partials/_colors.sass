@@ -1,18 +1,72 @@
-// Colors variabless ----------------------------------------------
-
-$base: #4c4c4c
-$font-color: #444444
-$link-color: #607890
-$selected-font-color: white
-$selected-background-color: #ff5e99
-
 // Color styles ----------------------------------------------------
 
 body, select, input, textarea
   color: $font-color
+  border-color: $border-color
 
+body
+  background-color: $border-color
+
+select, input, textarea
+  background-color: $highlight-color
+  border-color: $border-color
+  
+
+.container
+  background-color: $base-color
+
+#header
+  background-color: $border-color
+  
+.cssgradients #header
+  +linear-gradient(color-stops($base-color, $highlight-color))
+  +box-shadow($border-color, 0, 2px)
+
+#flash
+  color: $base-color
+  div
+    +box-shadow
+  .notice
+    background-color: $font-color
+  .error, .warning
+    background-color: $error-color
+
+.ad-image-wrapper, .ad-nav, .ad-controls
+  //background-color: $border-color
+  +fuzzy-border($border-color)
+
+.date, .input_prompt, .control-link-inactive, .ad-controls
+  color: transparentize($font-color, 0.4)
+  
 a
   &:link, &:visited
     color: $link-color
+    +text-shadow
   &:focus, &:hover, &:active
     color: complement($link-color)
+    +text-shadow(lighten(complement($link-color), 20%), 0, 0, 2px)
+  
+
+.comment
+  border-color: $border-color
+  
+.control-link
+  background-color: $border-color
+  border-color: $link-color
+  color: $link-color
+  +box-shadow
+  &:focus, &:hover, &:active
+    background-color: lighten($base-color, 0.6)
+    color: complement($link-color)
+    border-color: complement($link-color)
+    +box-glow(complement($link-color))
+    
+.control-link-inactive
+  background-color: $base-color
+  border-color: $border-color
+
+.ad-active img
+  border-color: $splash-color !important
+  
+textarea:focus
+  border-color: complement($link-color)

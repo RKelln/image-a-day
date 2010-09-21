@@ -6,6 +6,7 @@ tmp/
 releases/*
 public/system
 public/system/***
+assets/***
 
 # IDE settings files
 .loadpath

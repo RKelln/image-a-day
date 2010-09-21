@@ -3,7 +3,8 @@ class HomeController < ApplicationController
 
   def index
     @user = current_user
-    @images = @user.images.order('date DESC')
+    @images = Image.recent
+    #@images = @user.images.order('date DESC')
   end
 
 end

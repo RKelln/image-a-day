@@ -1,7 +1,6 @@
 
 #gallery.ad-gallery
   .ad-image-wrapper
-  .description
   .ad-controls
   .ad-nav
     .ad-thumbs
@@ -13,6 +12,7 @@
                    longdesc="#{image_path(image)}"
                    alt="#{image.description}"
                    title="#{image.user.nickname}")
+  .description
   .comments
     - for image in @images do
       %div(data-image-id="#{image.id}")
@@ -20,18 +20,16 @@
               {:comments => image.comments,
                :comment_resource => [image, image.comments.build]})
 
-.additional-controls
-- if user_signed_in?
-  = link_to "My Images", images_path, :class => "control-link"
-  = link_to "Everyone", users_path, :class => "control-link"
+%ul.additional-controls
+  %li
+    = link_to "My Images", images_path, :class => "control-link"
+  %li
+    = link_to "Everyone", users_path, :class => "control-link"
   
 - content_for (:javascripts) do
   :javascript
-    // anytime someone starts typing in a images comment box, 
-    // stop the slideshow
-    // TODO: implement
-    
-    $('.ad-gallery').adGallery({
+    // init Ad Gallery
+    var galleries = $('.ad-gallery').adGallery({
        //loader_image: 'loader.gif',
        //start_at_index: 0,
        description_wrapper: $('.description'),
@@ -44,9 +42,9 @@
        //display_back_and_forward: true,
        //scroll_jump: 0, // If 0, it jumps the width of the container
        slideshow: {
-         enable: true,
+         enable: #{@images.length > 1 ? "true" : "false"},
          autostart: true,
-         speed: 10000,
+         speed: 6000,
          start_label: 'Start',
          stop_label: 'Stop',
          stop_on_scroll: true,
@@ -62,13 +60,21 @@
          //  init: false,
          afterImageVisible: function() {
            // display comments
-           // find active image
            var active_image = $("#gallery .ad-thumbs .ad-active").attr('data-image-id');
-           $('#gallery .comments [data-image-id="'+ active_image +'"]').show();
+           //log("active = " + active_image);
+           $('#gallery .comments [data-image-id="'+ active_image +'"]').show('fast');
          },
          beforeImageVisible: function() {
-           // hide all comments
-           $('#gallery .comments [data-image-id]').hide();
+           //log("hide all comments");
+           $('#gallery .comments [data-image-id]').hide('fast');
          }
        }
+    });
+    
+    // anytime someone focuses an image's comment box, stop the slideshow
+    $(document).ready(function() {
+      $(".comments textarea").focus(function() {
+        log("cap'n we've got focus");
+        galleries[0].slideshow.stop();
+      });
     });

@@ -148,7 +148,7 @@ html > body {
   line-height: 1.714em;
 }
 
-/* line 44, ../../app/stylesheets/partials/_helpers.sass */
+/* line 45, ../../app/stylesheets/partials/_helpers.sass */
 .ir {
   text-indent: -119988px;
   overflow: hidden;
@@ -157,20 +157,20 @@ html > body {
   background-repeat: no-repeat;
 }
 
-/* line 47, ../../app/stylesheets/partials/_helpers.sass */
+/* line 48, ../../app/stylesheets/partials/_helpers.sass */
 .hidden {
   display: none;
   visibility: hidden;
 }
 
-/* line 50, ../../app/stylesheets/partials/_helpers.sass */
+/* line 51, ../../app/stylesheets/partials/_helpers.sass */
 .visuallyhidden {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-/* line 53, ../../app/stylesheets/partials/_helpers.sass */
+/* line 54, ../../app/stylesheets/partials/_helpers.sass */
 .clearfix {
   *zoom: 1;
 }
@@ -184,7 +184,7 @@ html > body {
   visibility: hidden;
 }
 
-/* line 62, ../../app/stylesheets/partials/_helpers.sass */
+/* line 63, ../../app/stylesheets/partials/_helpers.sass */
 input:invalid, textarea:invalid {
   -moz-border-radius: 0.33em;
   -webkit-border-radius: 0.33em;
@@ -198,13 +198,13 @@ input:invalid, textarea:invalid {
   box-shadow: red 0 0 5px 0;
 }
 
-/* line 66, ../../app/stylesheets/partials/_helpers.sass */
+/* line 67, ../../app/stylesheets/partials/_helpers.sass */
 .no-boxshadow input:invalid,
 .no-boxshadow textarea:invalid {
   background-color: #f0dddd;
 }
 
-/* line 81, ../../app/stylesheets/partials/_helpers.sass */
+/* line 82, ../../app/stylesheets/partials/_helpers.sass */
 .control-link {
   cursor: pointer;
   text-align: middle;
@@ -224,7 +224,7 @@ input:invalid, textarea:invalid {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 86, ../../app/stylesheets/partials/_helpers.sass */
+/* line 87, ../../app/stylesheets/partials/_helpers.sass */
 .control-link-inactive {
   cursor: default;
   text-align: middle;

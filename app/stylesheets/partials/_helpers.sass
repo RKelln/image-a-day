@@ -16,13 +16,14 @@
     $n: #{$base-line-height / $fontsize * $n}em
   height: $n
 
-= heights($n, $min: false, $max: false, $fontsize: $base-font-size)
-  +height($n, $fontsize)
+= heights($n: false, $min: false, $max: false, $fontsize: $base-font-size)
+  @if $n
+    +height($n, $fontsize)
   
   @if type_of($min) == number
     @if unitless($min)
       $min: #{$base-line-height / $fontsize * $min}em
-    +min_height($height)
+    +min_height($min)
     
   @if type_of($max) == number
     @if unitless($max)

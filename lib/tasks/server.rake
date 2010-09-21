@@ -1,22 +1,30 @@
 class RailsRunner
+  def self.pidfile
+    'tmp/pids/server.pid'
+  end
+  
   def self.pid
-    '/tmp/pids/server.pid'
+    `cat #{pidfile}`
   end
 
   # Just check for existance of pid file
   def self.running?
-    File.exists? pid
+    File.exists? pidfile
   end
 
   def self.start
-    unless running?
+    if running?
+      puts "WARNING: rails server already running"
+    else
       `rails s -d`
     end
   end
 
   def self.stop
     if running?
-      `kill -INT $(cat tmp/pids/server.pid)`
+      `kill -INT #{pid}`
+    else
+      puts "WARNING: cannot stop rails server, it isn't started"
     end
   end
 end

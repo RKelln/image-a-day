@@ -30,7 +30,7 @@ class Image < ActiveRecord::Base
     return date_matrix(images, last_date, days)
   end
   
-  scope :recent, where('date >= ?', 1.day.ago).order(:date).reverse_order.limit(1)
+  scope :recent, where('date >= ?', 1.day.ago).order(:user_id)
   
   class AbsentImage
     attr_accessor :upload_path

@@ -1,5 +1,6 @@
 $image-height: 16 !default
 $gallery-path: "gallery/" !default
+$icon-size: 32px !default
 
 .ad-gallery
   width: 100%
@@ -90,14 +91,16 @@ $gallery-path: "gallery/" !default
 //  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader (enabled=true, sizingMethod=scale, src='opa75.png')
 
 .ad-gallery
-  .ad-description-title
-    display: block
+  .ad-description-title:after
+    content: ": "
   .ad-controls
     +full($content-cols)
   .ad-info
     +columns(1, $content-cols)
   .ad-info, .ad-slideshow-countdown
     +adjust-font-size-to(12px, 1)
+  .ad-slideshow-countdown
+    +monospace-family
   .ad-slideshow-controls
     +columns(2, $content-cols)
     +omega($content-cols)
@@ -112,7 +115,7 @@ $gallery-path: "gallery/" !default
   .ad-nav
     +full($content-cols)
     +height(2)
-    +trailer
+
   .ad-forward, .ad-back
     position: absolute
     top: 0
@@ -144,7 +147,8 @@ $gallery-path: "gallery/" !default
     overflow: hidden
   .ad-thumbs
     .ad-thumb-list
-      margin-top: 8px
+      margin-top: 9px
+      margin-left: $gutter-width
       float: left
       width: 9000px
       list-style: none
@@ -155,8 +159,8 @@ $gallery-path: "gallery/" !default
         display: block
         img
           display: block
-          width: 100%
-          height: 100%
+          width: $icon-size
+          height: $icon-size
           @extend .control-link
           padding: 0
         //&:hover

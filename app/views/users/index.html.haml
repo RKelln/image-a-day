@@ -1,8 +1,7 @@
-%h1 Everyone
+%h1 Your fellow artists:
 
-- @users.each do |user|
-  %tr
-    %td= link_to "#{user.email}", user
-    /%td= link_to 'Delete', user, :confirm => 'Are you sure?', :method => :delete
-
-%br
+%ul
+  - @users.each do |user|
+    %li
+      #{user.nickname} (#{user.name}): 
+      = link_to "#{user.email}", user

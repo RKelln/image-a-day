@@ -27,6 +27,7 @@
 $content-cols: 8
 $comments-cols: 4
 $default-border-radius: 0.2em
+$icon-size: 32px
 
 body
   +susy
@@ -78,7 +79,7 @@ body
   #wall
     +columns($comments-cols, $total-cols)
     +omega($total-cols)
-
+  
 #footer
   +full
 
@@ -144,10 +145,23 @@ body
         +omega($content-cols)
         clear: none
 
+// Home controller ///////////////////////////////////////////
+
+ul.additional-controls
+  +full($content-cols)
+  +horizontal-list
+  +leader
+  
+
 // Other modules --------------------------------------------------
 $image-height: 18
 @import partials/gallery
 
-.gallery .description
-  +full($content-cols)
-  
+#gallery 
+  .description
+    +full($content-cols)
+    +trailer
+  .comments
+    +full($content-cols)
+    +trailer
+    +heights(false, 5)

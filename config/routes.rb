@@ -11,7 +11,9 @@ ImageADay::Application.routes.draw do
 
         get :upload
         match "upload/:year/:month/:day" => :upload, :constraints => {:year => /\d{4}/}
-        # TODO: named route for upload by date
+        # named route provided by custom helper
+
+        match "data/:user_id/:year/:month/:day/:style" => :data
         
         get :week
       end

@@ -24,6 +24,19 @@ class ImagesController < ApplicationController
 
     respond_with @image
   end
+  
+  # GET /images/data/:user_id/:year/:month/:day/:style
+  # :path => ':rails_root/public/system/:year_month_day:opt_style/:user_:yyyy_:yday.:extension'
+  def data
+    style = params[:style]
+    match_params = params.slice :user_id,:year,:month,:day
+    logger.debug "DATA matching #{match_params}"
+    @image = Image.where(params_where(match_params))
+    logger.debug "DATA matched #{@image}"
+
+    logger.debug "DATA sending #{@image.first.data.path(style)}"
+    send_file @image.first.data.path(style), :type => @image.first.data.content_type
+  end
 
   # GET /images/upload
   # GET /images/upload/:year/:month/:day
@@ -64,25 +77,25 @@ class ImagesController < ApplicationController
   private
 
   # massage incoming params into a meaningful index by context
-  def params_where
-    pr = params
+  def params_where(match_params = nil)
+    match_params = params unless match_params
     
-    pr.delete 'controller'
-    pr.delete 'action'
+    match_params.delete 'controller'
+    match_params.delete 'action'
     
-    pr[:user_id]=current_user.id unless pr[:user_id]
+    match_params[:user_id]=current_user.id unless match_params[:user_id]
     
-    if pr[:year]
-      params[:date] = Time.utc(params[:year], params[:month], params[:day])
-      pr.delete(:year)
-      pr.delete(:month)
-      pr.delete(:day)
-    elsif pr[:start_date]
-      pr[:date] = pr[:start_date]..pr[:end_date]
-      pr.delete(:start_date)
-      pr.delete(:end_date)
+    if match_params[:year]
+      match_params[:date] = Time.utc(match_params[:year], match_params[:month], match_params[:day])
+      match_params.delete(:year)
+      match_params.delete(:month)
+      match_params.delete(:day)
+    elsif match_params[:start_date]
+      match_params[:date] = match_params[:start_date]..match_params[:end_date]
+      match_params.delete(:start_date)
+      match_params.delete(:end_date)
     end
     
-    return pr
+    return match_params
   end
 end

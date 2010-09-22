@@ -1,0 +1,3 @@
+.weeklist
+  - for week in @weekly_images
+    = render 'weekly', :label => week[:user].nickname, :images => week[:images]

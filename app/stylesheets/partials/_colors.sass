@@ -10,14 +10,14 @@ body
 select, input, textarea
   background-color: $highlight-color
   border-color: $border-color
-  
+
 
 .container
   background-color: $base-color
 
-#header
+#header, .image.thumb img
   background-color: $border-color
-  
+
 .cssgradients #header
   +linear-gradient(color-stops($base-color, $highlight-color))
   +box-shadow($border-color, 0, 2px)
@@ -31,13 +31,13 @@ select, input, textarea
   .error, .warning
     background-color: $error-color
 
-.ad-image-wrapper, .ad-nav, .ad-controls
+.ad-image-wrapper, .ad-nav
   //background-color: $border-color
   +fuzzy-border($border-color)
 
-.date, .input_prompt, .control-link-inactive, .ad-controls
+.date, .input_prompt, .control-link-inactive, .ad-controls, .label
   color: transparentize($font-color, 0.4)
-  
+
 a
   &:link, &:visited
     color: $link-color
@@ -45,11 +45,11 @@ a
   &:focus, &:hover, &:active
     color: complement($link-color)
     +text-shadow(lighten(complement($link-color), 20%), 0, 0, 2px)
-  
+
 
 .comment
   border-color: $border-color
-  
+
 .control-link
   background-color: $border-color
   border-color: $link-color
@@ -60,13 +60,22 @@ a
     color: complement($link-color)
     border-color: complement($link-color)
     +box-glow(complement($link-color))
-    
+
 .control-link-inactive
   background-color: $base-color
   border-color: $border-color
 
+.image.absent a
+  background-color: $error-color
+  color: $font-color
+
+.image.thumb img
+  +box-shadow
+  &:focus, &:hover, &:active
+    +box-glow(complement($link-color))
+
 .ad-active img
   border-color: $splash-color !important
-  
+
 textarea:focus
   border-color: complement($link-color)

@@ -1,11 +1,16 @@
-.image
-  - if current_page?(image) 
-    .fullsize
-      %img(src="#{image.data.url}" class="fullsize")
+-# default to icon size unless we are on the image's page
+  if size = nil then use the full size image
+- size ||= :icon unless current_page?(image)
+
+-# default to visible details
+- details = true if details.nil?
+
+.image(class="#{size.to_s}")
+  - if size.nil?
+    %img(src="#{image.data.url}")
   - else
-    .icon
-      = link_to image do
-        %img(src="#{image.data.url(:icon)}" class="icon")
-  %details
+    = link_to image do
+      %img(src="#{image.data.url(size)}" class="#{size.to_s}")
+  %details{:style => details ? nil : "display:none;"}
     %summary
       = render 'layouts/details', {:subject => image}

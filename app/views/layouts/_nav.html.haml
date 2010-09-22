@@ -1,9 +1,11 @@
 %nav#nav
   %ul
-    %li Today
-    %li Week
+    %li
+      = link_to "Today", root_path
+    %li
+      = link_to "Week", week_path
     %li Month
-    %li#user  
+    %li#user
       - if user_signed_in?
         Signed in as
         %b= current_user.nickname

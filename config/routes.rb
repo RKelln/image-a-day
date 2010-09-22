@@ -4,6 +4,8 @@ ImageADay::Application.routes.draw do
   root :to => 'home#index'
 
   get 'home/index'
+  
+  match 'week' => 'home#week'
 
   resources :images, :only => [:index, :show, :new, :create, :destroy] do
       collection do

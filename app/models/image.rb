@@ -2,53 +2,65 @@ class Image < ActiveRecord::Base
   belongs_to :user
   has_many :comments, :dependent => :destroy
   # TODO: unique constraint by user/date
-  
+
   has_attached_file :data, :styles => { :thumb => '64x64>', :icon => '32x32#' },
           :path => ':rails_root/assets/images/:year_month_day:opt_style/:nickname_:year_:yday.:extension',
           :url => '/images/data/:user_id/:year/:month/:day/:style'
-  
+
   scope :today, where(:date => Time.now)
   scope :yesterday, where(:date => 1.day.ago)
   scope :latest, order(:date).reverse_order.limit(1) # can't use .first() here
-  
+
+  def to_s
+    "Image: #{user.nickname} [#{date}]: #{data_file_name}"
+  end
+
   def self.week(last_date=nil)
     days = 7
-    last_date = Time.now unless last_date
-    images = where('date <= ?', last_date).order(:date).reverse_order.limit(days)
-    
+    last_date ||= Time.now
+    images = where('date <= ?', last_date).order(:date).limit(days)
+
     return date_matrix(images, last_date, days)
   end
-  
+
   def self.month(date=nil)
     date = Time.now unless date
     first_date = Time.new(date.year, date.month)
     last_date = first_date + 1.month - 1.days
     days = ((last_date - first_date) / 86400) + 1 # TODO: is there a ruby way to do this?
-    
+
     images = where(:date => first_date..last_date)
 
     return date_matrix(images, last_date, days)
   end
-  
+
   scope :recent, where('date >= ?', 1.day.ago).order(:user_id)
-  
+
   class AbsentImage
-    attr_accessor :upload_path
-    
-    def initialize(upload_path)
-      @upload_path = upload_path
+    attr_accessor :upload_date
+
+    def initialize(upload_date)
+      @upload_date = Date.parse(upload_date)
+    end
+
+    def to_s
+      "AbsentImage: #{@upload_date.yday}"
     end
   end
-  
+
   private
-  
+
   def self.date_matrix(images, last_date, days)
     matrix = []
     (0..days).each do |d|
       date = last_date - d.days
-      matrix[d] = images.where(:date => date)
-      matrix[d] = AbsentImage.new(date.to_s) if matrix[d].empty?
+      matrix[d] = images.where(:date => date).take(1)
+      if matrix[d].empty?
+        matrix[d] = AbsentImage.new(date.to_s)
+      else
+        matrix[d] = matrix[d].first #remove from array
+      end
     end
-    return matrix
+    return matrix.reverse # oldest to newest
   end
 end

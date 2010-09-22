@@ -95,8 +95,10 @@ $icon-size: 32px !default
     content: ": "
   .ad-controls
     +full($content-cols)
+    +height(1)
   .ad-info
     +columns(1, $content-cols)
+    +alpha
   .ad-info, .ad-slideshow-countdown
     +adjust-font-size-to(12px, 1)
   .ad-slideshow-countdown
@@ -111,7 +113,7 @@ $icon-size: 32px !default
     @extend .control-link
   .ad-slideshow-running .ad-slideshow-start
     @extend control-link-inactive
-  
+
   .ad-nav
     +full($content-cols)
     +height(2)

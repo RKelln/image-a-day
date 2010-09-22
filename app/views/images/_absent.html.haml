@@ -1,0 +1,8 @@
+.image.absent
+  %a(class="control-link" href="#{upload_path(absent_image.upload_date)}")
+    Upload
+    %br
+    = "##{absent_image.upload_date.yday}"
+  %details(style="display:none;")
+    %summary
+      Upload your image for #{absent_image.upload_date.strftime("%d %B %Y")}

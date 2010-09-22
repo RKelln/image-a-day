@@ -28,6 +28,7 @@ $content-cols: 8
 $comments-cols: 4
 $default-border-radius: 0.2em
 $icon-size: 32px
+$thumb-size: 64px
 
 body
   +susy
@@ -39,7 +40,7 @@ body
     +columns(4, $total-cols)
     +adjust-font-size-to(32px)
     +trailer(1,32px)
-    
+
     // HACK: align to bottom of nav (and shift in a gutter width)
     position: relative
     bottom: -0.2em
@@ -79,7 +80,8 @@ body
   #wall
     +columns($comments-cols, $total-cols)
     +omega($total-cols)
-  
+    +leader(2)
+
 #footer
   +full
 
@@ -133,17 +135,73 @@ body
     & > details
       +full($content-cols)
       +trailer
-    .icon
+  .image.icon, .image.thumb
+    a
       +columns(1, $content-cols)
-      img
-        min-height: 1.5em
-        max-height: 3em
-        min-width: 3em
-        max-width: $col-width
-      & + details
-        +columns(7, $content-cols)
-        +omega($content-cols)
-        clear: none
+    & > details
+      +columns(7, $content-cols)
+      +omega($content-cols)
+      clear: none
+
+.image.icon img
+  width: $icon-size * $px2em
+  height: $icon-size * $px2em
+.image.thumb img
+  max-width: $thumb-size * $px2em
+  max-height: $thumb-size * $px2em
+  display: block
+  margin-left: auto
+  margin-right: auto
+
+.week
+  +full($content-cols)
+  position: relative
+  .label
+    +adjust-font-size-to(30px)
+    position: absolute
+    //z-index: -1
+    top: -0.85em
+    left: -$gutter-width * ($base-font-size / 30px)
+
+// handle week view differntly in different locations
+
+body.home .week
+  top: -($base-line-height / 2)
+  opacity: 0.75
+  &:hover
+    opacity: 1
+
+body.home .weeklist .week
+  +leader
+  top: 0
+  opacity: 1
+
+.image-list
+  +full($content-cols)
+  +height(3)
+  +horizontal-list($gutter-width / 2)
+  overflow: visible
+  z-index: 6
+  .image
+    margin-top: 0.3em
+    z-index: 7
+    a
+      vertical-align: middle
+  .image.thumb
+    width: $thumb-size * $px2em
+    height: $thumb-size * $px2em
+    a
+      display: block
+      margin: 0 auto
+  .image.absent a
+    display: block
+    width: ($thumb-size - 2px) * $px2em
+    height: ($thumb-size - 8px) * $px2em
+    text-align: center
+    padding: 0
+    padding-top: 6px * $px2em
+    font-weight: bold
+    +adjust-font-size-to(16px)
 
 // Home controller ///////////////////////////////////////////
 
@@ -151,13 +209,13 @@ ul.additional-controls
   +full($content-cols)
   +horizontal-list
   +leader
-  
+
 
 // Other modules --------------------------------------------------
 $image-height: 18
 @import partials/gallery
 
-#gallery 
+#gallery
   .description
     +full($content-cols)
     +trailer

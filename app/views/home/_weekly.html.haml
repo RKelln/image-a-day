@@ -1,0 +1,19 @@
+- label ||= nil
+.week
+  - if not label.nil?
+    %h2.label
+      = label
+  %ul.image-list
+    - for image in images
+      %li
+        - if image.class == Image::AbsentImage
+          = render 'images/absent', :absent_image => image
+        - else
+          = render image, :size => :thumb, :details => false
+
+- content_for (:javascripts) do
+  :javascript
+    // details of images are hidden until rollover
+    $(document).ready(function() {
+      //$(".week details").hide();
+    });

@@ -23,7 +23,7 @@ $font-color: #CCCCCC
 $link-color: #607890
 $selected-font-color: white
 $selected-background-color: #ff5e99
-$error-color: #FF4E4E
+$error-color: #B81212
 
 // Fonts --------------------------------------------------------------
 
@@ -48,7 +48,7 @@ $default-border-radius: 0.33em
 // box shadow
 $default-box-shadow-color: rgba(0,0,0,0.6)
 $default-box-shadow-h-offset: 1px
-$default-box-shadow-v-offset: 1px 
+$default-box-shadow-v-offset: 1px
 $default-box-shadow-blur: 5px
 
 
@@ -56,6 +56,7 @@ $default-box-shadow-blur: 5px
 
 
 // Don't move this @import above the GRID and FONT-SIZE variables.
+// NOTE: susy includes compass/css3
 @import susy/susy
 @import html5-boilerplate
 
@@ -67,8 +68,6 @@ $default-box-shadow-blur: 5px
 @import partials/fonts
 @import partials/helpers
 @import partials/colors
-
-@import compass/css3
 
 //+html5-boilerplate-styles
 +html5-boilerplate-helpers

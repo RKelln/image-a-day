@@ -1,0 +1,29 @@
+- form_for(user, :remote => true, :id => "edit_user_#{user.id}") do |f|
+  %ul
+    %li.short
+      = link_to user.id.to_s, user, :class => "control-link"
+    %li
+      = f.text_field :name
+    %li
+      = f.text_field :nickname
+    %li.long
+      = f.text_field :email
+    %li.short
+      = f.check_box :active
+    %li.short
+      = f.check_box :admin
+    %li.short
+      = f.submit("Update", :class => "control-link", :disable_with => "Updating...")
+
+- content_for(:javascript) do
+  :javascript
+    $("#edit_user_#{user.id}")
+    .bind("ajax:complete", function(data, status, xhr) {
+      //log("ajax:complete");
+      //log(this);
+      //log(status);
+      //log(xhr);
+      //$(".users h1").replaceWith(status.responseText);
+      blink($("#edit_user_#{user.id}"));
+    });
+

@@ -20,7 +20,9 @@ javascripts:
     - public/javascripts/jquery.form.js
 #    - public/javascripts/plugins.js
     - public/javascripts/application.js
-    - public/javascripts/gallery/jquery.ad-gallery.js    
+# NOTE: application.js before the other js libs (so you can call log() etc)
+    - public/javascripts/gallery/jquery.ad-gallery.js
+    - public/javascripts/gallery/jquery.create.js
 
 stylesheets:
   screen:

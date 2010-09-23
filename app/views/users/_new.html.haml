@@ -1,0 +1,16 @@
+- form_for(@new_user, :id=>"create_user") do |f|
+  %ul.create_user
+    %li.short
+      New:
+    %li
+      = f.text_field :name
+    %li
+      = f.text_field :nickname
+    %li.long
+      = f.text_field :email
+    %li.short
+      = f.check_box :active
+    %li.short
+      = f.check_box :admin
+    %li.short
+      = f.submit("Create", :class => "control-link")

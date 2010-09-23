@@ -7,6 +7,8 @@ ImageADay::Application.routes.draw do
   
   match 'week' => 'home#week'
 
+  match 'admin' => 'home#admin'
+
   resources :images, :only => [:index, :show, :new, :create, :destroy] do
       collection do
         match "date/:year(/:month(/:day))" => :index, :constraints => {:year => /\d{4}/}
@@ -25,7 +27,7 @@ ImageADay::Application.routes.draw do
   
   resources :comments, :only => [:index, :new, :create, :edit, :update, :destroy]
   
-  resources :users, :only => [:index, :show] do
+  resources :users, :only => [:index, :show, :new, :create, :edit, :update] do
     resources :images do
         match "date/:year(/:month(/:day))" => :index, :constraints => {:year => /\d{4}/}, :on => :collection
     end

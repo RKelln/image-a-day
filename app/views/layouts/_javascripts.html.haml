@@ -22,6 +22,8 @@
     
 -#  Append your own using content_for :javascripts
 = yield :javascripts
+-# RK: I always forget the last s
+= yield :javascript
 
 -# yui profiler and profileviewer
 - if Rails.env == 'development'

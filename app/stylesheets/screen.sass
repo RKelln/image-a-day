@@ -36,11 +36,11 @@ body
 #header
   +full($total-cols)
   +height(2)
+  z-index: 100
   #title
     +columns(4, $total-cols)
     +adjust-font-size-to(32px)
-    +trailer(1,32px)
-
+    margin: 0
     // HACK: align to bottom of nav (and shift in a gutter width)
     position: relative
     bottom: -0.2em
@@ -66,16 +66,23 @@ body
 #main
   +full
   #flash
-    +columns($total-cols)
-    z-index: 9999
+    // FIXME: evil hack to get flash the right size
+    width: 60em
+    position: absolute
+    z-index: 900
     div
       +border-radius($default-border-radius)
       padding-left: $gutter-width
       padding-right: $gutter-width
+      z-index: 901
     p
       text-align: center
       margin: 0
+      z-index: 902
   #content
+    +full($total-cols)
+    z-index: 10
+  #content.with-comments
     +columns($content-cols, $total-cols)
   #wall
     +columns($comments-cols, $total-cols)
@@ -128,6 +135,9 @@ body
 // Images controller //////////////////////////////////////////
 
 .images
+  .date
+    +full($content-cols)
+    margin: 0
   .image
     +full($content-cols)
     & > div
@@ -166,8 +176,8 @@ body
 // handle week view differntly in different locations
 
 body.home .week
-  top: -($base-line-height / 2)
-  opacity: 0.75
+  //top: -($base-line-height / 2)
+  opacity: 0.6
   &:hover
     opacity: 1
 
@@ -210,6 +220,30 @@ ul.additional-controls
   +horizontal-list
   +leader
 
+// admin (NOTE: no comments)
+.users
+  +full($total-cols)
+  ul
+    +full($total-cols)
+    +height(1.5)
+    li
+      +columns(2, $total-cols)
+      text-align: center
+      a.control-link
+        display: block
+        width: 80%
+        height: 80%
+        margin-top: 10%
+      &.short
+        +columns(1, $total-cols)
+      &.long
+        +columns(3, $total-cols)
+      &:last
+        +omega($total-cols)
+
+  .create_user
+    border: 1px solid $border-color
+    background-color: $border-color
 
 // Other modules --------------------------------------------------
 $image-height: 18

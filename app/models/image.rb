@@ -34,7 +34,11 @@ class Image < ActiveRecord::Base
     return date_matrix(images, last_date, days)
   end
 
-  scope :recent, where('date >= ?', 1.day.ago).order(:user_id)
+  # NOTE: named scope here doesn't work, define a class method instead
+  #scope :recent, scoped.find_by_sql("SELECT * FROM images WHERE date >= 'yesterday' AND date = (SELECT date FROM images AS recent_images WHERE recent_images.user_id = images.user_id ORDER BY date DESC LIMIT 1);")
+  def self.recent
+      return find_by_sql("SELECT * FROM images WHERE date >= 'yesterday' AND date = (SELECT date FROM images AS recent_images WHERE recent_images.user_id = images.user_id ORDER BY date DESC LIMIT 1);")
+  end
 
   class AbsentImage
     attr_accessor :upload_date

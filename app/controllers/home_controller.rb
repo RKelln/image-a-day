@@ -4,7 +4,6 @@ class HomeController < ApplicationController
   def index
     @user = current_user
     @images = Image.recent
-    #@images = @user.images.order('date DESC')
   end
 
   def week

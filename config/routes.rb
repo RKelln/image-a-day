@@ -9,7 +9,7 @@ ImageADay::Application.routes.draw do
 
   resources :images, :only => [:index, :show, :new, :create, :destroy] do
       collection do
-        match "/:year(/:month(/:day))" => :index, :constraints => {:year => /\d{4}/}
+        match "date/:year(/:month(/:day))" => :index, :constraints => {:year => /\d{4}/}
 
         get :upload
         match "upload/:year/:month/:day" => :upload, :constraints => {:year => /\d{4}/}
@@ -27,7 +27,7 @@ ImageADay::Application.routes.draw do
   
   resources :users, :only => [:index, :show] do
     resources :images do
-        match "/:year(/:month(/:day))" => :index, :constraints => {:year => /\d{4}/}, :on => :collection
+        match "date/:year(/:month(/:day))" => :index, :constraints => {:year => /\d{4}/}, :on => :collection
     end
   end
 

@@ -3,7 +3,7 @@ class ImagesController < ApplicationController
   respond_to :html, :xml
   
   # GET (/user/:user_id)/images
-  # GET (/user/:user_id)/images/:year(/:month(/:day))
+  # GET (/user/:user_id)/images/date/:year(/:month(/:day))
   # GET (/user/:user_id)/images?start_date=:start_date&end_date=:end_date
   def index
     @images = Image.where(params_where)
@@ -18,7 +18,7 @@ class ImagesController < ApplicationController
     respond_with @images
   end
   
-  # GET /images/1
+  # GET /images/:id
   def show
     @image = Image.find(params[:id])
 

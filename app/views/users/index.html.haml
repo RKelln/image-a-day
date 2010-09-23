@@ -5,3 +5,7 @@
     %li
       #{user.nickname} (#{user.name}): 
       = link_to "#{user.email}", user
+      (#{user.active ? "active" : "inactive"})
+      - if user.admin
+        [admin]
+      

@@ -5,6 +5,9 @@
     %li
       = link_to "Week", week_path
     %li Month
+    - if current_user.admin?
+      %li
+        = link_to "Admin", admin_path
     %li#user
       - if user_signed_in?
         Signed in as

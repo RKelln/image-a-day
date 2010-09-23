@@ -31,4 +31,17 @@ class HomeController < ApplicationController
     end
     # TODO: place current_user first
   end
+
+  def admin
+    @new_user = User.new
+    @users = User.order('users.id')
+    # TODO: recent logins
+    @logins = []
+    # TODO: recent comments
+    @comments = []
+    # TODO: recent errors / warnings
+    @errors = []
+
+    render :layout => 'application'
+  end
 end

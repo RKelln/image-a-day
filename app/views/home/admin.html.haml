@@ -1,0 +1,12 @@
+.users
+  %h1 Users:
+
+  %ul
+    %li.short ID
+    %li Name
+    %li Nickname
+    %li.long Email
+    %li.short Active
+    %il.short Admin
+  = render :partial => 'users/edit', :collection => @users, :as => :user
+  = render :partial => 'users/new'

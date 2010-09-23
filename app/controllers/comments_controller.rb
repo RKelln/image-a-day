@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_filter :authenticate_user!
-  respond_to :html, :xml
+  respond_to :html, :xml, :js
 
   # GET /comments
   def index

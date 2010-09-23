@@ -34,6 +34,14 @@ class Image < ActiveRecord::Base
     return date_matrix(images, last_date, days)
   end
 
+  def short_date
+    date.strftime('%b %d')
+  end
+
+  def long_date
+    date.strftime('%d %B %Y')
+  end
+
   scope :recent, where('date >= ?', 1.day.ago).order(:user_id)
 
   class AbsentImage
@@ -44,7 +52,15 @@ class Image < ActiveRecord::Base
     end
 
     def to_s
-      "AbsentImage: #{@upload_date.yday}"
+      "AbsentImage: ##{@upload_date.yday} (#{short_date})"
+    end
+
+    def short_date
+      @upload_date.strftime('%b %d')
+    end
+
+    def long_date
+      @upload_date.strftime('%d %B %Y')
     end
   end
 

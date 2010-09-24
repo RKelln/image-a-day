@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
         if @comment.errors.any?
           render :text => "Cannot add comment"
         else
-          render @comment, :layout => :none
+          render @comment, :layout => false
         end
       }
     end

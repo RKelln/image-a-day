@@ -11,6 +11,6 @@
   - else
     = link_to image do
       %img(src="#{image.data.url(size)}" class="#{size.to_s}")
-  %details{:style => details ? nil : "display:none;"}
+  %details[image]{:style => details ? nil : "display:none;"}
     %summary
-      = render 'layouts/details', {:subject => image}
+      = render 'layouts/details', {:subject => image, :delete => false}

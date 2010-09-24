@@ -1,3 +1,4 @@
-- if comment.user
-  .comment
+-# never render comments that have just been created
+- if not comment.user.nil?
+  %div.comment[comment]
     = render 'layouts/details', {:subject => comment}

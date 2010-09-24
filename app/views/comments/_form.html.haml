@@ -1,10 +1,19 @@
-= form_for comment_resource do |f|
-  -# if @comment.errors.any?
-    #errorExplanation
-      %h2= "#{pluralize(@comment.errors.count, "error")} prohibited this comment from being saved:"
-      %ul
-        - @comment.errors.full_messages.each do |msg|
-          %li= msg
+- form_id = "new_comment_#{name}"
+= form_for(comment_resource, 
+           :remote => true, 
+           :html => {:id => form_id}) do |f|
   = f.text_area :text
   .controls
-    = f.submit 'Add Comment', {:class => "control-link"}
+    = f.submit 'Add Comment', {:class => "control-link", :disable_with => "Adding..."}
+
+- content_for(:javascripts) do
+  :javascript
+    $("##{form_id}")
+      .bind("ajax:success", function(data, status, xhr) {
+        // clear textarea
+        $(this).children("textarea").val("");
+        
+        // add comment
+        var comment = $(status).insertAfter($(this));
+        //blink(comment); // RK: not fading back for some reason??
+      });

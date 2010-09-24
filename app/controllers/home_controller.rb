@@ -1,6 +1,11 @@
 class HomeController < ApplicationController
   before_filter :authenticate_user!
-
+  before_filter :create_comment
+  
+  def create_comment
+    #@comment = Comment.new
+  end
+  
   def index
     @user = current_user
     @images = Image.recent

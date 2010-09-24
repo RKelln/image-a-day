@@ -1,11 +1,15 @@
 %h2.date
   = @image.long_date
-  
+  = link_to("Delete Image", @image,
+            :confirm => 'Are you sure you want to delete your image?',
+            :method => :delete,
+            :class => "control-link")
 = render @image
 
 .comments
   = render('comments/comment_section',
             {:comments => @image.comments,
-             :comment_resource => [@image, @image.comments.build]})
+             :comment_resource => [@image, @image.comments.build],
+             :name => "image-#{@image.id}"})
 
 = link_to 'Back', images_path

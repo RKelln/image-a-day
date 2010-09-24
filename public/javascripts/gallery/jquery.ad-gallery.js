@@ -30,10 +30,12 @@
                        countdown_prefix: '(',
                        countdown_sufix: ')',
                        onStart: false,
-                       onStop: false
+                       onStop: false,
+                       key_events: true, // start with key events enabled for start/stop slideshow
                      },
                      effect: 'slide-hori', // or 'slide-vert', 'fade', or 'resize', 'none'
                      enable_keyboard_move: true,
+                     key_events: true, // start with enable key events enabled for next/prev image
                      cycle: true,
                      callbacks: {
                        init: false,
@@ -201,7 +203,9 @@
       };
       if(this.settings.enable_keyboard_move) {
         this.initKeyEvents();
+
       };
+      this.key_events = this.settings.key_events;
       var start_at = parseInt(this.settings.start_at_index, 10);
       if(window.location.hash && window.location.hash.indexOf('#ad-image') === 0) {
         start_at = window.location.hash.replace(/[^0-9]+/g, '');
@@ -356,15 +360,17 @@
       var context = this;
       $(document).keydown(
         function(e) {
-          if(e.keyCode == 39) {
-            // right arrow
-            context.nextImage();
-            context.slideshow.stop();
-          } else if(e.keyCode == 37) {
-            // left arrow
-            context.prevImage();
-            context.slideshow.stop();
-          };
+          if (context.key_events) {
+            if(e.keyCode == 39) {
+              // right arrow
+              context.nextImage();
+              context.slideshow.stop();
+            } else if(e.keyCode == 37) {
+              // left arrow
+              context.prevImage();
+              context.slideshow.stop();
+            };
+          }
         }
       );
     },
@@ -589,10 +595,10 @@
           if(this.current_image) {
             var old_image = this.current_image;
             var old_description = this.current_description;
-            
+
             // RK: remove description
             if(this.current_description) this.current_description.remove();
-            
+
             old_image.animate(animation.old_image, animation_speed, easing,
               function() {
                 old_image.remove();
@@ -766,14 +772,16 @@
       );
       $(document).keydown(
         function(e) {
-          if(e.keyCode == 83) {
-            // 's'
-            if(context.running) {
-              context.stop();
-            } else {
-              context.start();
-            };
-          };
+          if (context.settings.key_events) {
+            if(e.keyCode == 83) {
+              // 's'
+              if(context.running) {
+                context.stop();
+              } else {
+                context.start();
+              }
+            }
+          }
         }
       );
       return this.controls;

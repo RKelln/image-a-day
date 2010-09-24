@@ -1,17 +1,37 @@
 -# subject is passed in as a local and should be a Comment or Image
 -# ex: = render 'layouts/details', {:subject => Comment.new}
+
+-# pass in :delete => false to remove deleting, default true
+- delete = delete.nil? ? true : delete
+
 %ul.info
   %li.user<
-    = subject.user.nickname
+    =# subject.user.nickname
   %li.date<
     (#{time_ago_in_words(subject.created_at)} ago)
   - if subject.user_id == current_user.id
     %li<
       = link_to 'Edit', edit_subject_path(subject)
-    %li<
-      = link_to "Delete", subject, :confirm => 'Are you sure?', :method => :delete
+    - if delete
+      %li<
+        = link_to("Delete", subject,
+                  :confirm => 'Are you sure you want to delete your comment?',
+                  :method => :delete,
+                  :remote => true)
   = yield(:info_content)
 %p
   = subject.text if subject.has_attribute?('text')
   = subject.description if subject.has_attribute?('description')
   = yield(:details_content)
+
+- content_for(:javascripts) do
+  - if delete
+    :javascript
+      // NOTE: this only works if you use the HAML [object] notation in
+      // the container for this!!! ex: %div[subject]
+      $("##{unique_id(subject)}")
+        .bind("ajax:success", function(data, status, xhr) {
+          log("ajax:success: delete");
+          $(this).hide('fast');
+          $(this).remove();
+        });

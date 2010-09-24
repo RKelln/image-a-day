@@ -1,5 +1,5 @@
 - content_for(:comments) do
   #wall.comments
-    = render :partial => 'comments/comment_section'
+    = render :partial => 'comments/comment_section', :locals => {:name => "wall"}
     .debug
 = render :file => 'layouts/application'

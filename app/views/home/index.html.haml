@@ -13,19 +13,20 @@
                    alt="#{image.description}"
                    title="#{image.user.nickname}")
   .description
-  .comments
+  .allcomments
     - for image in @images do
-      %div(data-image-id="#{image.id}")
+      %div.comments(data-image-id="#{image.id}")
         = render('comments/comment_section',
-              {:comments => image.comments,
-               :comment_resource => [image, image.comments.build]})
+              {:comments => image.comments.reverse,
+               :comment_resource => [image, image.comments.build],
+               :name => "image-#{image.id}"})
 
 %ul.additional-controls
   %li
     = link_to "My Images", images_path, :class => "control-link"
   %li
     = link_to "Everyone", users_path, :class => "control-link"
-  
+
 - content_for (:javascripts) do
   :javascript
     // init Ad Gallery
@@ -62,19 +63,34 @@
            // display comments
            var active_image = $("#gallery .ad-thumbs .ad-active").attr('data-image-id');
            //log("active = " + active_image);
-           $('#gallery .comments [data-image-id="'+ active_image +'"]').show('fast');
+           $('#gallery .comments[data-image-id="'+ active_image +'"]').show('fast');
          },
          beforeImageVisible: function() {
            //log("hide all comments");
-           $('#gallery .comments [data-image-id]').hide('fast');
+           $('#gallery .comments[data-image-id]').hide('fast');
          }
        }
     });
-    
+
+    function gallery_key_events(active) {
+      //log("gallery key events: " + active);
+      galleries[0].key_events = active;
+      galleries[0].slideshow.settings.key_events = active;
+    }
+
     // anytime someone focuses an image's comment box, stop the slideshow
     $(document).ready(function() {
       $(".comments textarea").focus(function() {
-        log("cap'n we've got focus");
+        //log("cap'n we've got focus");
         galleries[0].slideshow.stop();
+
+        // suppress gallery keypresses
+        gallery_key_events(false);
       });
+
+      $(".comments textarea").blur(function() {
+        // suppress gallery keypresses
+        gallery_key_events(true);
+      });
+
     });

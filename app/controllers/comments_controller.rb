@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   # GET /comments
   def index
     @comments = Comment.all
-
+    # TODO: paginate and more comments button???
     respond_with @comments
   end
 
@@ -20,10 +20,17 @@ class CommentsController < ApplicationController
     end
     @comment.user_id = current_user.id
 
-    if @comment.save
-      redirect_to :back, :notice => 'Comment created'
-    else
-      render :action => 'new'
+    flash[:error] = "ERROR: Cannot add comment: #{@comment.errors}" unless @comment.save
+
+    respond_with(@comment, :location => :back) do |format|
+      # TODO: write a custom responder that can handle js responses correctly (on error)
+      format.js {
+        if @comment.errors.any?
+          render :text => "Cannot add comment"
+        else
+          render @comment, :layout => :none
+        end
+      }
     end
   end
 
@@ -32,7 +39,7 @@ class CommentsController < ApplicationController
   def edit
     @comment = Comment.find(params[:id])
   end
-  
+
   # PUT /comments/:id/update
   def update
     @comment = Comment.find(params[:id])
@@ -42,12 +49,18 @@ class CommentsController < ApplicationController
       render :action => "edit"
     end
   end
-  
+
   # DELETE /comments/:id
   def destroy
     @comment = Comment.find(params[:id])
-    @comment.destroy
 
-    redirect_to :back
+    unless current_user.admin? or @comment.user_id == current_user.id
+      flash[:warn] = "WARNING: You do not have permission to delete comment"
+    else
+      flash[:error] = "ERROR: Cannot delete comment: #{@comment.errors}" unless @comment.destroy
+    end
+    respond_with(@comment, :location => :back) do |format|
+      format.js {render :text=> "Comment deleted"}
+    end
   end
 end

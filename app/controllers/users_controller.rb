@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @images = @user.images.paginate(:page => params[:page])
 
     respond_with @user
   end

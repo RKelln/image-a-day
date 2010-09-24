@@ -1,9 +1,17 @@
 %h1= @user.email
 %b images
 
-- @user.images.each do |image|
+.paginate
+  %p
+    = will_paginate @images
+
+- @images.each do |image|
   %p
     = link_to image do
       %img(src="#{image.data.url(:icon)}")
     = image.description
     = image.date
+
+.paginate
+  %p
+    = will_paginate @images

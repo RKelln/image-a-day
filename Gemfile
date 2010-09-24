@@ -7,12 +7,17 @@ gem 'pg'
 gem 'haml'
 gem 'haml-rails'
 
+# authentication
 gem 'devise'
 
+# models with file attachments
 gem 'paperclip'
 
 # asset packaging
 gem 'jammit'
+
+# pagination
+gem 'will_paginate', '~> 3.0.pre2'
 
 # Deploy with Capistrano
 # gem 'capistrano'

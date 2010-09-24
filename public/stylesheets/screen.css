@@ -1,4 +1,4 @@
-/* line 27, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
+/* line 27, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -20,30 +20,30 @@ time, mark, audio, video {
   background: transparent;
 }
 
-/* line 38, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
+/* line 38, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-/* line 42, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
+/* line 42, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
 nav ul {
   list-style: none;
 }
 
-/* line 44, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
+/* line 44, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
 blockquote, q {
   quotes: none;
 }
 
-/* line 47, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
+/* line 47, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
   content: none;
 }
 
-/* line 49, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
+/* line 49, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
 a {
   margin: 0;
   padding: 0;
@@ -53,14 +53,14 @@ a {
   background: transparent;
 }
 
-/* line 51, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
+/* line 51, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
 ins {
   background-color: #ff9;
   color: #000;
   text-decoration: none;
 }
 
-/* line 53, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
+/* line 53, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
 mark {
   background-color: #ff9;
   color: #000;
@@ -68,24 +68,24 @@ mark {
   font-weight: bold;
 }
 
-/* line 55, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
+/* line 55, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
 del {
   text-decoration: line-through;
 }
 
-/* line 57, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
+/* line 57, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
 abbr[title], dfn[title] {
   border-bottom: 1px dotted;
   cursor: help;
 }
 
-/* line 61, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
+/* line 61, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 63, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
+/* line 63, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
 hr {
   display: block;
   height: 1px;
@@ -95,18 +95,18 @@ hr {
   padding: 0;
 }
 
-/* line 65, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
+/* line 65, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_reset.scss */
 input, select {
   vertical-align: middle;
 }
 
-/* line 29, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-susy-plugin-0.8.0/sass/susy/_vertical_rhythm.scss */
+/* line 29, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-susy-plugin-0.8.0/sass/susy/_vertical_rhythm.scss */
 body {
   font-size: 100%;
   line-height: 1.5em;
 }
 
-/* line 33, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-susy-plugin-0.8.0/sass/susy/_vertical_rhythm.scss */
+/* line 33, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-susy-plugin-0.8.0/sass/susy/_vertical_rhythm.scss */
 html > body {
   font-size: 16px;
 }
@@ -174,7 +174,7 @@ html > body {
 .clearfix {
   *zoom: 1;
 }
-/* line 22, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 22, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .clearfix:after {
   content: "\0020";
   display: block;
@@ -401,7 +401,7 @@ textarea:focus {
   border-color: #907860;
 }
 
-/* line 10, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_helpers.scss */
+/* line 10, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_helpers.scss */
 .ir {
   text-indent: -119988px;
   overflow: hidden;
@@ -410,24 +410,24 @@ textarea:focus {
   background-repeat: no-repeat;
 }
 
-/* line 12, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_helpers.scss */
+/* line 12, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_helpers.scss */
 .hidden {
   display: none;
   visibility: hidden;
 }
 
-/* line 14, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_helpers.scss */
+/* line 14, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_helpers.scss */
 .visuallyhidden {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-/* line 16, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_helpers.scss */
+/* line 16, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_helpers.scss */
 .clearfix {
   *zoom: 1;
 }
-/* line 22, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 22, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .clearfix:after {
   content: "\0020";
   display: block;
@@ -452,7 +452,7 @@ html {
   width: 61em;
   max-width: 100%;
 }
-/* line 22, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 22, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .container:after {
   content: "\0020";
   display: block;
@@ -748,12 +748,12 @@ button {
   overflow: visible;
 }
 
-/* line 60, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
+/* line 60, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
 a:hover, a:active {
   outline: none;
 }
 
-/* line 65, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
+/* line 65, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
 pre {
   padding: 15px;
   white-space: pre;
@@ -762,62 +762,62 @@ pre {
   word-wrap: break-word;
 }
 
-/* line 77, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
+/* line 77, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
 input[type="radio"] {
   vertical-align: text-bottom;
 }
 
-/* line 78, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
+/* line 78, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
 input[type="checkbox"] {
   vertical-align: bottom;
 }
 
-/* line 79, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
+/* line 79, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
 .ie7 input[type="checkbox"] {
   vertical-align: baseline;
 }
 
-/* line 80, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
+/* line 80, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
 .ie6 input {
   vertical-align: text-bottom;
 }
 
-/* line 85, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
+/* line 85, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
 label, input[type=button], input[type=submit], button {
   cursor: pointer;
 }
 
-/* line 97, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
+/* line 97, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
 ::-moz-selection {
   background: #ff5e99;
   color: white;
   text-shadow: none;
 }
 
-/* line 98, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
+/* line 98, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
 ::selection {
   background: #ff5e99;
   color: white;
   text-shadow: none;
 }
 
-/* line 103, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
+/* line 103, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
 a:link {
   -webkit-tap-highlight-color: #ff5e99;
 }
 
-/* line 114, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
+/* line 114, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
 button {
   width: auto;
   overflow: visible;
 }
 
-/* line 118, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
+/* line 118, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
 .ie7 img {
   -ms-interpolation-mode: bicubic;
 }
 
-/* line 120, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
+/* line 120, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_styles.scss */
 .ie6 legend, .ie7 legend {
   margin-left: -7px;
 }
@@ -826,12 +826,12 @@ button {
 @media all and (orientation:landscape) {}
 @media screen and (max-device-width: 480px) {}
 /* Styles -------------------------------------------------------------- */
-/* line 29, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-susy-plugin-0.8.0/sass/susy/_vertical_rhythm.scss */
+/* line 29, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-susy-plugin-0.8.0/sass/susy/_vertical_rhythm.scss */
 body body {
   font-size: 100%;
   line-height: 1.5em;
 }
-/* line 33, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-susy-plugin-0.8.0/sass/susy/_vertical_rhythm.scss */
+/* line 33, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-susy-plugin-0.8.0/sass/susy/_vertical_rhythm.scss */
 body html > body {
   font-size: 16px;
 }
@@ -876,7 +876,7 @@ body html > body {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 51, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+/* line 51, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
 #header #nav ul li {
   list-style-image: none;
   list-style-type: none;
@@ -887,11 +887,11 @@ body html > body {
   padding-left: 1em;
   padding-right: 1em;
 }
-/* line 43, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+/* line 43, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
 #header #nav ul li:first-child, #header #nav ul li.first {
   padding-left: 0px;
 }
-/* line 44, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+/* line 44, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
 #header #nav ul li:last-child, #header #nav ul li.last {
   padding-right: 0px;
 }
@@ -1037,7 +1037,7 @@ body html > body {
   font-size: 0.75em;
   line-height: 2em;
 }
-/* line 51, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+/* line 51, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
 .comment .info li, summary .info li {
   list-style-image: none;
   list-style-type: none;
@@ -1048,11 +1048,11 @@ body html > body {
   padding-left: 4px;
   padding-right: 4px;
 }
-/* line 43, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+/* line 43, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
 .comment .info li:first-child, .comment .info li.first, summary .info li:first-child, summary .info li.first {
   padding-left: 0px;
 }
-/* line 44, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+/* line 44, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
 .comment .info li:last-child, .comment .info li.last, summary .info li:last-child, summary .info li.last {
   padding-right: 0px;
 }
@@ -1161,7 +1161,7 @@ body.home .weeklist .week {
   overflow: visible;
   z-index: 6;
 }
-/* line 51, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+/* line 51, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
 .image-list li {
   list-style-image: none;
   list-style-type: none;
@@ -1172,11 +1172,11 @@ body.home .weeklist .week {
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
-/* line 43, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+/* line 43, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
 .image-list li:first-child, .image-list li.first {
   padding-left: 0px;
 }
-/* line 44, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+/* line 44, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
 .image-list li:last-child, .image-list li.last {
   padding-right: 0px;
 }
@@ -1223,7 +1223,7 @@ ul.additional-controls {
   *zoom: 1;
   margin-top: 1.5em;
 }
-/* line 51, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+/* line 51, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
 ul.additional-controls li {
   list-style-image: none;
   list-style-type: none;
@@ -1234,11 +1234,11 @@ ul.additional-controls li {
   padding-left: 4px;
   padding-right: 4px;
 }
-/* line 43, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+/* line 43, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
 ul.additional-controls li:first-child, ul.additional-controls li.first {
   padding-left: 0px;
 }
-/* line 44, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+/* line 44, ../../../../.rvm/gems/ruby-1.9.2-p0/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
 ul.additional-controls li:last-child, ul.additional-controls li.last {
   padding-right: 0px;
 }
@@ -1352,7 +1352,7 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
 }
 /* line 47, ../../app/stylesheets/partials/_gallery.sass */
 .ad-gallery .ad-image-wrapper .ad-prev .ad-prev-image {
-  background: url('/images/gallery/ad_prev.png?1284913426');
+  background: url('/images/gallery/ad_prev.png?1284913516');
   width: 30px;
   height: 30px;
   display: none;
@@ -1363,7 +1363,7 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
 }
 /* line 56, ../../app/stylesheets/partials/_gallery.sass */
 .ad-gallery .ad-image-wrapper .ad-next .ad-next-image {
-  background: url('/images/gallery/ad_prev.png?1284913426');
+  background: url('/images/gallery/ad_prev.png?1284913516');
   width: 30px;
   height: 30px;
   display: none;
@@ -1371,7 +1371,7 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   top: 47%;
   left: 0;
   z-index: 101;
-  background: url('/images/gallery/ad_next.png?1284913426');
+  background: url('/images/gallery/ad_next.png?1284913516');
   width: 30px;
   height: 30px;
   right: 0;
@@ -1398,7 +1398,7 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   text-align: left;
   width: 100%;
   z-index: 2;
-  background: url('/images/gallery/opa75.png?1284913426');
+  background: url('/images/gallery/opa75.png?1284913516');
   color: black;
 }
 
@@ -1470,7 +1470,7 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   left: -20px;
   width: 13px;
   display: block;
-  background: url('/images/gallery/ad_scroll_back.png?1284913426') 0px 22px no-repeat;
+  background: url('/images/gallery/ad_scroll_back.png?1284913516') 0px 22px no-repeat;
 }
 /* line 140, ../../app/stylesheets/partials/_gallery.sass */
 .ad-gallery .ad-forward {
@@ -1478,7 +1478,7 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   display: block;
   right: -20px;
   width: 13px;
-  background: url('/images/gallery/ad_scroll_forward.png?1284913426') 0px 22px no-repeat;
+  background: url('/images/gallery/ad_scroll_forward.png?1284913516') 0px 22px no-repeat;
 }
 /* line 146, ../../app/stylesheets/partials/_gallery.sass */
 .ad-gallery .ad-nav .ad-thumbs {
@@ -1538,4 +1538,9 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   min-height: 7.5em;
   height: auto !important;
   height: 7.5em;
+}
+
+/* line 261, ../../app/stylesheets/screen.sass */
+.paginate {
+  clear: both;
 }

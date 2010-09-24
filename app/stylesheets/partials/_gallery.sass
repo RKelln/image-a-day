@@ -40,10 +40,10 @@ $icon-size: 32px !default
       display: block
       z-index: 100
       /* Or else IE will hide it
-      background: url(non-existing.jpg)
+      /* background: url(non-existing.jpg)
     .ad-next
       /* Or else IE will hide it
-      background: url(non-existing.jpg)
+      /* background: url(non-existing.jpg)
     .ad-prev .ad-prev-image
       background: image_url($gallery-path + "ad_prev.png")
       width: 30px
@@ -152,19 +152,24 @@ $icon-size: 32px !default
       margin-top: 9px
       margin-left: $gutter-width
       float: left
-      width: 9000px
+      // RK: FIXME: this is set by the gallery js, but incorrectly, dunno how to fix yet
+      //width: 9000px
       list-style: none
     li
       float: left
       padding-right: $gutter-width
       a
         display: block
+        overflow: none
+        z-index: 10
         img
           display: block
           width: $icon-size
           height: $icon-size
           @extend .control-link
           padding: 0
+          +border-radius
+          z-index: 9
         //&:hover
         //  +box-shadow(complement($link-color), 0, 0, 8px)
         &.ad-active img

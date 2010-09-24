@@ -3,6 +3,9 @@ class Image < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   # TODO: unique constraint by user/date
 
+  #validates :description, :length => {:maximum => 10000}
+  #validates :date, :presence => true
+
   has_attached_file :data, :styles => { :thumb => '64x64>', :icon => '32x32#' },
           :path => ':rails_root/assets/images/:year_month_day:opt_style/:nickname_:year_:yday.:extension',
           :url => '/images/data/:user_id/:year/:month/:day/:style'

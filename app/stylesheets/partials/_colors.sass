@@ -53,24 +53,31 @@ a
 .comment
   border-color: $border-color
 
-.control-link
+.control, .control-link
   background-color: $border-color
   border-color: $link-color
-  color: $link-color
   +box-shadow
   &:focus, &:hover, &:active
     background-color: lighten($base-color, 0.6)
-    color: complement($link-color)
     border-color: complement($link-color)
     +box-glow(complement($link-color))
+
+.control-link
+  color: $link-color
+  &:focus, &:hover, &:active
+    color: complement($link-color)
 
 .control-link-inactive
   background-color: $base-color
   border-color: $border-color
 
-.image.absent a
-  background-color: $error-color
-  color: $font-color
+.image.absent
+  background-color: $border-color
+
+.user .image-list .image.absent
+  background-color: $error-color !important
+  a
+    color: $font-color
 
 .image.thumb img
   +box-shadow

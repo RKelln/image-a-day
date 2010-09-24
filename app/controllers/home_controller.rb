@@ -16,7 +16,7 @@ class HomeController < ApplicationController
 
     # TODO: only active users
     @weekly_images = Array.new
-    for user in User.all
+    for user in User.where(:active => true)
       if user != @user
         @weekly_images << {:user => user, :images => user.weekly_images}
       end
@@ -24,16 +24,12 @@ class HomeController < ApplicationController
     # TODO: sort by relationship / priority / user ordering
 
     # TODO: place current_user first
-    @weekly_images.insert(0, {:user => @user, :images => @user.weekly_images})
+    #@my_weekly_images.insert(0, {:user => @user, :images => @user.weekly_images})
   end
 
   def month
-    # TODO: only active users
-    @weekly_images = Array.new
-    for user in User.all
-      @weekly_images << {:user => user, :images => user.weekly_images}
-    end
-    # TODO: place current_user first
+    # TODO: monthly images
+    @monthly_images = Array.new
   end
 
   def admin

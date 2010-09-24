@@ -1,5 +1,6 @@
 - label ||= nil
-.week
+- classes ||= nil
+.week{:class => classes }
   - if not label.nil?
     %h2.label
       = label

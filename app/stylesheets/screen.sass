@@ -169,14 +169,12 @@ body
   .label
     +adjust-font-size-to(30px)
     position: absolute
-    //z-index: -1
     top: -0.85em
     left: -$gutter-width * ($base-font-size / 30px)
 
-// handle week view differntly in different locations
 
+// handle week view differntly in different locations
 body.home .week
-  //top: -($base-line-height / 2)
   opacity: 0.6
   &:hover
     opacity: 1
@@ -203,15 +201,25 @@ body.home .weeklist .week
     a
       display: block
       margin: 0 auto
-  .image.absent a
+  .image.absent
     display: block
     width: ($thumb-size - 2px) * $px2em
-    height: ($thumb-size - 8px) * $px2em
+    height: ($thumb-size - 2px) * $px2em
+    border: 1px solid $border-color
     text-align: center
-    padding: 0
-    padding-top: 6px * $px2em
     font-weight: bold
     +adjust-font-size-to(16px)
+    a
+      display: none
+      padding-top: 5px * $px2em
+      width: 100%
+      height: ($thumb-size - 7px) * $px2em
+
+.user .image-list .image.absent
+  @extend .control
+  a
+    display: block
+
 
 // Home controller ///////////////////////////////////////////
 
@@ -257,7 +265,7 @@ $image-height: 18
     +full($content-cols)
     +trailer
     +heights(false, 5)
-    
+
 .paginate
   +full($content-cols)
 

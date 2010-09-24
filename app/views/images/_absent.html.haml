@@ -1,5 +1,5 @@
 .image.absent
-  %a(class="control-link" href="#{upload_path(absent_image.upload_date)}" title="#{absent_image.long_date}")
+  %a(href="#{upload_path(absent_image.upload_date)}" title="#{absent_image.long_date}")
     = "##{absent_image.upload_date.yday}"
     %br
     = absent_image.short_date

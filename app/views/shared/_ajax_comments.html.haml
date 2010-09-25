@@ -6,7 +6,7 @@
      $('#{selector}')
       .live("ajax:success", function(data, status, xhr) {
         var comment = $(this);
-        log("ajax:success: " + comment.attr('id'));
+        //log("ajax:success: " + comment.attr('id'));
 
         // determine if delete or edit
         // NOTE: if you change the comment_controller#destroy response this must be changed too
@@ -16,7 +16,7 @@
           comment.remove();
         }
         else {
-          log("edit comment");
+          //log("edit comment");
           var edit_form = $(status).replaceAll(comment);
           // bind edit button
           $(edit_form)

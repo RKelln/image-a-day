@@ -21,6 +21,10 @@
   
   = render :partial => 'layouts/stylesheets'
   
-  = include_javascripts :head_scripts
+  -# Jammit javascript includes
+  =# include_javascripts :head_scripts
+  
+  -# regular javascript includes
+  = javascript_include_tag 'modernizer' 
   
   = csrf_meta_tag

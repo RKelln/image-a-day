@@ -12,7 +12,11 @@
   !window.jQuery && document.write('#{ escape_javascript(javascript_include_tag "jquery-1.4.2.min") }')
 
 -# Jammit javascript packaging
-= include_javascripts :end_scripts
+=# include_javascripts :end_scripts
+
+-# regular javascript packages
+= javascript_include_tag 'rails', 'application', 'jquery.form', 'jquery.ad-gallery', 'jquery.create'
+
 
 /[if lt IE 7 ]
   = javascript_include_tag 'dd_belatedpng'

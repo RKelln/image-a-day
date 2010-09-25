@@ -15,6 +15,20 @@ class ApplicationController < ActionController::Base
     flash.discard  # don't want the flash to appear when you reload page
   end
 
+  # Safely find an object (that has a user_id) and handle errors with flash messages
+  # id may also be a params hash containing :id
+  # TODO: add to all models so that we can do Model.safe_find(id)
+  def safe_find(model, id)
+    id = id[:id] if id.is_a? Hash
+    begin
+      object = model.find(params[:id])
+      flash[:warn] = "WARNING: You do not have permission for this action" unless current_user.admin? or object.user_id == current_user.id
+    rescue => e
+      flash[:error] = "ERROR: #{e.message}"
+    end
+    object
+  end
+
   protected
 
     def specify_layout

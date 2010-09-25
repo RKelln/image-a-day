@@ -34,33 +34,43 @@ class CommentsController < ApplicationController
     end
   end
 
-  # TODO: remove this action once comments are ajax
   # GET /comments/:id/edit/
   def edit
-    @comment = Comment.find(params[:id])
+    @comment = safe_find(Comment, params)
+    
+    respond_with(@comment, :location => :back) do |format|
+      format.js { render :partial => "comments/edit", :layout => false}
+    end
   end
 
   # PUT /comments/:id/update
   def update
-    @comment = Comment.find(params[:id])
-    if @comment.update_attributes(params[:comment])
-      redirect_to :back, :notice => 'Comment was successfully updated.'
-    else
-      render :action => "edit"
+    @comment = safe_find(Comment, params)
+      
+    flash[:error] = "ERROR: Cannot update comment" unless @comment.update_attributes(params[:comment])
+    
+    respond_with(@comment, 
+      :location => :back, 
+      :notice => 'Comment was successfully updated.') do |format|
+      format.js {
+        if @comment.errors.any?
+          render :text => "Cannot add comment"
+        else
+          render @comment, :layout => false
+        end
+      }
     end
   end
 
   # DELETE /comments/:id
   def destroy
-    @comment = Comment.find(params[:id])
+    @comment = safe_find(Comment, params)
 
-    unless current_user.admin? or @comment.user_id == current_user.id
-      flash[:warn] = "WARNING: You do not have permission to delete comment"
-    else
-      flash[:error] = "ERROR: Cannot delete comment: #{@comment.errors}" unless @comment.destroy
-    end
+    flash[:error] = "ERROR: Cannot delete comment: #{@comment.errors}" unless @comment.destroy
+
     respond_with(@comment, :location => :back) do |format|
       format.js {render :text=> "Comment deleted"}
     end
   end
+
 end

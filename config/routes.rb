@@ -9,7 +9,7 @@ ImageADay::Application.routes.draw do
 
   match 'admin' => 'home#admin'
 
-  resources :images, :only => [:index, :show, :new, :create, :destroy] do
+  resources :images, :only => [:index, :show, :new, :create, :destroy, :edit, :update] do
       collection do
         match "date/:year(/:month(/:day))" => :index, :constraints => {:year => /\d{4}/}
 

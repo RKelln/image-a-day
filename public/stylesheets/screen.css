@@ -1064,8 +1064,8 @@ body html > body {
   white-space: nowrap;
   display: inline;
   float: left;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
 }
 /* line 43, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
 .comment .info li:first-child, .comment .info li.first, summary .info li:first-child, summary .info li.first {
@@ -1083,33 +1083,41 @@ body html > body {
 .comment .info .date, summary .info .date {
   font-style: italic;
 }
+/* line 134, ../../app/stylesheets/screen.sass */
+.comment .info .edit, .comment .info .delete, summary .info .edit, summary .info .delete {
+  float: right;
+}
+/* line 136, ../../app/stylesheets/screen.sass */
+.comment .info .edit, summary .info .edit {
+  margin-right: 0.5em;
+}
 
-/* line 138, ../../app/stylesheets/screen.sass */
+/* line 142, ../../app/stylesheets/screen.sass */
 .images .date {
   clear: both;
   margin: 0;
 }
-/* line 141, ../../app/stylesheets/screen.sass */
+/* line 145, ../../app/stylesheets/screen.sass */
 .images .image {
   clear: both;
 }
-/* line 143, ../../app/stylesheets/screen.sass */
+/* line 147, ../../app/stylesheets/screen.sass */
 .images .image > div {
   clear: both;
 }
-/* line 145, ../../app/stylesheets/screen.sass */
+/* line 149, ../../app/stylesheets/screen.sass */
 .images .image > details {
   clear: both;
   margin-bottom: 1.5em;
 }
-/* line 149, ../../app/stylesheets/screen.sass */
+/* line 153, ../../app/stylesheets/screen.sass */
 .images .image.icon a, .images .image.thumb a {
   display: inline;
   float: left;
   width: 10.256%;
   margin-right: 2.564%;
 }
-/* line 151, ../../app/stylesheets/screen.sass */
+/* line 155, ../../app/stylesheets/screen.sass */
 .images .image.icon > details, .images .image.thumb > details {
   display: inline;
   float: left;
@@ -1122,13 +1130,13 @@ body html > body {
   clear: none;
 }
 
-/* line 156, ../../app/stylesheets/screen.sass */
+/* line 160, ../../app/stylesheets/screen.sass */
 .image.icon img {
   width: 2em;
   height: 2em;
 }
 
-/* line 159, ../../app/stylesheets/screen.sass */
+/* line 163, ../../app/stylesheets/screen.sass */
 .image.thumb img {
   max-width: 4em;
   max-height: 4em;
@@ -1137,12 +1145,12 @@ body html > body {
   margin-right: auto;
 }
 
-/* line 166, ../../app/stylesheets/screen.sass */
+/* line 170, ../../app/stylesheets/screen.sass */
 .week {
   clear: both;
   position: relative;
 }
-/* line 169, ../../app/stylesheets/screen.sass */
+/* line 173, ../../app/stylesheets/screen.sass */
 .week .label {
   font-size: 1.875em;
   line-height: 1.6em;
@@ -1151,23 +1159,23 @@ body html > body {
   left: -0.533em;
 }
 
-/* line 177, ../../app/stylesheets/screen.sass */
+/* line 181, ../../app/stylesheets/screen.sass */
 body.home .week {
   opacity: 0.6;
 }
-/* line 179, ../../app/stylesheets/screen.sass */
+/* line 183, ../../app/stylesheets/screen.sass */
 body.home .week:hover {
   opacity: 1;
 }
 
-/* line 182, ../../app/stylesheets/screen.sass */
+/* line 186, ../../app/stylesheets/screen.sass */
 body.home .weeklist .week {
   margin-top: 1.5em;
   top: 0;
   opacity: 1;
 }
 
-/* line 187, ../../app/stylesheets/screen.sass */
+/* line 191, ../../app/stylesheets/screen.sass */
 .image-list {
   clear: both;
   height: 4.5em;
@@ -1199,26 +1207,26 @@ body.home .weeklist .week {
 .image-list li:last-child, .image-list li.last {
   padding-right: 0px;
 }
-/* line 193, ../../app/stylesheets/screen.sass */
+/* line 197, ../../app/stylesheets/screen.sass */
 .image-list .image {
   margin-top: 0.3em;
   z-index: 7;
 }
-/* line 196, ../../app/stylesheets/screen.sass */
+/* line 200, ../../app/stylesheets/screen.sass */
 .image-list .image a {
   vertical-align: middle;
 }
-/* line 198, ../../app/stylesheets/screen.sass */
+/* line 202, ../../app/stylesheets/screen.sass */
 .image-list .image.thumb {
   width: 4em;
   height: 4em;
 }
-/* line 201, ../../app/stylesheets/screen.sass */
+/* line 205, ../../app/stylesheets/screen.sass */
 .image-list .image.thumb a {
   display: block;
   margin: 0 auto;
 }
-/* line 204, ../../app/stylesheets/screen.sass */
+/* line 208, ../../app/stylesheets/screen.sass */
 .image-list .image.absent {
   display: block;
   width: 3.875em;
@@ -1229,7 +1237,7 @@ body.home .weeklist .week {
   font-size: 1em;
   line-height: 1.5em;
 }
-/* line 212, ../../app/stylesheets/screen.sass */
+/* line 216, ../../app/stylesheets/screen.sass */
 .image-list .image.absent a {
   display: none;
   padding-top: 0.313em;
@@ -1237,12 +1245,12 @@ body.home .weeklist .week {
   height: 3.563em;
 }
 
-/* line 220, ../../app/stylesheets/screen.sass */
+/* line 224, ../../app/stylesheets/screen.sass */
 .user .image-list .image.absent a {
   display: block;
 }
 
-/* line 226, ../../app/stylesheets/screen.sass */
+/* line 230, ../../app/stylesheets/screen.sass */
 ul.additional-controls {
   clear: both;
   margin: 0;
@@ -1273,16 +1281,16 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   padding-right: 0px;
 }
 
-/* line 232, ../../app/stylesheets/screen.sass */
+/* line 236, ../../app/stylesheets/screen.sass */
 .users {
   clear: both;
 }
-/* line 234, ../../app/stylesheets/screen.sass */
+/* line 238, ../../app/stylesheets/screen.sass */
 .users ul {
   clear: both;
   height: 2.25em;
 }
-/* line 237, ../../app/stylesheets/screen.sass */
+/* line 241, ../../app/stylesheets/screen.sass */
 .users ul li {
   display: inline;
   float: left;
@@ -1290,35 +1298,35 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   margin-right: 1.695%;
   text-align: center;
 }
-/* line 240, ../../app/stylesheets/screen.sass */
+/* line 244, ../../app/stylesheets/screen.sass */
 .users ul li a.control-link, .users ul li .ad-gallery a.ad-slideshow-start, .ad-gallery .users ul li a.ad-slideshow-start, .users ul li .ad-gallery a.ad-slideshow-stop, .ad-gallery .users ul li a.ad-slideshow-stop {
   display: block;
   width: 80%;
   height: 80%;
   margin-top: 10%;
 }
-/* line 245, ../../app/stylesheets/screen.sass */
+/* line 249, ../../app/stylesheets/screen.sass */
 .users ul li.short {
   display: inline;
   float: left;
   width: 6.78%;
   margin-right: 1.695%;
 }
-/* line 247, ../../app/stylesheets/screen.sass */
+/* line 251, ../../app/stylesheets/screen.sass */
 .users ul li.long {
   display: inline;
   float: left;
   width: 23.729%;
   margin-right: 1.695%;
 }
-/* line 249, ../../app/stylesheets/screen.sass */
+/* line 253, ../../app/stylesheets/screen.sass */
 .users ul li:last {
   display: inline;
   float: right;
   margin-right: 0;
   #margin-left: -1em;
 }
-/* line 252, ../../app/stylesheets/screen.sass */
+/* line 256, ../../app/stylesheets/screen.sass */
 .users .create_user {
   border: 1px solid #1a1a1a;
   background-color: #1a1a1a;
@@ -1331,7 +1339,7 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   padding: 0;
 }
 /* line 9, ../../app/stylesheets/partials/_gallery.sass */
-.ad-gallery * {
+.ad-gallery div, .ad-gallery p {
   margin: 0;
   padding: 0;
 }
@@ -1564,12 +1572,12 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   top: -9000px;
 }
 
-/* line 261, ../../app/stylesheets/screen.sass */
+/* line 265, ../../app/stylesheets/screen.sass */
 #gallery .description {
   clear: both;
   margin-bottom: 1.5em;
 }
-/* line 264, ../../app/stylesheets/screen.sass */
+/* line 268, ../../app/stylesheets/screen.sass */
 #gallery .comments {
   clear: both;
   margin-bottom: 1.5em;
@@ -1578,7 +1586,7 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   height: 7.5em;
 }
 
-/* line 269, ../../app/stylesheets/screen.sass */
+/* line 273, ../../app/stylesheets/screen.sass */
 .paginate {
   clear: both;
 }

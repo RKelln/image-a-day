@@ -1,11 +1,21 @@
-- form_id = "new_comment_#{name}"
+-# defaults
+- form_id = "comment_form_#{name}"
+- button = ["Add Comment", "Adding..."] if button.nil?
+- button = [button, button] if button.is_a? String
+- field ||= :text
+
 = form_for(comment_resource, 
            :remote => true, 
            :html => {:id => form_id}) do |f|
-  = f.text_area :text
+  = f.text_area field
   .controls
-    = f.submit 'Add Comment', {:class => "control-link", :disable_with => "Adding..."}
+    = f.submit button[0], {:class => "control-link", :disable_with => button[1]}
 
+-# NOTE: it is important that this javascript will not be added to the document
+-# when this is used as a partial and sent back over ajax. The javascript functionality
+-# only applies to when this is loaded in a page normally. If you want javascript
+-# to apply to this form you need to add it in another location that is not dynamic
+-# For example see: shared/_ajax_comments.html.haml
 - content_for(:javascripts) do
   :javascript
     $("##{form_id}")

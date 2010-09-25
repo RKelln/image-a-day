@@ -1,0 +1,4 @@
+= render 'form', { | 
+  :comment_resource => @comment, |
+  :name=>unique_id(@comment, :edit), |
+  :button => ["Edit Comment", "Editing..."]}

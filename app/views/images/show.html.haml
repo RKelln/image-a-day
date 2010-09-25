@@ -13,3 +13,5 @@
              :name => "image-#{@image.id}"})
 
 = link_to 'Back', images_path
+
+= render :partial => 'shared/ajax_comments', :locals => {:selector => ".comments .comment"}

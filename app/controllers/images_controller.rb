@@ -74,6 +74,36 @@ class ImagesController < ApplicationController
     end
   end
 
+  ### For description editing ###
+
+  # GET /images/:id/edit/
+  def edit
+    @image = safe_find(Image, params)
+
+    respond_with(@image, :location => :back) do |format|
+      format.js { render 'images/edit', :layout => false}
+    end
+  end
+
+  # PUT /images/:id/update
+  def update
+    @image = safe_find(Image, params)
+
+    flash[:error] = "ERROR: Cannot update description" unless @image.update_attributes(params[:image])
+
+    respond_with(@image,
+      :location => :back,
+      :notice => 'Description was successfully updated.') do |format|
+      format.js {
+        if @image.errors.any?
+          render :text => "ERROR: Cannot update description"
+        else
+          render :partial => 'images/description', :locals => {:image => @image}, :layout => false
+        end
+      }
+    end
+  end
+
   private
 
   # massage incoming params into a meaningful index by context

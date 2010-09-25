@@ -27,6 +27,8 @@
   %li
     = link_to "Everyone", users_path, :class => "control-link"
 
+= render :partial => 'shared/ajax_comments', :locals => {:selector => "#content .comment"}
+
 - content_for (:javascripts) do
   :javascript
     // init Ad Gallery
@@ -80,7 +82,7 @@
 
     // anytime someone focuses an image's comment box, stop the slideshow
     $(document).ready(function() {
-      $(".comments textarea").focus(function() {
+      $(".comments textarea").live('focus', function() {
         //log("cap'n we've got focus");
         galleries[0].slideshow.stop();
 
@@ -88,7 +90,7 @@
         gallery_key_events(false);
       });
 
-      $(".comments textarea").blur(function() {
+      $(".comments textarea").live('blur', function() {
         // suppress gallery keypresses
         gallery_key_events(true);
       });

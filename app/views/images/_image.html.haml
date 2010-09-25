@@ -12,5 +12,6 @@
     = link_to image do
       %img(src="#{image.data.url(size)}" class="#{size.to_s}")
   %details[image]{:style => details ? nil : "display:none;"}
-    %summary
-      = render 'layouts/details', {:subject => image, :delete => false}
+    = render :partial => 'images/description', :locals => {:image => image}
+
+= render :partial => 'shared/ajax_comments', :locals => {:selector => "##{unique_id(image)} summary"}

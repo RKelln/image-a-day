@@ -2,4 +2,7 @@
   #wall.comments
     = render :partial => 'comments/comment_section', :locals => {:name => "wall"}
     .debug
+= render :partial => 'shared/ajax_comments', :locals => {:selector => "#wall .comment"}
+
 = render :file => 'layouts/application'
+

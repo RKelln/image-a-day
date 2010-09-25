@@ -124,13 +124,17 @@ body
     padding-left: $gutter-width
   .info
     +full(4)
-    +horizontal_list(4px)
+    +horizontal_list(4px * $px2em)
     +adjust-font-size-to(12px)
     //+omega(4)
     .user
       font-weight: bold
     .date
       font-style: italic
+    .edit, .delete
+      float: right
+    .edit
+      margin-right: 8px * $px2em
 
 // Images controller //////////////////////////////////////////
 

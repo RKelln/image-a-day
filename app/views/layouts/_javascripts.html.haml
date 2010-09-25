@@ -13,7 +13,6 @@
 
 -# Jammit javascript packaging
 = include_javascripts :end_scripts
-=# javascript_include_tag 'rails', 'plugins', 'application'
 
 /[if lt IE 7 ]
   = javascript_include_tag 'dd_belatedpng'
@@ -26,5 +25,5 @@
 = yield :javascript
 
 -# yui profiler and profileviewer
-- if Rails.env == 'development'
+-# if Rails.env == 'development'
   = javascript_include_tag 'profiling/yahoo-profiling.min', 'profiling/config'

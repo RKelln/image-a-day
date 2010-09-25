@@ -6,32 +6,22 @@
 
 %ul.info
   %li.user<
-    =# subject.user.nickname
+    = subject.user.nickname
   %li.date<
     (#{time_ago_in_words(subject.created_at)} ago)
-  - if subject.user_id == current_user.id
-    %li<
-      = link_to 'Edit', edit_subject_path(subject)
+  - if current_user.admin? or subject.user_id == current_user.id
     - if delete
-      %li<
+      %li.delete<
         = link_to("Delete", subject,
                   :confirm => 'Are you sure you want to delete your comment?',
                   :method => :delete,
-                  :remote => true)
+                  :remote => true,
+                  :class => 'control-link')
+    %li.edit<
+      = link_to('Edit', edit_subject_path(subject), :remote => true, :class => 'control-link')
+    
   = yield(:info_content)
 %p
   = subject.text if subject.has_attribute?('text')
   = subject.description if subject.has_attribute?('description')
   = yield(:details_content)
-
-- content_for(:javascripts) do
-  - if delete
-    :javascript
-      // NOTE: this only works if you use the HAML [object] notation in
-      // the container for this!!! ex: %div[subject]
-      $("##{unique_id(subject)}")
-        .bind("ajax:success", function(data, status, xhr) {
-          log("ajax:success: delete");
-          $(this).hide('fast');
-          $(this).remove();
-        });

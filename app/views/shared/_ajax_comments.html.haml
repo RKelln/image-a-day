@@ -1,0 +1,30 @@
+- selector ||= ".comment"
+- content_for(:javascripts) do
+  :javascript
+    // using .live() this attaches the handlers required for editing and deleting comments
+    // even if they are created and destroyed
+     $('#{selector}')
+      .live("ajax:success", function(data, status, xhr) {
+        var comment = $(this);
+        log("ajax:success: " + comment.attr('id'));
+
+        // determine if delete or edit
+        // NOTE: if you change the comment_controller#destroy response this must be changed too
+        if (status.match("Comment deleted")) {
+          //log("delete comment")
+          comment.hide('fast');
+          comment.remove();
+        }
+        else {
+          log("edit comment");
+          var edit_form = $(status).replaceAll(comment);
+          // bind edit button
+          $(edit_form)
+          .bind("ajax:success", function(data, status, xhr) {
+            //log("successfully edited comment");
+            //log(status);
+            // add comment, remove form
+            var new_comment = $(status).replaceAll($(this));
+          });
+        }
+      });

@@ -8,9 +8,7 @@ module ApplicationHelper
   
   def edit_subject_path(subject)
     if subject.is_a? Image
-      # FIXME: images cannot yet be edited
-      #return edit_image_path(subject)
-      return nil
+      return edit_image_path(subject)
     elsif subject.is_a? Comment
       return edit_comment_path(subject)
     else
@@ -26,7 +24,8 @@ module ApplicationHelper
   # TODO: actually use HAMLs mehtod, since this is a simplified version of it
   # example:       div[instance] = <div id="classname_idnum">
   #          unique_id(instance) = "classname_idnum"
-  def unique_id(instance)
-    return "#{instance.class.to_s.downcase}_#{instance.id}"
+  def unique_id(instance, prepend="")
+    prepend = prepend.to_s + '_' unless prepend.empty?
+    return "#{prepend}#{instance.class.to_s.downcase}_#{instance.id}"
   end
 end

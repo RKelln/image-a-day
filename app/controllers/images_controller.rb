@@ -42,7 +42,12 @@ class ImagesController < ApplicationController
       # TODO: bedtime!
     end
 
-    respond_with @image
+    if Image.where(:date => @image.date, :user_id => current_user.id).empty?
+      respond_with @image
+    else
+      flash[:error] = "ERROR: You can only have one image per day.  Delete the image you want to replace first."
+      redirect_to :back,
+    end
   end
 
   # POST /images

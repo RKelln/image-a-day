@@ -1,6 +1,6 @@
 -# default to icon size unless we are on the image's page
   if size = nil then use the full size image
-- size ||= :icon unless current_page?(image)
+- current_page?(image) ? size ||= :display : size ||= :icon
 
 -# default to visible details
 - details = true if details.nil?

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   respond_to :html, :xml, :js
 
   def index
-    @users = User.all
+    @users = User.only_active
 
     respond_with @users
   end

@@ -16,7 +16,7 @@ class HomeController < ApplicationController
 
     # TODO: only active users
     @weekly_images = Array.new
-    for user in User.where(:active => true)
+    for user in User.only_active
       if user != @user
         @weekly_images << {:user => user, :images => user.weekly_images}
       end

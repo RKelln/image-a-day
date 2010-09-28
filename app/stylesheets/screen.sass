@@ -84,6 +84,9 @@ body
     z-index: 10
   #content.with-comments
     +columns($content-cols, $total-cols)
+    div.full
+      +columns($content-cols, $content-cols)
+      +trailer
   #wall
     +columns($comments-cols, $total-cols)
     +omega($total-cols)

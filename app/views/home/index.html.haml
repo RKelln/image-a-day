@@ -31,48 +31,51 @@
 
 - content_for (:javascripts) do
   :javascript
-    // init Ad Gallery
-    var galleries = $('.ad-gallery').adGallery({
-       //loader_image: 'loader.gif',
-       //start_at_index: 0,
-       description_wrapper: $('.description'),
-       thumb_opacity: 1,
-       animate_first_image: true,
-       //animation_speed: 400,
-       //width: false,
-       //height: false,
-       //display_next_and_prev: true,
-       //display_back_and_forward: true,
-       //scroll_jump: 0, // If 0, it jumps the width of the container
-       slideshow: {
-         enable: #{@images.length > 1 ? "true" : "false"},
-         autostart: true,
-         speed: 6000,
-         start_label: 'Start',
-         stop_label: 'Stop',
-         stop_on_scroll: true,
-         countdown_prefix: '(',
-         countdown_sufix: ')',
-         onStart: false,
-         onStop: false
-       },
-       effect: 'fade', //'slide-hori', 'slide-vert', 'fade', or 'resize', 'none'
-       //enable_keyboard_move: true,
-       //cycle: true,
-       callbacks: {
-         //  init: false,
-         afterImageVisible: function() {
-           // display comments
-           var active_image = $("#gallery .ad-thumbs .ad-active").attr('data-image-id');
-           //log("active = " + active_image);
-           $('#gallery .comments[data-image-id="'+ active_image +'"]').show('fast');
+
+    $(document).ready(function() {
+      // init Ad Gallery
+      var galleries = $('.ad-gallery').adGallery({
+         //loader_image: 'loader.gif',
+         //start_at_index: 0,
+         description_wrapper: $('.description'),
+         thumb_opacity: 1,
+         animate_first_image: true,
+         //animation_speed: 400,
+         //width: false,
+         //height: false,
+         //display_next_and_prev: true,
+         //display_back_and_forward: true,
+         //scroll_jump: 0, // If 0, it jumps the width of the container
+         slideshow: {
+           enable: #{@images.length > 1 ? "true" : "false"},
+           autostart: true,
+           speed: 6000,
+           start_label: 'Start',
+           stop_label: 'Stop',
+           stop_on_scroll: true,
+           countdown_prefix: '(',
+           countdown_sufix: ')',
+           onStart: false,
+           onStop: false
          },
-         beforeImageVisible: function() {
-           //log("hide all comments");
-           $('#gallery .comments[data-image-id]').hide('fast');
+         effect: 'fade', //'slide-hori', 'slide-vert', 'fade', or 'resize', 'none'
+         //enable_keyboard_move: true,
+         //cycle: true,
+         callbacks: {
+           //  init: false,
+           afterImageVisible: function() {
+             // display comments
+             var active_image = $("#gallery .ad-thumbs .ad-active").attr('data-image-id');
+             //log("active = " + active_image);
+             $('#gallery .comments[data-image-id="'+ active_image +'"]').show('fast');
+           },
+           beforeImageVisible: function() {
+             //log("hide all comments");
+             $('#gallery .comments[data-image-id]').hide('fast');
+           }
          }
-       }
-    });
+      }); // $('.ad-gallery').adGallery(
+    }); // $(document).ready
 
     function gallery_key_events(active) {
       //log("gallery key events: " + active);

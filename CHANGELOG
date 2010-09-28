@@ -1,0 +1,11 @@
+= Changelog
+
+== Release 0.1
+* First release
+  * Image uploading (using Paperclip)
+  * Today view with image gallery
+  * Week view to display the last week for each active user
+  * Ajax comments on "wall" and on individual images
+  * Devise + Warden for user authentication
+  * Compass + Susy + HTML5Boilerplate for styling
+  * Simple administration of users (create, edit)

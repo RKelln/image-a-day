@@ -1,0 +1,114 @@
+= Welcome to Image-A-Day
+
+Image-A-Day is a website where participants can upload and share an image every day.
+
+It was conceived as project to help me do at least a few minutes of art every day. 
+I invited family and friends to join me in my quest and created a simple PHP 
+website with the single rule: you had to upload an image each day.
+It didn't matter whether it was a photo, a found image, or even the same image as
+yesterday. You can {read more about my version of the project}[http://ryankelln.com/#imageaday].
+
+Eventually I found time and help to convert the old website to a {Ruby on Rails}[http://rubyonrails.org/] 
+site thanks to the help of Stuart Zilm. The {new hotness}[http://image-a-day.com/]
+is still an invite-only place for friends and family, but the idea is that you
+too can run your own server and invite whomever you like to participate. The
+project has brought us closer together and provided a fullfiling challenge 
+
+The {code for the new site}[http://github.com/szilm/image-a-day] is available on github.
+
+
+== Release History
+See CHANGELOG for details.
+
+*0.1*:: <em>28 Sep 2010</em> First functional version.
+
+        At this early stage you must have familiarity with Rails to admin the site.
+        Security and features are at a minimum but images can be uploaded and viewed.
+
+
+== Requirements
+
+* Ruby >= 1.9.2
+* Rails 3
+* server tested on Debian and Ubuntu 10.04
+
+---
+
+== Getting Started
+NOTE: tested on Ubuntu 10.04 only
+
+1. At the command prompt, clone the application:
+       <tt>git clone git://github.com/szilm/image-a-day.git</tt>
+
+2. Change directory to <tt>image-a-day</tt>
+       <tt>cd myapp</tt>
+
+3. Run bundler to install gems:
+       <tt>bundle install</tt>
+
+4. Create the postgresql user (as postgres user, giving):
+       <tt>sudo -u postgres createuser -S -P -d -R -e image-a-day</tt>
+       This gives the image-a-day user the following permissions
+       * -S: not superuser
+       * -P: prompt for a password
+       * -d: allow databases to be created
+       * -R: cannot craete new roles
+       * -e: echo the commands
+       See link:http://www.postgresql.org/docs/8.4/interactive/app-createuser.html for more details
+       
+       Enter a password that you will also enter into the <tt>config/database.yml</tt> file
+
+5. Create the database and migrate:
+       <tt>rake db:migrate:reset</tt>
+
+6. Update the database seed data and load it:
+       * Edit <tt>db/seeds.rb</tt> if you want a different default testing account
+       * <tt>rake db:seed</tt>
+
+7. Run the server:
+       <tt>rails server</tt> (run with --help for options)
+       (use <tt>rails s -d</tt> to easily run in detached mode)
+
+8. Go to http://localhost:3000/ and you should see the site running.
+
+You can find the following resources handy:
+
+* The Getting Started Guide: http://guides.rubyonrails.org/getting_started.html
+* Ruby on Rails Tutorial Book: http://www.railstutorial.org/
+
+---
+
+== Thanks
+
+Thanks to Stu for all the help! Thanks to all the brave participants who really made
+this project shine.
+
+Image-A-Day exists because of the hard work of many generous people:
+* The Ruby and Ruby on Rails communities
+* {Haml}[http://haml-lang.com/] and {Sass}[http://sass-lang.com/] communities
+* {Compass}[http://compass-style.org] by {Chris Eppstein}[http://chriseppstein.github.com/]
+* {Susy}[http://susy.oddbird.net/] plugin for Compass by {Eric A. Meyer}[http://eric.dirtcircle.com/]
+* {Html5Boilerplate}[http://github.com/sporkd/compass-html5-boilerplate] plugin for Compass by {Peter Gumeson}[http://github.com/sporkd] (from the original {Html5Boilerplate project}[http://html5boilerplate.com/]}
+* {Devise}[http://github.com/plataformatec/devise] by {platformatec}[http://blog.plataformatec.com.br/]
+* {Paperclip}[http://github.com/thoughtbot/paperclip] by {Thoughtbot}[http://thoughtbot.com/]
+And many others!
+
+---
+
+== License
+Image-A-Day webserver software is released under the {GPL 3}[http://www.gnu.org/licenses/gpl.html].
+
+Copyright (C) 2010,  Ryan Kelln and Stuart Zilm
+
+Image-A-Day is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Image-A-Day is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.

@@ -1,0 +1,44 @@
+#
+# TODO
+#
+# last updated: 28 Sep 2010
+
+# For 0.2 release ##############################################################
+
+  * Month view to display a month of images for the current user
+  * easy navigation through time in week and month views
+  * user page with useful info
+  * set bed time / next day time per user and make editable
+  
+  
+# For 0.1.1 release ############################################################
+
+  * check file size upload limits
+  * flash colors
+  * force password change on 1st login
+  * screen size copy of image
+    * only for larger images
+    
+    
+# For 0.1 release ##############################################################
+
+  * fix Jammit
+  
+
+# Wishlist #####################################################################
+
+  * file upload progress indicator
+  * file size upload error messages
+  * smart comments
+    * display notification of comments on your images
+    * reply to comments (threading?)
+    * daily user pic
+  * ajax image upload UI
+
+
+# Refactoring, cleanup #########################################################
+
+  * responds_with js/ajax stuff is a nightmare, need a custom responder or new approach
+    * json???
+  * clean up layouts and/or moved some of that into shared/
+  * image description vs comments ugliness

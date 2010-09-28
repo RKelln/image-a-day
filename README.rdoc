@@ -32,7 +32,6 @@ See CHANGELOG for details.
 * Rails 3
 * server tested on Debian and Ubuntu 10.04
 
----
 
 == Getting Started
 NOTE: tested on Ubuntu 10.04 only
@@ -76,7 +75,6 @@ You can find the following resources handy:
 * The Getting Started Guide: http://guides.rubyonrails.org/getting_started.html
 * Ruby on Rails Tutorial Book: http://www.railstutorial.org/
 
----
 
 == Thanks
 
@@ -93,7 +91,6 @@ Image-A-Day exists because of the hard work of many generous people:
 * {Paperclip}[http://github.com/thoughtbot/paperclip] by {Thoughtbot}[http://thoughtbot.com/]
 And many others!
 
----
 
 == License
 Image-A-Day webserver software is released under the {GPL 3}[http://www.gnu.org/licenses/gpl.html].

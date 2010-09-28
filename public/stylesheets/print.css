@@ -420,6 +420,18 @@ textarea:focus {
   border-color: #907860;
 }
 
+/* line 93, ../../app/stylesheets/partials/_colors.sass */
+.pop-up {
+  background-color: #222222;
+  border-color: rgba(47, 47, 47, 0.5);
+}
+
+/* line 97, ../../app/stylesheets/partials/_colors.sass */
+.control-link[data-method=delete]:hover {
+  background-color: #b81212;
+  color: #cccccc;
+}
+
 /* line 10, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.2/stylesheets/html5-boilerplate/_helpers.scss */
 .ir {
   text-indent: -119988px;

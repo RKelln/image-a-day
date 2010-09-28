@@ -11,7 +11,10 @@
   - else
     = link_to image do
       %img(src="#{image.data.url(size)}" class="#{size.to_s}")
-  %details[image]{:style => details ? nil : "display:none;"}
+  %details[image]{:class => details ? nil : "pop-up"}
     = render :partial => 'images/description', :locals => {:image => image}
-
+    = link_to("Delete Image", image,
+            :confirm => 'Are you sure you want to delete your image?',
+            :method => :delete,
+            :class => ["control-link", "warning"])
 = render :partial => 'shared/ajax_comments', :locals => {:selector => "##{unique_id(image)} summary"}

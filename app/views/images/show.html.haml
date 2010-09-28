@@ -1,9 +1,5 @@
 %h2.date
   = @image.long_date
-  = link_to("Delete Image", @image,
-            :confirm => 'Are you sure you want to delete your image?',
-            :method => :delete,
-            :class => "control-link")
 = render @image
 
 .comments

@@ -6,7 +6,7 @@ class ImagesController < ApplicationController
   # GET (/user/:user_id)/images/date/:year(/:month(/:day))
   # GET (/user/:user_id)/images?start_date=:start_date&end_date=:end_date
   def index
-    @images = Image.where(params_where).paginate(:page => params[:page])
+    @images = Image.where(params_where).paginate(:page => params[:page]).reverse
 
     respond_with @images
   end

@@ -84,10 +84,14 @@ body
     z-index: 10
   #content.with-comments
     +columns($content-cols, $total-cols)
+    div.full
+      +columns($content-cols, $content-cols)
+      +trailer
   #wall
     +columns($comments-cols, $total-cols)
     +omega($total-cols)
-    +leader(2)
+    .notices
+      +height(2)
 
 #footer
   +full
@@ -139,7 +143,7 @@ body
 // Images controller //////////////////////////////////////////
 
 .images
-  .date
+  h2.date
     +full($content-cols)
     margin: 0
   .image
@@ -149,13 +153,17 @@ body
     & > details
       +full($content-cols)
       +trailer
+
   .image.icon, .image.thumb
-    a
+    & > a
       +columns(1, $content-cols)
     & > details
       +columns(7, $content-cols)
       +omega($content-cols)
       clear: none
+
+.image details a[data-method=delete]
+  float: right
 
 .image.icon img
   width: $icon-size * $px2em
@@ -194,17 +202,17 @@ body.home .weeklist .week
   +horizontal-list($gutter-width / 2)
   overflow: visible
   z-index: 6
-  .image
+  // override horizontal-list no-wrap
+  li
+    white-space: inherit
+  & > .image
     margin-top: 0.3em
     z-index: 7
     a
       vertical-align: middle
-  .image.thumb
+  & > .image.thumb
     width: $thumb-size * $px2em
     height: $thumb-size * $px2em
-    a
-      display: block
-      margin: 0 auto
   .image.absent
     display: block
     width: ($thumb-size - 2px) * $px2em
@@ -224,8 +232,30 @@ body.home .weeklist .week
   a
     display: block
 
+// week (details/summary pop-ups)
+.pop-up
+  // hidden
+  position: absolute
+  margin-left: -20000px
+  z-index: 1000
+  min-width: 12em
+  max-width: 23em
+  padding: (($base-line-height / 2) - 1px) * $px2em
+  border: 1px solid
+  +border-radius(1em)
+  textarea
+    min-width: 23em
+
+.image.thumb:hover > .pop-up
+  margin-left: 0
 
 // Home controller ///////////////////////////////////////////
+
+.notices
+  text-align: center
+  a
+    +adjust-font-size-to($base-font-size, 2)
+    padding: 0.3em 1em
 
 ul.additional-controls
   +full($content-cols)
@@ -256,6 +286,7 @@ ul.additional-controls
   .create_user
     border: 1px solid $border-color
     background-color: $border-color
+
 
 // Other modules --------------------------------------------------
 $image-height: 18

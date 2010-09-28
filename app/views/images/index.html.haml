@@ -1,11 +1,11 @@
 %h1 Listing images
 
+%p
+  = link_to "Upload today's image", upload_path, :class => "control-link"
+
 .paginate
   %p
     = will_paginate @images
-
-%p
-  = link_to 'Upload image', upload_path
 
 - @images.each do |image|
   = render image, :size=>:thumb

@@ -33,11 +33,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-    @user = current_user
-
-  end
-
   def update
     # only allow admins to update other users, but users can update themselves
 

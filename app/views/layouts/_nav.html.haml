@@ -11,7 +11,7 @@
     %li#user
       - if user_signed_in?
         Signed in as
-        %b= current_user.nickname
+        %b= link_to current_user.nickname, edit_user_registration_path
         = link_to "Sign out", destroy_user_session_path, :class => "control-link"
       -else
         /= link_to "Sign up", new_user_registration_path, :class => "control-link"

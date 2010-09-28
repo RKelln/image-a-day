@@ -1,5 +1,5 @@
 ImageADay::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => 'registrations'}
 
   root :to => 'home#index'
 
@@ -27,7 +27,7 @@ ImageADay::Application.routes.draw do
   
   resources :comments, :only => [:index, :new, :create, :edit, :update, :destroy]
   
-  resources :users, :only => [:index, :show, :new, :create, :edit, :update] do
+  resources :users, :only => [:index, :show, :new, :create] do
     resources :images do
         match "date/:year(/:month(/:day))" => :index, :constraints => {:year => /\d{4}/}, :on => :collection
     end

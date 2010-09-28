@@ -1282,7 +1282,8 @@ body.home .weeklist .week {
   position: absolute;
   margin-left: -20000px;
   z-index: 1000;
-  width: 23em;
+  min-width: 12em;
+  max-width: 23em;
   padding: 0.688em;
   border: 1px solid;
   -moz-border-radius: 1em;
@@ -1292,24 +1293,28 @@ body.home .weeklist .week {
   -khtml-border-radius: 1em;
   border-radius: 1em;
 }
-
 /* line 246, ../../app/stylesheets/screen.sass */
+.pop-up textarea {
+  min-width: 23em;
+}
+
+/* line 249, ../../app/stylesheets/screen.sass */
 .image.thumb:hover > .pop-up {
   margin-left: 0;
 }
 
-/* line 251, ../../app/stylesheets/screen.sass */
+/* line 254, ../../app/stylesheets/screen.sass */
 .notices {
   text-align: center;
 }
-/* line 253, ../../app/stylesheets/screen.sass */
+/* line 256, ../../app/stylesheets/screen.sass */
 .notices a {
   font-size: 1em;
   line-height: 3em;
   padding: 0.3em 1em;
 }
 
-/* line 257, ../../app/stylesheets/screen.sass */
+/* line 260, ../../app/stylesheets/screen.sass */
 ul.additional-controls {
   clear: both;
   margin: 0;
@@ -1340,16 +1345,16 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   padding-right: 0px;
 }
 
-/* line 263, ../../app/stylesheets/screen.sass */
+/* line 266, ../../app/stylesheets/screen.sass */
 .users {
   clear: both;
 }
-/* line 265, ../../app/stylesheets/screen.sass */
+/* line 268, ../../app/stylesheets/screen.sass */
 .users ul {
   clear: both;
   height: 2.25em;
 }
-/* line 268, ../../app/stylesheets/screen.sass */
+/* line 271, ../../app/stylesheets/screen.sass */
 .users ul li {
   display: inline;
   float: left;
@@ -1357,35 +1362,35 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   margin-right: 1.695%;
   text-align: center;
 }
-/* line 271, ../../app/stylesheets/screen.sass */
+/* line 274, ../../app/stylesheets/screen.sass */
 .users ul li a.control-link, .users ul li .ad-gallery a.ad-slideshow-start, .ad-gallery .users ul li a.ad-slideshow-start, .users ul li .ad-gallery a.ad-slideshow-stop, .ad-gallery .users ul li a.ad-slideshow-stop {
   display: block;
   width: 80%;
   height: 80%;
   margin-top: 10%;
 }
-/* line 276, ../../app/stylesheets/screen.sass */
+/* line 279, ../../app/stylesheets/screen.sass */
 .users ul li.short {
   display: inline;
   float: left;
   width: 6.78%;
   margin-right: 1.695%;
 }
-/* line 278, ../../app/stylesheets/screen.sass */
+/* line 281, ../../app/stylesheets/screen.sass */
 .users ul li.long {
   display: inline;
   float: left;
   width: 23.729%;
   margin-right: 1.695%;
 }
-/* line 280, ../../app/stylesheets/screen.sass */
+/* line 283, ../../app/stylesheets/screen.sass */
 .users ul li:last {
   display: inline;
   float: right;
   margin-right: 0;
   #margin-left: -1em;
 }
-/* line 283, ../../app/stylesheets/screen.sass */
+/* line 286, ../../app/stylesheets/screen.sass */
 .users .create_user {
   border: 1px solid #1a1a1a;
   background-color: #1a1a1a;
@@ -1631,12 +1636,12 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   top: -9000px;
 }
 
-/* line 293, ../../app/stylesheets/screen.sass */
+/* line 296, ../../app/stylesheets/screen.sass */
 #gallery .description {
   clear: both;
   margin-bottom: 1.5em;
 }
-/* line 296, ../../app/stylesheets/screen.sass */
+/* line 299, ../../app/stylesheets/screen.sass */
 #gallery .comments {
   clear: both;
   margin-bottom: 1.5em;
@@ -1645,7 +1650,7 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   height: 7.5em;
 }
 
-/* line 301, ../../app/stylesheets/screen.sass */
+/* line 304, ../../app/stylesheets/screen.sass */
 .paginate {
   clear: both;
 }

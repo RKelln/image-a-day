@@ -238,10 +238,13 @@ body.home .weeklist .week
   position: absolute
   margin-left: -20000px
   z-index: 1000
-  width: 23em
+  min-width: 12em
+  max-width: 23em
   padding: (($base-line-height / 2) - 1px) * $px2em
   border: 1px solid
   +border-radius(1em)
+  textarea
+    min-width: 23em
 
 .image.thumb:hover > .pop-up
   margin-left: 0

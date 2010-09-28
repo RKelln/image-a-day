@@ -1,5 +1,7 @@
 - content_for(:comments) do
   #wall.comments
+    .notices
+      = yield :comment_notices
     = render :partial => 'comments/comment_section', :locals => {:name => "wall"}
     .debug
 = render :partial => 'shared/ajax_comments', :locals => {:selector => "#wall .comment"}

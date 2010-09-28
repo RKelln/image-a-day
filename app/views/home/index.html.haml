@@ -1,3 +1,6 @@
+- content_for(:comment_notices) do
+  = link_to "Upload today's image", upload_path, :class => "control-link"
+
 = render 'weekly', {:images => @user.weekly_images, :classes => "user"}
 #gallery.ad-gallery
   .ad-image-wrapper

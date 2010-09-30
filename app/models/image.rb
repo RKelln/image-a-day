@@ -7,7 +7,7 @@ class Image < ActiveRecord::Base
   #validates :date, :presence => true
 
   has_attached_file :data, :styles => { :thumb => '64x64>', :icon => '32x32#', :display => '976x976>' },
-          :path => ':rails_root/assets/images/:year_month_day:opt_style/:nickname_:year_:yday.:extension',
+          :path => ':rails_root/assets/images/:year_month_day:opt_style/:user_id_:year_:yday.:extension',
           :url => '/images/data/:user_id/:year/:month/:day/:style'
 
   scope :today, where(:date => Time.now)

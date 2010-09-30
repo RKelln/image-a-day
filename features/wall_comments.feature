@@ -15,7 +15,13 @@ Feature: Wall Comments
 
     Scenario: Add a comment
         When  I go to the home page
-        #Then  I should see "Add Comment" within "#wall"
+        When  I fill in "Add a comment:" with "This is my comment"
+        And   I press "Add Comment" within "#wall"
+        Then  I should see "This is my comment" within "#wall .comment"
+
+    @javascript
+    Scenario: Add a comment using AJAX
+        When  I go to the home page
         When  I fill in "Add a comment:" with "This is my comment"
         And   I press "Add Comment" within "#wall"
         Then  I should see "This is my comment" within "#wall .comment"

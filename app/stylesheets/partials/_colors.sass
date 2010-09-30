@@ -23,23 +23,29 @@ select, input, textarea
   +box-shadow($border-color, 0, 2px)
 
 #flash
-  color: $base-color
   div
     +box-shadow
     background-color: $highlight-color
+    color: $font-color
   .notice
     background-color: $font-color
+    color: $base-color
   .error, .warning
     background-color: $error-color
+    color: $base-color
   .success
     background-color: $splash-color
+    color: $base-color
 
-.ad-image-wrapper, .ad-nav
+.ad-image-wrapper, .ad-nav, .create_user, #login, #signup
   //background-color: $border-color
   +fuzzy-border($border-color)
 
-.date, .input_prompt, .control-link-inactive, .ad-controls, .label
+.date, .input_prompt, .control-link-inactive, .ad-controls, label, .label, #content > h1, #content > h2, footer
   color: transparentize($font-color, 0.4)
+
+.disabled
+  opacity: 0.5 !important
 
 a
   &:link, &:visited
@@ -97,3 +103,4 @@ textarea:focus
 .control-link[data-method=delete]:hover
   background-color: $error-color
   color: $font-color
+

@@ -36,6 +36,7 @@ body
 #header
   +full($total-cols)
   +height(2)
+  position: relative
   z-index: 100
   #title
     +columns(4, $total-cols)
@@ -67,26 +68,26 @@ body
   +full
   #flash
     // FIXME: evil hack to get flash the right size
-    width: 60em
+    width: 97%
     position: absolute
-    z-index: 900
+    z-index: 90
     div
       +border-radius($default-border-radius)
       padding-left: $gutter-width
       padding-right: $gutter-width
-      z-index: 901
     p
       text-align: center
       margin: 0
-      z-index: 902
   #content
     +full($total-cols)
-    z-index: 10
+    //z-index: 10
+    .full
+      +columns($total-cols, $total-cols)
+      +trailer
   #content.with-comments
     +columns($content-cols, $total-cols)
-    div.full
+    .full
       +columns($content-cols, $content-cols)
-      +trailer
   #wall
     +columns($comments-cols, $total-cols)
     +omega($total-cols)
@@ -103,7 +104,14 @@ body
   +columns(5,12)
   +prepend(3,12)
   +rhythm-borders
+  +leader
+  +trailer(2)
 
+.registrations #content
+  & > *
+    +columns(6, $total_cols)
+  i
+    +adjust-font-size-to(12px)
 // Comments ///////////////////////////////////////////////////
 
 .input_prompt
@@ -175,14 +183,22 @@ body
   margin-left: auto
   margin-right: auto
 
+.container
+  position: relative
+  z-index: 1
+
 .week
   +full($content-cols)
   position: relative
+  z-index: auto
   .label
+    display: block
     +adjust-font-size-to(30px)
     position: absolute
     top: -0.85em
     left: -$gutter-width * ($base-font-size / 30px)
+    // underneath .image-list
+    z-index: -1
 
 
 // handle week view differntly in different locations
@@ -191,26 +207,31 @@ body.home .week
   &:hover
     opacity: 1
 
-body.home .weeklist .week
+body.home .weeklist 
   +leader
-  top: 0
-  opacity: 1
+  .week
+    margin-top: ($base-line-height/2)*$px2em
+    top: 0
+    opacity: 1
 
 .image-list
   +full($content-cols)
   +height(3)
   +horizontal-list($gutter-width / 2)
   overflow: visible
-  z-index: 6
-  // override horizontal-list no-wrap
+  //position: relative
+  //z-index: 20
+  
   li
+    // override horizontal-list white-space: no-wrap
     white-space: inherit
+    //position: relative
+    //z-index: 21
   & > .image
     margin-top: 0.3em
-    z-index: 7
     a
       vertical-align: middle
-  & > .image.thumb
+  div.image.thumb
     width: $thumb-size * $px2em
     height: $thumb-size * $px2em
   .image.absent
@@ -234,20 +255,23 @@ body.home .weeklist .week
 
 // week (details/summary pop-ups)
 .pop-up
-  // hidden
   position: absolute
   margin-left: -20000px
-  z-index: 1000
+  z-index: 50
   min-width: 12em
   max-width: 23em
   padding: (($base-line-height / 2) - 1px) * $px2em
   border: 1px solid
   +border-radius(1em)
+  +box-shadow
   textarea
     min-width: 23em
 
 .image.thumb:hover > .pop-up
   margin-left: 0
+
+.pop-up:hover
+  margin-left: -30px
 
 // Home controller ///////////////////////////////////////////
 
@@ -263,7 +287,7 @@ ul.additional-controls
   +leader
 
 // admin (NOTE: no comments)
-.users
+#content .users
   +full($total-cols)
   ul
     +full($total-cols)
@@ -303,4 +327,5 @@ $image-height: 18
 
 .paginate
   +full($content-cols)
+
 

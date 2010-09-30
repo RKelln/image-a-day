@@ -1,11 +1,10 @@
-%h1 Your fellow artists:
+%h2 Your fellow artists:
 
 %ul
   - @users.each do |user|
-    %li
+    %li.full><
       #{user.nickname} (#{user.name}): 
       = link_to "#{user.email}", user
       (#{user.active ? "active" : "inactive"})
       - if user.admin
         [admin]
-      

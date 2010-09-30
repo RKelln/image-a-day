@@ -4,7 +4,6 @@
   ex: id="new_comment_<name>"  See _form.html.html for details
 
 - if comment_resource
-  %h2.input_prompt Add a comment:
   = render 'comments/form', {:comment_resource => comment_resource, :name => name}
 
 - comments.each do |comment|

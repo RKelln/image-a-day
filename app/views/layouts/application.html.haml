@@ -12,8 +12,10 @@
         %article#content{:class => content_for?(:comments) ? "with-comments" : nil}
           = content_for?(:content) ? yield(:content) : yield
         = yield(:comments)
+        
       %footer#footer
         = render :partial => 'layouts/footer'
+        
     .debug
     -# Javascript at the bottom for fast page loading
     = render :partial => 'layouts/javascripts'

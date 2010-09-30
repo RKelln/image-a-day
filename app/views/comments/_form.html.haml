@@ -7,9 +7,10 @@
 = form_for(comment_resource, 
            :remote => true, 
            :html => {:id => form_id}) do |f|
-  = f.text_area field
+  = f.label field, "Add a comment:", :for => "comment_text_#{name}"
+  = f.text_area field, :id => "comment_text_#{name}"
   .controls
-    = f.submit button[0], {:class => "control-link", :disable_with => button[1]}
+    = f.submit button[0], :id => "comment_submit_#{name}", :class => "control-link", :disable_with => button[1]
 
 -# NOTE: it is important that this javascript will not be added to the document
 -# when this is used as a partial and sent back over ajax. The javascript functionality

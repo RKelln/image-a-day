@@ -4,7 +4,7 @@
       = link_to "Today", root_path
     %li
       = link_to "Week", week_path
-    %li Month
+    %li.disabled Month
     - if current_user.admin?
       %li
         = link_to "Admin", admin_path

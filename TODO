@@ -1,44 +1,49 @@
-#
-# TODO
-#
-# last updated: 28 Sep 2010
+= TODO
+last updated: 28 Sep 2010
 
-# For 0.2 release ##############################################################
+== For 0.2 release
 
-  * Month view to display a month of images for the current user
-  * easy navigation through time in week and month views
-  * user page with useful info
-  * set bed time / next day time per user and make editable
-  
-  
-# For 0.1.1 release ############################################################
-
-  * check file size upload limits
-  * flash colors
-  * force password change on 1st login
-  * screen size copy of image
-    * only for larger images
-    
-    
-# For 0.1 release ##############################################################
-
-  * fix Jammit
-  
-
-# Wishlist #####################################################################
-
-  * file upload progress indicator
-  * file size upload error messages
-  * smart comments
-    * display notification of comments on your images
-    * reply to comments (threading?)
-    * daily user pic
-  * ajax image upload UI
+* Month view to display a month of images for the current user
+* easy navigation through time in week and month views
+* user page with useful info
+* set bed time / next day time per user and make editable
 
 
-# Refactoring, cleanup #########################################################
+== For 0.1.1 release
 
-  * responds_with js/ajax stuff is a nightmare, need a custom responder or new approach
-    * json???
-  * clean up layouts and/or moved some of that into shared/
-  * image description vs comments ugliness
+* check file size upload limits
+* flash colors
+* force password change on 1st login
+* screen size copy of image
+  * only for larger images
+* BUG: css pop-up hoving issues
+  * add js to make it stay longer even if mouse leaves temporarily?
+  * fix weirdness on Today page hovers over gallery
+
+
+== For 0.1 release
+
+* fix Jammit
+* images named by user id
+* BUG: broken image link
+
+
+== Wishlist
+
+* file upload progress indicator
+* file size upload error messages
+* smart comments
+  * display notification of comments on your images
+  * reply to comments (threading?)
+  * daily user pic
+* ajax image upload UI
+* per user user-ordering (to sort week view list and gallery images)
+* user Favourites (images and comments?)
+
+
+== Refactoring, cleanup
+
+* responds_with js/ajax stuff is a nightmare, need a custom responder or new approach
+  * json???
+* clean up layouts and/or moved some of that into shared/
+* image description vs comments ugliness

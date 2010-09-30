@@ -3,11 +3,11 @@
 -ie_html :lang => 'en', :class => 'no-js' do
   = render :partial => 'layouts/head'
   %body{ :class => "#{controller.controller_name}" }
-    #container
+    .container
       %header#header
         %h1#title
           = site_title
-      #main
+      %section#main
         = render :partial => 'layouts/flashes'
         = yield
         

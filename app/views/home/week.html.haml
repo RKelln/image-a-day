@@ -1,3 +1,6 @@
+- content_for(:comment_notices) do
+  = link_to "Upload today's image", upload_path, :class => "control-link"
+
 .weeklist
   = render('weekly',
     :label => @user.nickname,

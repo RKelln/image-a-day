@@ -286,33 +286,33 @@ select, input, textarea {
   box-shadow: #1a1a1a 0 2px 5px 0;
 }
 
-/* line 25, ../../app/stylesheets/partials/_colors.sass */
-#flash {
-  color: #222222;
-}
-/* line 27, ../../app/stylesheets/partials/_colors.sass */
+/* line 26, ../../app/stylesheets/partials/_colors.sass */
 #flash div {
   -moz-box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px 0;
   -webkit-box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px 0;
   -o-box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px 0;
   box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px 0;
   background-color: #2f2f2f;
+  color: #cccccc;
 }
 /* line 30, ../../app/stylesheets/partials/_colors.sass */
 #flash .notice {
   background-color: #cccccc;
+  color: #222222;
 }
-/* line 32, ../../app/stylesheets/partials/_colors.sass */
+/* line 33, ../../app/stylesheets/partials/_colors.sass */
 #flash .error, #flash .warning {
   background-color: #b81212;
+  color: #222222;
 }
-/* line 34, ../../app/stylesheets/partials/_colors.sass */
+/* line 36, ../../app/stylesheets/partials/_colors.sass */
 #flash .success {
   background-color: #52ad4b;
+  color: #222222;
 }
 
-/* line 37, ../../app/stylesheets/partials/_colors.sass */
-.ad-image-wrapper, .ad-nav {
+/* line 40, ../../app/stylesheets/partials/_colors.sass */
+.ad-image-wrapper, .ad-nav, .create_user, #login, #signup {
   background-color: #1a1a1a;
   -moz-border-radius: 0.33em;
   -webkit-border-radius: 0.33em;
@@ -326,28 +326,33 @@ select, input, textarea {
   box-shadow: #1a1a1a 0 0 2px 0;
 }
 
-/* line 41, ../../app/stylesheets/partials/_colors.sass */
-.date, .input_prompt, .control-link-inactive, .ad-controls, .label {
+/* line 44, ../../app/stylesheets/partials/_colors.sass */
+.date, .input_prompt, .control-link-inactive, .ad-controls, label, .label, #content > h1, #content > h2, footer {
   color: rgba(204, 204, 204, 0.6);
 }
 
-/* line 45, ../../app/stylesheets/partials/_colors.sass */
+/* line 47, ../../app/stylesheets/partials/_colors.sass */
+.disabled {
+  opacity: 0.5 !important;
+}
+
+/* line 51, ../../app/stylesheets/partials/_colors.sass */
 a:link, a:visited {
   color: #607890;
   text-shadow: black 1px 1px 1px;
 }
-/* line 48, ../../app/stylesheets/partials/_colors.sass */
+/* line 54, ../../app/stylesheets/partials/_colors.sass */
 a:focus, a:hover, a:active {
   color: #907860;
   text-shadow: #bcab9a 0 0 2px;
 }
 
-/* line 53, ../../app/stylesheets/partials/_colors.sass */
+/* line 59, ../../app/stylesheets/partials/_colors.sass */
 .comment {
   border-color: #1a1a1a;
 }
 
-/* line 56, ../../app/stylesheets/partials/_colors.sass */
+/* line 62, ../../app/stylesheets/partials/_colors.sass */
 .control, .control-link {
   background-color: #1a1a1a;
   border-color: #607890;
@@ -356,7 +361,7 @@ a:focus, a:hover, a:active {
   -o-box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px 0;
   box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px 0;
 }
-/* line 60, ../../app/stylesheets/partials/_colors.sass */
+/* line 66, ../../app/stylesheets/partials/_colors.sass */
 .control:focus, .control:hover, .control:active, .control-link:focus, .control-link:hover, .control-link:active {
   background-color: #242424;
   border-color: #907860;
@@ -366,43 +371,43 @@ a:focus, a:hover, a:active {
   box-shadow: #907860 0 0 0.5em 0;
 }
 
-/* line 65, ../../app/stylesheets/partials/_colors.sass */
+/* line 71, ../../app/stylesheets/partials/_colors.sass */
 .control-link {
   color: #607890;
 }
-/* line 67, ../../app/stylesheets/partials/_colors.sass */
+/* line 73, ../../app/stylesheets/partials/_colors.sass */
 .control-link:focus, .control-link:hover, .control-link:active {
   color: #907860;
 }
 
-/* line 70, ../../app/stylesheets/partials/_colors.sass */
+/* line 76, ../../app/stylesheets/partials/_colors.sass */
 .control-link-inactive {
   background-color: #222222;
   border-color: #1a1a1a;
 }
 
-/* line 74, ../../app/stylesheets/partials/_colors.sass */
+/* line 80, ../../app/stylesheets/partials/_colors.sass */
 .image.absent {
   background-color: #1a1a1a;
 }
 
-/* line 77, ../../app/stylesheets/partials/_colors.sass */
+/* line 83, ../../app/stylesheets/partials/_colors.sass */
 .user .image-list .image.absent {
   background-color: #b81212 !important;
 }
-/* line 79, ../../app/stylesheets/partials/_colors.sass */
+/* line 85, ../../app/stylesheets/partials/_colors.sass */
 .user .image-list .image.absent a {
   color: #cccccc;
 }
 
-/* line 82, ../../app/stylesheets/partials/_colors.sass */
+/* line 88, ../../app/stylesheets/partials/_colors.sass */
 .image.thumb img {
   -moz-box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px 0;
   -webkit-box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px 0;
   -o-box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px 0;
   box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px 0;
 }
-/* line 84, ../../app/stylesheets/partials/_colors.sass */
+/* line 90, ../../app/stylesheets/partials/_colors.sass */
 .image.thumb img:focus, .image.thumb img:hover, .image.thumb img:active {
   -moz-box-shadow: #907860 0 0 0.5em 0;
   -webkit-box-shadow: #907860 0 0 0.5em 0;
@@ -410,23 +415,23 @@ a:focus, a:hover, a:active {
   box-shadow: #907860 0 0 0.5em 0;
 }
 
-/* line 87, ../../app/stylesheets/partials/_colors.sass */
+/* line 93, ../../app/stylesheets/partials/_colors.sass */
 .ad-active img {
   border-color: #52ad4b !important;
 }
 
-/* line 90, ../../app/stylesheets/partials/_colors.sass */
+/* line 96, ../../app/stylesheets/partials/_colors.sass */
 textarea:focus {
   border-color: #907860;
 }
 
-/* line 93, ../../app/stylesheets/partials/_colors.sass */
+/* line 99, ../../app/stylesheets/partials/_colors.sass */
 .pop-up {
   background-color: #222222;
   border-color: rgba(47, 47, 47, 0.5);
 }
 
-/* line 97, ../../app/stylesheets/partials/_colors.sass */
+/* line 103, ../../app/stylesheets/partials/_colors.sass */
 .control-link[data-method=delete]:hover {
   background-color: #b81212;
   color: #cccccc;

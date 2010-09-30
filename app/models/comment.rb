@@ -6,4 +6,7 @@ class Comment < ActiveRecord::Base
   #validates :user_id, :presence => true
   validates_presence_of :text
 
+  def to_s
+    "Comment[#{id}, #{user_id}]: #{created_at} \"#{text}\""
+  end
 end

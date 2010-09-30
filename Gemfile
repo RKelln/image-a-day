@@ -43,9 +43,14 @@ group :development do
 end
 
 group :test do
-#  gem "rspec-rails", ">= 2.0.0.beta"
-#  gem 'capybara'
-#  gem 'database_cleaner'
-#  gem 'cucumber-rails'
-#  gem "factory_girl", :require => nil
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'cucumber-rails'
+  gem 'cucumber'
+#  gem 'rspec-rails'
+  gem "rspec-rails", ">= 2.0.0.beta"
+  gem "factory_girl", :require => nil
+  gem "factory_girl_rails"
+#  gem 'spork'
+  gem 'launchy'    # So you can do Then show me the page
 end

@@ -1,14 +1,14 @@
 -# Jammit stylesheet packaging
-=# include_stylesheets :screen, :media => 'screen, projection'
-=# include_stylesheets :print, :media => 'print'
+= include_stylesheets :screen, :media => 'screen, projection'
+= include_stylesheets :print, :media => 'print'
 
-= stylesheet_link_tag "screen", :media => 'screen, projection'
-= stylesheet_link_tag "print", :media => 'print'
-
+-# Rails-style
+=# stylesheet_link_tag "screen", :media => 'screen, projection'
+=# stylesheet_link_tag "print", :media => 'print'
 
 /[if IE]
-  =# include_stylesheets :ie, :media => 'all', :embed_assets => false
-  = stylesheet_link_tag "ie", :media => 'all'
+  = include_stylesheets :ie, :media => 'all', :embed_assets => false
+  =# stylesheet_link_tag "ie", :media => 'all'
   
 -# Uncomment if you are specifically targeting less enabled mobile browsers
 -#= include_stylesheets :handheld, :media => 'handheld'

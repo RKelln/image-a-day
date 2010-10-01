@@ -25,7 +25,7 @@ javascripts:
     - public/javascripts/application.js
     - public/javascripts/jquery.form.js
     - public/javascripts/gallery/jquery.ad-gallery.js
-    - public/javascripts/gallery/jquery.create.js
+#    - public/javascripts/jquery.create.js
 
 stylesheets:
   screen:

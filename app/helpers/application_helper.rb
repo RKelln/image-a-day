@@ -6,6 +6,16 @@ module ApplicationHelper
     SITE_TITLE
   end
   
+  def site_title_haml()
+    #capture_haml do
+      haml_tag :h1, {:id => "title"} do
+        haml_tag :a, {:href => root_path} do
+          haml_concat site_title
+        end
+      end
+    #end
+  end
+  
   def edit_subject_path(subject)
     if subject.is_a? Image
       return edit_image_path(subject)

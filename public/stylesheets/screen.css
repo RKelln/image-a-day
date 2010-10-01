@@ -313,6 +313,7 @@ select, input, textarea {
 
 /* line 40, ../../app/stylesheets/partials/_colors.sass */
 .ad-image-wrapper, .ad-nav, .create_user, #login, #signup {
+  border-color: #1a1a1a;
   background-color: #1a1a1a;
   -moz-border-radius: 0.33em;
   -webkit-border-radius: 0.33em;
@@ -327,7 +328,7 @@ select, input, textarea {
 }
 
 /* line 44, ../../app/stylesheets/partials/_colors.sass */
-.date, .input_prompt, .control-link-inactive, .ad-controls, label, .label, #content > h1, #content > h2, footer {
+.date, .input_prompt, .control-link-inactive, .ad-controls, label, .label, #main > h1, #main > h2, #content > h1, #content > h2, footer {
   color: rgba(204, 204, 204, 0.6);
 }
 
@@ -1042,14 +1043,14 @@ body html > body {
 }
 
 /* line 111, ../../app/stylesheets/screen.sass */
-.registrations #content > * {
+.registrations #content > *, .passwords #main > * {
   display: inline;
   float: left;
   width: 49.153%;
   margin-right: 1.695%;
 }
 /* line 113, ../../app/stylesheets/screen.sass */
-.registrations #content i {
+.registrations #content i, .passwords #main i {
   font-size: 0.75em;
   line-height: 2em;
 }
@@ -1338,28 +1339,28 @@ body.home .weeklist .week {
   min-width: 23em;
 }
 
-/* line 270, ../../app/stylesheets/screen.sass */
+/* line 271, ../../app/stylesheets/screen.sass */
 .image.thumb:hover > .pop-up {
   margin-left: 0;
 }
 
-/* line 273, ../../app/stylesheets/screen.sass */
+/* line 274, ../../app/stylesheets/screen.sass */
 .pop-up:hover {
   margin-left: -30px;
 }
 
-/* line 278, ../../app/stylesheets/screen.sass */
+/* line 279, ../../app/stylesheets/screen.sass */
 .notices {
   text-align: center;
 }
-/* line 280, ../../app/stylesheets/screen.sass */
+/* line 281, ../../app/stylesheets/screen.sass */
 .notices a {
   font-size: 1em;
   line-height: 3em;
   padding: 0.3em 1em;
 }
 
-/* line 284, ../../app/stylesheets/screen.sass */
+/* line 285, ../../app/stylesheets/screen.sass */
 ul.additional-controls {
   clear: both;
   margin: 0;
@@ -1390,16 +1391,16 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   padding-right: 0px;
 }
 
-/* line 290, ../../app/stylesheets/screen.sass */
+/* line 291, ../../app/stylesheets/screen.sass */
 #content .users {
   clear: both;
 }
-/* line 292, ../../app/stylesheets/screen.sass */
+/* line 293, ../../app/stylesheets/screen.sass */
 #content .users ul {
   clear: both;
   height: 2.25em;
 }
-/* line 295, ../../app/stylesheets/screen.sass */
+/* line 296, ../../app/stylesheets/screen.sass */
 #content .users ul li {
   display: inline;
   float: left;
@@ -1407,52 +1408,52 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   margin-right: 1.695%;
   text-align: center;
 }
-/* line 298, ../../app/stylesheets/screen.sass */
+/* line 299, ../../app/stylesheets/screen.sass */
 #content .users ul li a.control-link, #content .users ul li .ad-gallery a.ad-slideshow-start, .ad-gallery #content .users ul li a.ad-slideshow-start, #content .users ul li .ad-gallery a.ad-slideshow-stop, .ad-gallery #content .users ul li a.ad-slideshow-stop {
   display: block;
   width: 80%;
   height: 80%;
   margin-top: 10%;
 }
-/* line 303, ../../app/stylesheets/screen.sass */
+/* line 304, ../../app/stylesheets/screen.sass */
 #content .users ul li.short {
   display: inline;
   float: left;
   width: 6.78%;
   margin-right: 1.695%;
 }
-/* line 305, ../../app/stylesheets/screen.sass */
+/* line 306, ../../app/stylesheets/screen.sass */
 #content .users ul li.long {
   display: inline;
   float: left;
   width: 23.729%;
   margin-right: 1.695%;
 }
-/* line 307, ../../app/stylesheets/screen.sass */
+/* line 308, ../../app/stylesheets/screen.sass */
 #content .users ul li:last {
   display: inline;
   float: right;
   margin-right: 0;
   #margin-left: -1em;
 }
-/* line 310, ../../app/stylesheets/screen.sass */
+/* line 311, ../../app/stylesheets/screen.sass */
 #content .users .create_user {
   border: 1px solid #1a1a1a;
   background-color: #1a1a1a;
 }
 
-/* line 5, ../../app/stylesheets/partials/_gallery.sass */
+/* line 10, ../../app/stylesheets/partials/_gallery.sass */
 .ad-gallery {
   width: 100%;
   margin: 0;
   padding: 0;
 }
-/* line 9, ../../app/stylesheets/partials/_gallery.sass */
+/* line 14, ../../app/stylesheets/partials/_gallery.sass */
 .ad-gallery div, .ad-gallery p {
   margin: 0;
   padding: 0;
 }
-/* line 12, ../../app/stylesheets/partials/_gallery.sass */
+/* line 17, ../../app/stylesheets/partials/_gallery.sass */
 .ad-gallery .ad-image-wrapper {
   width: 100%;
   height: 27em;
@@ -1460,7 +1461,7 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   position: relative;
   overflow: hidden;
 }
-/* line 18, ../../app/stylesheets/partials/_gallery.sass */
+/* line 23, ../../app/stylesheets/partials/_gallery.sass */
 .ad-gallery .ad-image-wrapper .ad-loader {
   position: absolute;
   z-index: 10;
@@ -1468,7 +1469,7 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   left: 48%;
   border: 1px solid #cccccc;
 }
-/* line 24, ../../app/stylesheets/partials/_gallery.sass */
+/* line 29, ../../app/stylesheets/partials/_gallery.sass */
 .ad-gallery .ad-image-wrapper .ad-next {
   position: absolute;
   right: 0;
@@ -1477,9 +1478,9 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   height: 100%;
   cursor: pointer;
   display: block;
-  z-index: 100;
+  z-index: 10;
 }
-/* line 33, ../../app/stylesheets/partials/_gallery.sass */
+/* line 38, ../../app/stylesheets/partials/_gallery.sass */
 .ad-gallery .ad-image-wrapper .ad-prev {
   position: absolute;
   left: 0;
@@ -1488,14 +1489,7 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   height: 100%;
   cursor: pointer;
   display: block;
-  z-index: 100;
-  /* Or else IE will hide it */
-  /* background: url(non-existing.jpg) */
-}
-/* line 44, ../../app/stylesheets/partials/_gallery.sass */
-.ad-gallery .ad-image-wrapper .ad-next {
-  /* Or else IE will hide it */
-  /* background: url(non-existing.jpg) */
+  z-index: 10;
 }
 /* line 47, ../../app/stylesheets/partials/_gallery.sass */
 .ad-gallery .ad-image-wrapper .ad-prev .ad-prev-image {
@@ -1506,7 +1500,7 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   position: absolute;
   top: 47%;
   left: 0;
-  z-index: 101;
+  z-index: 11;
 }
 /* line 56, ../../app/stylesheets/partials/_gallery.sass */
 .ad-gallery .ad-image-wrapper .ad-next .ad-next-image {
@@ -1517,7 +1511,7 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   position: absolute;
   top: 47%;
   left: 0;
-  z-index: 101;
+  z-index: 11;
   background: url('/images/gallery/ad_next.png?1284913426');
   width: 30px;
   height: 30px;
@@ -1544,7 +1538,7 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   padding: 7px;
   text-align: left;
   width: 100%;
-  z-index: 2;
+  z-index: 10 -2;
   background: url('/images/gallery/opa75.png?1284913426');
   color: black;
 }
@@ -1591,67 +1585,59 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   margin-right: 1em;
   cursor: pointer;
 }
-/* line 117, ../../app/stylesheets/partials/_gallery.sass */
+/* line 118, ../../app/stylesheets/partials/_gallery.sass */
 .ad-gallery .ad-nav {
   clear: both;
   height: 3em;
+  position: relative;
 }
-/* line 121, ../../app/stylesheets/partials/_gallery.sass */
+/* line 123, ../../app/stylesheets/partials/_gallery.sass */
 .ad-gallery .ad-forward, .ad-gallery .ad-back {
+  display: block;
+  cursor: pointer;
   position: absolute;
   top: 0;
   height: 100%;
   z-index: 10;
 }
 
-/* IE 6 doesn't like height: 100% */
-/* line 129, ../../app/stylesheets/partials/_gallery.sass */
-* html .ad-gallery .ad-forward {
-  height: 100px;
-}
-
 /* line 133, ../../app/stylesheets/partials/_gallery.sass */
 .ad-gallery .ad-back {
-  height: 100px;
-  cursor: pointer;
-  left: -20px;
-  width: 13px;
-  display: block;
-  background: url('/images/gallery/ad_scroll_back.png?1284913426') 0px 22px no-repeat;
+  left: -1em;
+  width: 1em;
+  background: url('/images/gallery/ad_scroll_back.png?1284913426') 0px 15px no-repeat;
 }
-/* line 140, ../../app/stylesheets/partials/_gallery.sass */
+/* line 137, ../../app/stylesheets/partials/_gallery.sass */
 .ad-gallery .ad-forward {
-  cursor: pointer;
-  display: block;
-  right: -20px;
-  width: 13px;
-  background: url('/images/gallery/ad_scroll_forward.png?1284913426') 0px 22px no-repeat;
+  right: -1em;
+  width: 1em;
+  background: url('/images/gallery/ad_scroll_forward.png?1284913426') 0px 15px no-repeat;
 }
-/* line 146, ../../app/stylesheets/partials/_gallery.sass */
+/* line 141, ../../app/stylesheets/partials/_gallery.sass */
 .ad-gallery .ad-nav .ad-thumbs {
   clear: both;
   height: 3em;
   overflow: hidden;
 }
-/* line 151, ../../app/stylesheets/partials/_gallery.sass */
+/* line 146, ../../app/stylesheets/partials/_gallery.sass */
 .ad-gallery .ad-thumbs .ad-thumb-list {
   margin-top: 9px;
   margin-left: 1em;
   float: left;
   list-style: none;
 }
-/* line 158, ../../app/stylesheets/partials/_gallery.sass */
+/* line 153, ../../app/stylesheets/partials/_gallery.sass */
 .ad-gallery .ad-thumbs li {
   float: left;
   padding-right: 1em;
 }
-/* line 161, ../../app/stylesheets/partials/_gallery.sass */
+/* line 156, ../../app/stylesheets/partials/_gallery.sass */
 .ad-gallery .ad-thumbs li a {
   display: block;
   overflow: none;
   z-index: 10;
 }
-/* line 165, ../../app/stylesheets/partials/_gallery.sass */
+/* line 160, ../../app/stylesheets/partials/_gallery.sass */
 .ad-gallery .ad-thumbs li a img {
   display: block;
   width: 32px;
@@ -1665,7 +1651,7 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   border-radius: 0.2em;
   z-index: 9;
 }
-/* line 175, ../../app/stylesheets/partials/_gallery.sass */
+/* line 170, ../../app/stylesheets/partials/_gallery.sass */
 .ad-gallery .ad-thumbs li a.ad-active img {
   -moz-box-shadow: #52ad4b 0 0 8px 0;
   -webkit-box-shadow: #52ad4b 0 0 8px 0;
@@ -1674,19 +1660,19 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
 }
 
 /* Can't do display none, since Opera won't load the images then */
-/* line 180, ../../app/stylesheets/partials/_gallery.sass */
+/* line 175, ../../app/stylesheets/partials/_gallery.sass */
 .ad-preloads {
   position: absolute;
   left: -9000px;
   top: -9000px;
 }
 
-/* line 320, ../../app/stylesheets/screen.sass */
+/* line 321, ../../app/stylesheets/screen.sass */
 #gallery .description {
   clear: both;
   margin-bottom: 1.5em;
 }
-/* line 323, ../../app/stylesheets/screen.sass */
+/* line 324, ../../app/stylesheets/screen.sass */
 #gallery .comments {
   clear: both;
   margin-bottom: 1.5em;
@@ -1695,7 +1681,7 @@ ul.additional-controls li:last-child, ul.additional-controls li.last {
   height: 7.5em;
 }
 
-/* line 328, ../../app/stylesheets/screen.sass */
+/* line 329, ../../app/stylesheets/screen.sass */
 .paginate {
   clear: both;
 }

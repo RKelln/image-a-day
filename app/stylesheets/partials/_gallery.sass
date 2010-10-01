@@ -2,6 +2,11 @@ $image-height: 16 !default
 $gallery-path: "gallery/" !default
 $icon-size: 32px !default
 
+$ad-nav-height: 2
+$ad-arrow_offset: 3px + $base-line-height/2
+
+$base-z-index: 10 !default
+
 .ad-gallery
   width: 100%
   margin: 0
@@ -29,7 +34,7 @@ $icon-size: 32px !default
       height: 100%
       cursor: pointer
       display: block
-      z-index: 100
+      z-index: $base-z-index
     .ad-prev
       position: absolute
       left: 0
@@ -38,12 +43,7 @@ $icon-size: 32px !default
       height: 100%
       cursor: pointer
       display: block
-      z-index: 100
-      /* Or else IE will hide it
-      /* background: url(non-existing.jpg)
-    .ad-next
-      /* Or else IE will hide it
-      /* background: url(non-existing.jpg)
+      z-index: $base-z-index
     .ad-prev .ad-prev-image
       background: image_url($gallery-path + "ad_prev.png")
       width: 30px
@@ -52,7 +52,7 @@ $icon-size: 32px !default
       position: absolute
       top: 47%
       left: 0
-      z-index: 101
+      z-index: $base-z-index + 1
     .ad-next .ad-next-image
       background: image_url($gallery-path + "ad_prev.png")
       width: 30px
@@ -61,7 +61,7 @@ $icon-size: 32px !default
       position: absolute
       top: 47%
       left: 0
-      z-index: 101
+      z-index: $base-z-index + 1
       background: image_url($gallery-path + "ad_next.png")
       width: 30px
       height: 30px
@@ -72,7 +72,7 @@ $icon-size: 32px !default
       overflow: hidden
       top: 0
       left: 0
-      z-index: 9
+      z-index: $base-z-index - 1
       a img
         border: 0
       .ad-image-description
@@ -82,7 +82,7 @@ $icon-size: 32px !default
         padding: 7px
         text-align: left
         width: 100%
-        z-index: 2
+        z-index: $base-z-index -2
         background: image_url($gallery-path + "opa75.png")
         color: #000
 
@@ -114,35 +114,30 @@ $icon-size: 32px !default
   .ad-slideshow-running .ad-slideshow-start
     @extend control-link-inactive
 
+
   .ad-nav
     +full($content-cols)
-    +height(2)
+    +height($ad-nav-height)
+    position: relative
 
   .ad-forward, .ad-back
+    display: block
+    cursor: pointer
     position: absolute
     top: 0
     height: 100%
-    z-index: 10
+    z-index: $base-z-index
 
-/* IE 6 doesn't like height: 100%
-
-* html .ad-gallery .ad-forward
-  height: 100px
 
 .ad-gallery
   .ad-back
-    height: 100px
-    cursor: pointer
-    left: -20px
-    width: 13px
-    display: block
-    background: image_url($gallery-path + "ad_scroll_back.png") 0px 22px no-repeat
+    left: -$gutter-width
+    width: $gutter-width
+    background: image_url($gallery-path + "ad_scroll_back.png") 0px $ad-arrow_offset no-repeat
   .ad-forward
-    cursor: pointer
-    display: block
-    right: -20px
-    width: 13px
-    background: image_url($gallery-path + "ad_scroll_forward.png") 0px 22px no-repeat
+    right: -$gutter-width
+    width: $gutter-width
+    background: image_url($gallery-path + "ad_scroll_forward.png") 0px $ad-arrow_offset no-repeat
   .ad-nav .ad-thumbs
     +full($content-cols)
     +height(2)
@@ -161,7 +156,7 @@ $icon-size: 32px !default
       a
         display: block
         overflow: none
-        z-index: 10
+        z-index: $base-z-index
         img
           display: block
           width: $icon-size
@@ -169,7 +164,7 @@ $icon-size: 32px !default
           @extend .control-link
           padding: 0
           +border-radius
-          z-index: 9
+          z-index: $base-z-index - 1
         //&:hover
         //  +box-shadow(complement($link-color), 0, 0, 8px)
         &.ad-active img

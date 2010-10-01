@@ -313,6 +313,7 @@ select, input, textarea {
 
 /* line 40, ../../app/stylesheets/partials/_colors.sass */
 .ad-image-wrapper, .ad-nav, .create_user, #login, #signup {
+  border-color: #1a1a1a;
   background-color: #1a1a1a;
   -moz-border-radius: 0.33em;
   -webkit-border-radius: 0.33em;
@@ -327,7 +328,7 @@ select, input, textarea {
 }
 
 /* line 44, ../../app/stylesheets/partials/_colors.sass */
-.date, .input_prompt, .control-link-inactive, .ad-controls, label, .label, #content > h1, #content > h2, footer {
+.date, .input_prompt, .control-link-inactive, .ad-controls, label, .label, #main > h1, #main > h2, #content > h1, #content > h2, footer {
   color: rgba(204, 204, 204, 0.6);
 }
 

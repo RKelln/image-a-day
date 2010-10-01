@@ -5,8 +5,7 @@
   %body{ :class => "#{controller.controller_name}" }
     .container
       %header#header
-        %h1#title
-          = site_title
+        - site_title_haml
       %section#main
         = render :partial => 'layouts/flashes'
         = yield

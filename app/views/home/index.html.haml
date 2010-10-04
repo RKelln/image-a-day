@@ -34,10 +34,10 @@
 
 - content_for (:javascripts) do
   :javascript
-
+    var galleries = null;
     $(document).ready(function() {
       // init Ad Gallery
-      var galleries = $('.ad-gallery').adGallery({
+      galleries = $('.ad-gallery').adGallery({
          //loader_image: 'loader.gif',
          //start_at_index: 0,
          description_wrapper: $('.description'),

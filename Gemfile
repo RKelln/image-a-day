@@ -14,7 +14,7 @@ gem 'devise'
 gem 'paperclip'
 
 # asset packaging
-#gem 'jammit'
+gem 'jammit'
 
 # pagination
 gem 'will_paginate', '~> 3.0.pre2'

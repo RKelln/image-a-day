@@ -15,7 +15,7 @@ javascript_compressor: yui # (yui, closure)
 javascripts:
 # head scripts are required in the head, all others should be at the end of the page
 # modernizer provides html5 support checking, etc
-# jquery may be referenced by js tha tis in the body, rather than at the end
+# jquery is loaded from google, or in the old rails style if that fails
   head_scripts:
     - public/javascripts/modernizer.js
     
@@ -25,7 +25,7 @@ javascripts:
     - public/javascripts/application.js
     - public/javascripts/jquery.form.js
     - public/javascripts/gallery/jquery.ad-gallery.js
-    - public/javascripts/gallery/jquery.create.js
+#    - public/javascripts/jquery.create.js
 
 stylesheets:
   screen:

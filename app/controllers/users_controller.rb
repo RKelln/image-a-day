@@ -15,24 +15,6 @@ class UsersController < ApplicationController
     respond_with @user
   end
 
-  def create
-    # TODO: real authentication
-    unless current_user.admin?
-      redirect_to :back, :notice => 'User creation failed: you must be an admin'
-    end
-
-    @user = User.new(params[:user])
-
-    # FIXME:default password to be the user email, replace with devise random password?
-    @user.password = @user.email
-
-    if @user.save
-      redirect_to :back, :notice => 'User created'
-    else
-      redirect_to :back, :error => 'User creation failed'
-    end
-  end
-
   def update
     # only allow admins to update other users, but users can update themselves
 

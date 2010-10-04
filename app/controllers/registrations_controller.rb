@@ -1,19 +1,43 @@
+# NOTE: This class exists to let us use some, but not all, of devise :registerable
+# We do not want a public-facing sign_up
+# There is very likely a better way to do this
 class RegistrationsController < ApplicationController
+  prepend_before_filter :authenticate_admin, :only => :create
   prepend_before_filter :authenticate_scope!, :only => [:edit, :update, :destroy]
   include Devise::Controllers::InternalHelpers
   
   layout 'application'
 
   # GET /resource/sign_up
-  # POST /resource/sign_up
   # REMOVED
 
-  # GET /resource/edit
+  # POST /users
+  # NOTE: this used to live in UsersController and was moved because devise :registerable re-routes us
+  def create
+    # TODO: real authentication
+    # authenticate_admin before filter ought to be doing this now
+    #unless current_user.admin?
+    #  redirect_to :back, :notice => 'User creation failed: you must be an admin'
+    #end
+
+    @user = User.new(params[:user])
+
+    # FIXME:default password to be the user email, replace with devise random password?
+    @user.password = @user.email
+
+    if @user.save
+      redirect_to :back, :notice => 'User created'
+    else
+      redirect_to :back, :error => 'User creation failed'
+    end
+  end
+
+  # GET /users/edit
   def edit
     render_with_scope :edit
   end
 
-  # PUT /resource
+  # PUT /users
   def update
     if resource.update_with_password(params[resource_name])
       set_flash_message :notice, :updated
@@ -24,7 +48,7 @@ class RegistrationsController < ApplicationController
     end
   end
 
-  # DELETE /resource
+  # DELETE /users
   def destroy
     resource.destroy
     set_flash_message :notice, :destroyed
@@ -33,6 +57,11 @@ class RegistrationsController < ApplicationController
 
   protected
 
+    def authenticate_admin
+      warden.authenticate!
+      return warden.user.admin
+    end
+  
     # Authenticates the current scope and gets a copy of the current resource.
     # We need to use a copy because we don't want actions like update changing
     # the current user in place.

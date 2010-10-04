@@ -27,7 +27,7 @@ ImageADay::Application.routes.draw do
   
   resources :comments, :only => [:index, :new, :create, :edit, :update, :destroy]
   
-  resources :users, :only => [:index, :show, :new, :create] do
+  resources :users, :only => [:index, :show, :create, :update] do
     resources :images do
         match "date/:year(/:month(/:day))" => :index, :constraints => {:year => /\d{4}/}, :on => :collection
     end

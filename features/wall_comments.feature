@@ -7,8 +7,8 @@ Feature: Wall Comments
         Given I am logged in
 
     Scenario: Comments list
-        Given I have a comment saying "Hello"
-        Given I have a comment saying "I love you"
+        Given there is a comment with the text "Hello"
+        Given there is a comment with the text "I love you"
         When  I go to the home page
         Then  I should see "Hello" within "#wall .comment"
         And   I should see "I love you" within "#wall .comment"

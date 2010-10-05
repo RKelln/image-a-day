@@ -7,10 +7,12 @@ Feature: Administration
         Given I am logged in as an admin
 
     Scenario: Users list
-        Given I have a user "stu@mailinator.com" with nickname "Stu"
-        And   I have a user "ryan@mailinator.com" with nickname "Ryan"
+        Given there is a user with the email "stu@mailinator.com" and the nickname "Stu"
+        And   there is a user with the email "ryan@mailinator.com" and the nickname "Ryan"
         When  I go to the admin page
-        Then  some "user_nickname" field within "#content .users" should contain "Stu"
+        Then  some "user_email" field within "#content .users" should contain "stu@mailinator.com"
+        And   some "user_email" field within "#content .users" should contain "ryan@mailinator.com"
+        And   some "user_nickname" field within "#content .users" should contain "Stu"
         And   some "user_nickname" field within "#content .users" should contain "Ryan"
 
     Scenario: Add a user
@@ -33,6 +35,3 @@ Feature: Administration
         Then  some "user_name" field within "#content .users" should contain "First Last"
         And   some "user_nickname" field within "#content .users" should contain "Nick"
         And   some "user_email" field within "#content .users" should contain "nick@email.com"
-
-#    Scenario: Modify a user
-#        When  I go to the admin page

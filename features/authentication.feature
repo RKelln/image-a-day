@@ -4,7 +4,7 @@ Feature: Authentication
     I want to log in and out
   
     Scenario: Log In
-        Given I have a user "stu@mailinator.com" with nickname "Stu" and password "dnib729"
+        Given there is a user with the email "stu@mailinator.com" and the nickname "Stu" and the password "dnib729"
         When  I go to the home page
         Then  I should see "Log in"
         When  I fill in "Email" with "stu@mailinator.com"

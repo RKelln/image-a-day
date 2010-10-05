@@ -55,6 +55,7 @@ GEM
       term-ansicolor (~> 1.0.4)
     cucumber-rails (0.3.2)
       cucumber (>= 0.8.0)
+    cucumber_factory (1.7.0)
     culerity (0.2.12)
     database_cleaner (0.5.2)
     devise (1.1.2)
@@ -165,6 +166,7 @@ DEPENDENCIES
   compass-susy-plugin
   cucumber
   cucumber-rails
+  cucumber_factory
   database_cleaner
   devise
   factory_girl

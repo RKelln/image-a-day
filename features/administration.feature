@@ -35,3 +35,22 @@ Feature: Administration
         Then  some "user_name" field within "#content .users" should contain "First Last"
         And   some "user_nickname" field within "#content .users" should contain "Nick"
         And   some "user_email" field within "#content .users" should contain "nick@email.com"
+
+    Scenario: Modify a user
+        Given there is a user with the email "stu@mailinator.com" and the nickname "Stu"
+        And   there is a user with the email "ryan@mailinator.com" and the nickname "Ryan"
+        When  I go to the admin page
+        And   I fill in "user_email" with "ryan@gmail.com" for user "Ryan"
+        And   I press "Update" for user "Ryan"
+        Then  some "user_email" field within "#content .users" should contain "ryan@gmail.com"
+        And   no "user_email" field within "#content .users" should contain "ryan@mailinator.com"
+
+    @javascript
+    Scenario: Modify a user
+        Given there is a user with the email "stu@mailinator.com" and the nickname "Stu"
+        And   there is a user with the email "ryan@mailinator.com" and the nickname "Ryan"
+        When  I go to the admin page
+        And   I fill in "user_email" with "ryan@gmail.com" for user "Ryan"
+        And   I press "Update" for user "Ryan"
+        Then  some "user_email" field within "#content .users" should contain "ryan@gmail.com"
+        And   no "user_email" field within "#content .users" should contain "ryan@mailinator.com"

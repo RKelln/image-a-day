@@ -6,7 +6,7 @@ class ImagesController < ApplicationController
   # GET (/user/:user_id)/images/date/:year(/:month(/:day))
   # GET (/user/:user_id)/images?start_date=:start_date&end_date=:end_date
   def index
-    @images = Image.where(params_where).paginate(:page => params[:page]).reverse
+    @images = Image.where(params_where).reverse.paginate(:page => params[:page])
 
     respond_with @images
   end
@@ -113,10 +113,11 @@ class ImagesController < ApplicationController
 
   # massage incoming params into a meaningful index by context
   def params_where(match_params = nil)
-    match_params = params unless match_params
+    match_params = params.dup unless match_params
 
-    match_params.delete 'controller'
-    match_params.delete 'action'
+    match_params.delete(:controller)
+    match_params.delete(:action)
+    match_params.delete(:page)
 
     match_params[:user_id]=current_user.id unless match_params[:user_id]
 

@@ -47,15 +47,20 @@ def import_image(image_file)
         date = Date.new(match_data[:year].to_i,
                         Date::MONTHNAMES.index(match_data[:month]),
                         match_data[:day].to_i)
+        
+        # skip images that already exist in the database
+        return if Image.where(:user_id => user, :date => date).any?
 
         text_file = image_file.sub(/\.[a-z]+$/, '.txt')
-        description = File.open(text_file).read if File.exists?(text_file)
+        description = File.open(text_file).read.delete('\\') if File.exists?(text_file)
+
+        file = File.new(image_file)
         
         image_record = Image.new()
         image_record.user_id = user_id
         image_record.date = date
         image_record.description = description
-        image_record.data = File.new(image_file)
+        image_record.data = file
         
         begin
             if not image_record.save!
@@ -67,6 +72,8 @@ def import_image(image_file)
         rescue Exception => exception
             $log.error "#{image_file} - exception #{exception.class} in image_record.save! '#{exception.to_s}'"
             return image_file # error
+        ensure
+            file.close
         end
     end
 end

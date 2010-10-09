@@ -1,11 +1,16 @@
-%h2= @user.email
-%h3 images
+%h2 
+  = @user.nickname
+  Images
 
 .paginate
   %p
     = will_paginate @images
 
 - @images.each do |image|
+  = render image, :size=>:thumb
+
+
+-# @images.each do |image|
   %p
     = link_to image do
       %img(src="#{image.data.url(:icon)}")

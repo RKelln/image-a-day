@@ -6,7 +6,7 @@ class ImagesController < ApplicationController
   # GET (/user/:user_id)/images/date/:year(/:month(/:day))
   # GET (/user/:user_id)/images?start_date=:start_date&end_date=:end_date
   def index
-    @images = Image.where(params_where).reverse.paginate(:page => params[:page])
+    @images = Image.by_date.where(params_where).paginate(:page => params[:page])
 
     respond_with @images
   end
@@ -46,7 +46,7 @@ class ImagesController < ApplicationController
       respond_with @image
     else
       flash[:error] = "ERROR: You can only have one image per day.  Delete the image you want to replace first."
-      redirect_to :back,
+      redirect_to :back
     end
   end
 

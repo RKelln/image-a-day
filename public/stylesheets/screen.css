@@ -1142,32 +1142,32 @@ body html > body {
 }
 
 /* line 154, ../../app/stylesheets/screen.sass */
-.images h2.date {
+.images h2.date, .users h2.date {
   clear: both;
   margin: 0;
 }
 /* line 157, ../../app/stylesheets/screen.sass */
-.images .image {
+.images .image, .users .image {
   clear: both;
 }
 /* line 159, ../../app/stylesheets/screen.sass */
-.images .image > div {
+.images .image > div, .users .image > div {
   clear: both;
 }
 /* line 161, ../../app/stylesheets/screen.sass */
-.images .image > details {
+.images .image > details, .users .image > details {
   clear: both;
   margin-bottom: 1.5em;
 }
 /* line 166, ../../app/stylesheets/screen.sass */
-.images .image.icon > a, .images .image.thumb > a {
+.images .image.icon > a, .images .image.thumb > a, .users .image.icon > a, .users .image.thumb > a {
   display: inline;
   float: left;
   width: 10.256%;
   margin-right: 2.564%;
 }
 /* line 168, ../../app/stylesheets/screen.sass */
-.images .image.icon > details, .images .image.thumb > details {
+.images .image.icon > details, .images .image.thumb > details, .users .image.icon > details, .users .image.thumb > details {
   display: inline;
   float: left;
   width: 87.179%;

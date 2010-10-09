@@ -24,12 +24,6 @@
                :comment_resource => [image, image.comments.build],
                :name => "image-#{image.id}"})
 
-%ul.additional-controls
-  %li
-    = link_to "My Images", images_path, :class => "control-link"
-  %li
-    = link_to "Everyone", users_path, :class => "control-link"
-
 = render :partial => 'shared/ajax_comments', :locals => {:selector => "#content .comment"}
 
 - content_for (:javascripts) do

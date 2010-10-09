@@ -1,0 +1,14 @@
+%nav#secondary-nav
+  %ul
+    %li.wide
+      = link_to "My Images", images_path
+    %li.wide
+      = link_to "Artist List", users_path
+    %li
+      = link_to "Today", root_path
+    %li
+      = link_to "Week", week_path
+    %li.disabled Month
+    - if current_user.admin?
+      %li
+        = link_to "Admin", admin_path

@@ -38,31 +38,43 @@ body
   +height(2)
   position: relative
   z-index: 100
-  #title
-    +columns(4, $total-cols)
-    +adjust-font-size-to(32px)
-    margin: 0
-    // HACK: align to bottom of nav (and shift in a gutter width)
-    position: relative
-    bottom: -0.2em
-    left: 16px
-  #nav
-    +columns($content-cols, $total-cols)
-    +omega($total-cols)
-    +leader
-    ul
-      +horizontal_list(1em)
-      li
-        width: $col-width
-        text-align: center
-        padding-right: 0
-      #user
-        width: auto
-        float: right
-        text-align: right
-        margin-right: $gutter-width
-        .control-link
-          margin-left: $gutter-width
+
+#title
+  +columns(4, $total-cols)
+  +adjust-font-size-to(32px)
+  margin: 0
+  // HACK: align to bottom of nav (and shift in a gutter width)
+  position: relative
+  bottom: -0.2em
+  left: 16px
+
+#nav
+  +columns($content-cols, $total-cols)
+  +omega($total-cols)
+  +leader
+  ul
+    #user
+      width: auto
+      float: right
+      text-align: right
+      margin-right: $gutter-width
+      .control-link
+        margin-left: $gutter-width
+
+#secondary-nav
+  +full($content-cols)
+  +leader
+
+#nav, #secondary-nav
+  ul
+    +horizontal_list(1em)
+    li
+      width: $col-width
+      text-align: center
+      padding-right: 0
+      &.wide
+        text-align: left
+        width: $col-width * 2
 
 #main
   +full
@@ -113,6 +125,11 @@ body
   i
     +adjust-font-size-to(12px)
 // Comments ///////////////////////////////////////////////////
+
+.comments label
+  position: relative
+  bottom: -0.4em
+  left: 3px
 
 .input_prompt
   margin-bottom: 0
@@ -282,11 +299,6 @@ body.home .weeklist
     +adjust-font-size-to($base-font-size, 2)
     padding: 0.3em 1em
 
-ul.additional-controls
-  +full($content-cols)
-  +horizontal-list
-  +leader
-
 // admin (NOTE: no comments)
 #content .users
   +full($total-cols)
@@ -320,7 +332,8 @@ $image-height: 18
 #gallery
   .description
     +full($content-cols)
-    +trailer
+    +trailer(0.5)
+    +leader(0.5)
   .comments
     +full($content-cols)
     +trailer

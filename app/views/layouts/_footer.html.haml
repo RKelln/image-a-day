@@ -1,5 +1,8 @@
-%small.copyright
-  Copyright &copy; #{Date.today.year} #{link_to "Ryan Kelln", "http://ryankelln.com"} & Stu Zilm.
-%small.license
-  This software is licensed under the #{link_to "GPLv3", "http://www.gnu.org/licenses/gpl-3.0.html"}.
-  The #{link_to "source code", "http://github.com/szilm/image-a-day"} is freely available on #{link_to "Github", "http://github.com"}. 
+- if user_signed_in?
+  = render :partial => 'shared/secondary_nav'
+#disclaimer
+  %small.copyright
+    Copyright &copy; #{Date.today.year} #{link_to "Ryan Kelln", "http://ryankelln.com"} & Stu Zilm.
+  %small.license
+    This software is licensed under the #{link_to "GPLv3", "http://www.gnu.org/licenses/gpl-3.0.html"}.
+    The #{link_to "source code", "http://github.com/szilm/image-a-day"} is freely available on #{link_to "Github", "http://github.com"}. 

@@ -6,9 +6,9 @@
 
 %ul.info
   %li.user<
-    = subject.user.nickname
-  %li.date<
-    (#{time_ago_in_words(subject.created_at)} ago)
+    = link_to subject.user.nickname, subject.user 
+  %li.date(title="#{long_date(subject.date)}")<
+    (#{time_ago_in_words(subject.date)} ago)
   - if current_user.admin? or subject.user_id == current_user.id
     - if delete
       %li.delete<

@@ -9,4 +9,8 @@ class Comment < ActiveRecord::Base
   def to_s
     "Comment[#{id}, #{user_id}]: #{created_at} \"#{text}\""
   end
+  
+  def date
+    created_at
+  end
 end

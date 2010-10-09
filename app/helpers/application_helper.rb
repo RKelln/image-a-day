@@ -38,4 +38,14 @@ module ApplicationHelper
     prepend = prepend.to_s + '_' unless prepend.empty?
     return "#{prepend}#{instance.class.to_s.downcase}_#{instance.id}"
   end
+  
+  # TODO: DRY up with models/image.rb
+  def short_date(date)
+    date.strftime('%b %d')
+  end
+
+  def long_date(date)
+    date.strftime('%d %B %Y')
+  end
+  
 end

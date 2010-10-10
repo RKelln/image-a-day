@@ -22,14 +22,14 @@ class Image < ActiveRecord::Base
 
   def self.week(last_date=nil)
     days = 7
-    last_date ||= Date.current
+    last_date ||= Date.today
     images = where('date <= ?', last_date).by_date.limit(days)
 
     return date_matrix(images, last_date, days)
   end
 
   def self.month(date=nil)
-    date = Date.current unless date
+    date = Date.today unless date
     first_date = Date.new(date.year, date.month)
     last_date = first_date + 1.month - 1.days
     days = ((last_date - first_date) / 86400) + 1 # TODO: is there a ruby way to do this?

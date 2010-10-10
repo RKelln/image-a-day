@@ -109,15 +109,34 @@ body
 #footer
   +full
 
+#about
+  +columns(6, $total-cols)
+  +leader
+
+#special_notice
+  +full(6)
+  +rhythm-borders
+  +trailer
+  p:last-child
+    margin-bottom: 0
+  em
+    font-weight: bold
+    font-style: normal
+
 
 //.Devise /////////////////////////////////////////////////////
 
 #login, #signup
-  +columns(5,12)
-  +prepend(3,12)
+  +columns(5,$total-cols)
   +rhythm-borders
   +leader
   +trailer(2)
+
+#login
+  +omega($total-cols)
+
+#signup
+  +prepend(3,$total-cols)
 
 .registrations #content, .passwords #main
   & > *

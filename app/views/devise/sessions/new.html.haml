@@ -1,3 +1,5 @@
+= render :partial => 'shared/about'
+
 #login
   %h2 Log in
   = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
@@ -14,4 +16,4 @@
         = f.check_box :remember_me
         = f.label :remember_me
     %p= f.submit "Sign in", :class => "control-link"
-  = render :partial => "devise/shared/links"
+  =# render :partial => "devise/shared/links"

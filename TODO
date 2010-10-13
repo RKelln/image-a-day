@@ -21,7 +21,8 @@ last updated: 9 Oct 2010
 * line up and/or tweak "Edit" and "Delete Image" buttons
 * transparent empty image boxes on Week view
 * name, date, etc in details (don't need user for your own, need image date, etc)
-
+* time based pagination for comments and images
+* validation of uploaded images to require an image
 
 == For 0.1 release
 

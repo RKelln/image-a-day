@@ -1,4 +1,4 @@
-- form_for(user, :remote => true, :id => "edit_user_#{user.id}") do |f|
+= form_for(user, :remote => true, :id => "edit_user_#{user.id}") do |f|
   %ul
     %li.short
       = link_to user.id.to_s, user, :class => "control-link"

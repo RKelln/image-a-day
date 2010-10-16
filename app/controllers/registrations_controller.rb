@@ -26,9 +26,11 @@ class RegistrationsController < ApplicationController
     @user.password = @user.email
 
     if @user.save
-      redirect_to :back, :notice => 'User created'
+      flash[:notice] = 'User created'
+      redirect_to :back
     else
-      redirect_to :back, :error => 'User creation failed'
+      flash[:error] = "User creation failed: #{@user.errors}"
+      redirect_to :back
     end
   end
 

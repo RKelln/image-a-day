@@ -16,7 +16,6 @@ last updated: 9 Oct 2010
 * password reset on admin page
   * forgot password functionality accessible and working
 
-
 == For 0.1.1 release
 
 * Month view to display a month of images for the current user
@@ -27,7 +26,7 @@ last updated: 9 Oct 2010
 * paginate through time
   * wall comments
   * week, month views
-
+* validation of uploaded images to require an image
 
 == Wishlist
 

@@ -13,8 +13,7 @@ class Image < ActiveRecord::Base
   scope :today, where(:date => Time.now)
   scope :yesterday, where(:date => 1.day.ago)
   scope :by_date, order(:date).reverse_order # backwards through time by default
-  scope :latest, by_date.limit(1) # can't use .first() here
-  
+  scope :latest, by_date.where("date <= ?", Time.zone.now).limit(1) # can't use .first() here
 
   def to_s
     "Image: #{user.nickname} [#{date}]: #{data_file_name}"

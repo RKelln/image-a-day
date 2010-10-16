@@ -52,18 +52,9 @@ body
   +columns($content-cols, $total-cols)
   +omega($total-cols)
   +leader
-  ul
-    #user
-      width: auto
-      float: right
-      text-align: right
-      margin-right: $gutter-width
-      .control-link
-        margin-left: $gutter-width
 
 #secondary-nav
   +full($content-cols)
-  +leader
 
 #nav, #secondary-nav
   ul
@@ -75,9 +66,18 @@ body
       &.wide
         text-align: left
         width: $col-width * 2
+    #user
+      width: auto
+      float: right
+      text-align: right
+      margin-right: $gutter-width
+      .control-link
+        margin-left: $gutter-width
 
 #main
   +full
+  +clearfix
+  //overflow: visible
   #flash
     // FIXME: evil hack to get flash the right size
     width: 97%
@@ -107,7 +107,9 @@ body
       +height(2)
 
 #footer
-  +full
+  +full($total-cols)
+  +leader
+  +alpha
 
 #about
   +columns(6, $total-cols)
@@ -223,8 +225,44 @@ body
   position: relative
   z-index: 1
 
+
+// Home controller ///////////////////////////////////////////
+
+.notices
+  text-align: center
+  a
+    +adjust-font-size-to($base-font-size, 2)
+    padding: 0.3em 1em
+
+// admin (NOTE: no comments)
+#content .users
+  +full($total-cols)
+  ul
+    +full($total-cols)
+    +height(1.5)
+    li
+      +columns(2, $total-cols)
+      text-align: center
+      a.control-link
+        display: block
+        width: 80%
+        height: 80%
+        margin-top: 10%
+      &.short
+        +columns(1, $total-cols)
+      &.long
+        +columns(3, $total-cols)
+      &:last
+        +omega($total-cols)
+
+  .create_user
+    border: 1px solid $border-color
+    background-color: $border-color
+
+// Week ------------------------------------------------------
+
 .week
-  +full($content-cols)
+  +columns($content-cols, $content-cols)
   position: relative
   z-index: auto
   .label
@@ -232,32 +270,37 @@ body
     +adjust-font-size-to(30px)
     position: absolute
     top: -0.85em
-    left: -$gutter-width * ($base-font-size / 30px)
+    //left: -$gutter-width * ($base-font-size / 30px)
     // underneath .image-list
     z-index: -1
 
 
 // handle week view differntly in different locations
-body.home .week
+body.home .user.week
   opacity: 0.6
   &:hover
     opacity: 1
 
-body.home .weeklist 
+body.home .weeklist
   +leader
   .week
     margin-top: ($base-line-height/2)*$px2em
     top: 0
     opacity: 1
 
+body.home .month
+  .week
+    margin-top: ($base-line-height/2)*$px2em
+
 .image-list
-  +full($content-cols)
+  +columns($content-cols - 1, $content-cols)
   +height(3)
   +horizontal-list($gutter-width / 2)
+  margin-left: ($col-width + $gutter-width) / 2
   overflow: visible
   //position: relative
   //z-index: 20
-  
+
   li
     // override horizontal-list white-space: no-wrap
     white-space: inherit
@@ -303,46 +346,23 @@ body.home .weeklist
   textarea
     min-width: 23em
 
-  
+
 .image.thumb:hover > .pop-up
   margin-left: 0
 
 .pop-up:hover
   margin-left: -30px
 
-// Home controller ///////////////////////////////////////////
+// Month ----------------------------------------------------------
 
-.notices
-  text-align: center
-  a
-    +adjust-font-size-to($base-font-size, 2)
-    padding: 0.3em 1em
+.month
 
-// admin (NOTE: no comments)
-#content .users
-  +full($total-cols)
-  ul
-    +full($total-cols)
-    +height(1.5)
-    li
-      +columns(2, $total-cols)
-      text-align: center
-      a.control-link
-        display: block
-        width: 80%
-        height: 80%
-        margin-top: 10%
-      &.short
-        +columns(1, $total-cols)
-      &.long
-        +columns(3, $total-cols)
-      &:last
-        +omega($total-cols)
-
-  .create_user
-    border: 1px solid $border-color
-    background-color: $border-color
-
+  .test
+    float: left
+    width: 62px
+    height: 62px
+    border: 1px solid white
+    margin-right: 10px
 
 // Other modules --------------------------------------------------
 $image-height: 18

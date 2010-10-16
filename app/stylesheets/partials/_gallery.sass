@@ -116,8 +116,10 @@ $base-z-index: 10 !default
 
 
   .ad-nav
-    +full($content-cols)
+    //+full($content-cols)
+    +columns($content-cols - 1, $content-cols)
     +height($ad-nav-height)
+    margin-left: ($col-width + $gutter_width) / 2 
     position: relative
 
   .ad-forward, .ad-back

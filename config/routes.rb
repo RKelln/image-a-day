@@ -6,7 +6,7 @@ ImageADay::Application.routes.draw do
   get 'home/index'
   
   match 'week' => 'home#week'
-
+  match 'month' => 'home#month'
   match 'admin' => 'home#admin'
 
   resources :images, :only => [:index, :show, :new, :create, :destroy, :edit, :update] do

@@ -1,0 +1,18 @@
+%li
+  = link_to "Today", root_path
+%li
+  = link_to "Week", week_path
+%li
+  = link_to "Month", month_path
+- if current_user.admin?
+  %li
+    = link_to "Admin", admin_path
+%li#user
+  - if user_signed_in?
+    Signed in as
+    %b= link_to current_user.nickname, edit_user_registration_path
+    = link_to "Sign out", destroy_user_session_path, :class => "control-link"
+  -else
+    /= link_to "Sign up", new_user_registration_path, :class => "control-link"
+    /or
+    = link_to "Sign in", new_user_session_path, :class => "control-link"

@@ -13,30 +13,35 @@ class Image < ActiveRecord::Base
   scope :today, where(:date => Time.now)
   scope :yesterday, where(:date => 1.day.ago)
   scope :by_date, order(:date).reverse_order # backwards through time by default
-  scope :latest, by_date.limit(1) # can't use .first() here
-  
+  scope :latest, by_date.where("date <= ?", Time.zone.now).limit(1) # can't use .first() here
 
   def to_s
     "Image: #{user.nickname} [#{date}]: #{data_file_name}"
   end
 
+  # accepts a specific date, in which case it will return a weeks wroth of images leading up to
+  # ad including that date. Also accepts a range that is a week long
   def self.week(last_date=nil)
-    days = 7
-    last_date ||= Date.today
-    images = where('date <= ?', last_date).by_date.limit(days)
+    if last_date.is_a? Range
+      range = last_date
+    else
+      last_date ||= Date.today
+      range = (last_date - 6.days)..last_date
+    end
 
-    return date_matrix(images, last_date, days)
+    images = where(:date => range).by_date
+
+    return date_matrix(images, range)
   end
 
   def self.month(date=nil)
     date = Date.today unless date
     first_date = Date.new(date.year, date.month)
     last_date = first_date + 1.month - 1.days
-    days = ((last_date - first_date) / 86400) + 1 # TODO: is there a ruby way to do this?
 
     images = where(:date => first_date..last_date)
 
-    return date_matrix(images, last_date, days)
+    return date_matrix(images, first_date..last_date)
   end
 
   # NOTE: named scope here doesn't work, define a class method instead
@@ -75,17 +80,16 @@ class Image < ActiveRecord::Base
 
   private
 
-  def self.date_matrix(images, last_date, days)
+  def self.date_matrix(images, date_range)
     matrix = []
-    (0..days).each do |d|
-      date = last_date - d.days
-      matrix[d] = images.where(:date => date).take(1)
-      if matrix[d].empty?
-        matrix[d] = AbsentImage.new(date.to_s)
+    date_range.each_with_index do |day, i|
+      matrix[i] = images.where(:date => day).take(1)
+      if matrix[i].empty?
+        matrix[i] = AbsentImage.new(day.to_s)
       else
-        matrix[d] = matrix[d].first #remove from array
+        matrix[i] = matrix[i].first #remove from array
       end
     end
-    return matrix.reverse # oldest to newest
+    return matrix
   end
 end

@@ -14,8 +14,8 @@ class User < ActiveRecord::Base
 
   has_many :images
 
-  def weekly_images
-    Image.where({:user_id =>id}).week
+  def weekly_images(date=nil)
+    Image.where({:user_id =>id}).week(date)
   end
 
   scope :only_active, where(:active => true)

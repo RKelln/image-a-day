@@ -1,10 +1,14 @@
 - content_for(:comment_notices) do
   = link_to "Upload today's image", upload_path, :class => "control-link"
 
+.controls
+  = link_to "Previous", week_path(:end_date=>@date - 7.days)
+  = link_to "Next", week_path(:end_date=>@date + 7.days) unless @date + 7.days >= Date.today
+
 .weeklist
   = render('weekly',
     :label => @user.nickname,
-    :images => @user.weekly_images,
+    :images => @user.weekly_images(@date),
     :classes => "user")
   - for week in @weekly_images
     = render 'weekly', :label => week[:user].nickname, :images => week[:images]

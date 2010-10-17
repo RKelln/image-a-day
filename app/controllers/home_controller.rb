@@ -12,13 +12,18 @@ class HomeController < ApplicationController
   end
 
   def week
+    if params[:end_date]
+        @date = Date.parse(params[:end_date])
+    else
+        @date = Date.today
+    end
     @user = current_user
 
     # TODO: only active users
     @weekly_images = Array.new
     for user in User.only_active
       if user != @user
-        @weekly_images << {:user => user, :images => user.weekly_images}
+        @weekly_images << {:user => user, :images => user.weekly_images(@date)}
       end
     end
     # TODO: sort by relationship / priority / user ordering

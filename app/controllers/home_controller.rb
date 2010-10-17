@@ -41,7 +41,15 @@ class HomeController < ApplicationController
     # previous and next months that would show on the same month calendar
 
     # find all the weeks in the month and then get the weekly images for each week
-    date = Date.new(params[:year], params[:month]) if params[:month] and params[:year]
+    if params[:month] and params[:year]
+      date = Date.new(params[:year].to_i, params[:month].to_i) # NOTE: Date.new fails on string parameters
+      @next_date = date + 1.month
+      @next_date = nil if @next_date > Date.today
+    else
+      date = Date.today
+    end
+    @prev_date = date - 1.month
+    
     @weeks = Array.new
     for week in weeks_in_month(date)
       @weeks << Image.where(:user_id => current_user).week(week)

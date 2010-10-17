@@ -1,6 +1,10 @@
 - content_for(:comment_notices) do
   = link_to "Upload today's image", upload_path, :class => "control-link"
 
+.controls
+  = link_to "Previous", month_path(:year=>@prev_date.year, :month=>@prev_date.month)
+  = link_to "Next", month_path(:year=>@next_date.year, :month=>@next_date.month) if @next_date
+
 .month.user
   %h2
     MONTH VIEW

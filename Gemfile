@@ -54,4 +54,5 @@ group :test do
   gem 'cucumber_factory'
 #  gem 'spork'
   gem 'launchy'    # So you can do Then show me the page
+  gem 'timecop'
 end

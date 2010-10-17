@@ -14,9 +14,15 @@ class HomeController < ApplicationController
   def week
     if params[:end_date]
         @date = Date.parse(params[:end_date])
+        if @date < Date.today
+            @next_date = @date + 7.days
+            @next_date = Date.today if @next_date > Date.today
+        end
     else
         @date = Date.today
     end
+    @prev_date = @date - 7.days
+    
     @user = current_user
     @weekly_images = Array.new
     for user in User.only_active

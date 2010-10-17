@@ -2,8 +2,8 @@
   = link_to "Upload today's image", upload_path, :class => "control-link"
 
 .controls
-  = link_to "Previous", week_path(:end_date=>@date - 7.days)
-  = link_to "Next", week_path(:end_date=>@date + 7.days) unless @date + 7.days >= Date.today
+  = link_to "Previous", week_path(:end_date=>@prev_date)
+  = link_to "Next", week_path(:end_date=>@next_date) if @next_date
 
 .weeklist
   = render('weekly',

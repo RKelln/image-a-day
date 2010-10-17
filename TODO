@@ -3,30 +3,31 @@ last updated: 9 Oct 2010
 
 == For 0.2 release
 
-* Month view to display a month of images for the current user
-* easy navigation through time in week and month views
 * user page with useful info
 * set bed time / next day time per user and make editable
-
-
-== For 0.1.1 release
-
 * check file size upload limits
 * force password change on 1st login
 * BUG: css pop-up hoving issues
   * add js to make it stay longer even if mouse leaves temporarily?
 * BUG: broken image link - is this a real bug?
 * disabled button style
-* font for paginate text and other numbers
-* line up and/or tweak "Edit" and "Delete Image" buttons
 * transparent empty image boxes on Week view
 * name, date, etc in details (don't need user for your own, need image date, etc)
-* time based pagination for comments and images
+* password reset on admin page
+  * forgot password functionality accessible and working
+
+
+== For 0.1.1 release
+
+* Month view to display a month of images for the current user
+* easy navigation through time in week and month views
+* font for paginate text and other numbers
+* line up and/or tweak "Edit" and "Delete Image" buttons
+* image description details formatting and location?
+* paginate through time
+  * wall comments
+  * week, month views
 * validation of uploaded images to require an image
-
-== For 0.1 release
-
-
 
 == Wishlist
 

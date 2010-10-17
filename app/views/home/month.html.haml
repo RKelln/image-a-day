@@ -1,0 +1,9 @@
+- content_for(:comment_notices) do
+  = link_to "Upload today's image", upload_path, :class => "control-link"
+
+.month.user
+  %h2
+    MONTH VIEW
+    
+  - for week in @weeks
+    = render 'weekly', :images => week

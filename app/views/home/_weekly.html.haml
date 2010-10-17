@@ -11,10 +11,3 @@
           = render 'images/absent', :absent_image => image
         - else
           = render image, :size => :thumb, :details => false
-
-- content_for (:javascripts) do
-  :javascript
-    // details of images are hidden until rollover
-    $(document).ready(function() {
-      //$(".week details").hide();
-    });

@@ -29,6 +29,7 @@ $comments-cols: 4
 $default-border-radius: 0.2em
 $icon-size: 32px
 $thumb-size: 64px
+$half-col-width: ($col-width + $gutter-width) / 2
 
 body
   +susy
@@ -77,6 +78,7 @@ body
 #main
   +full
   +clearfix
+  min-height: 650px
   //overflow: visible
   #flash
     // FIXME: evil hack to get flash the right size
@@ -259,6 +261,24 @@ body
     border: 1px solid $border-color
     background-color: $border-color
 
+.time.controls
+  +full($content-cols)
+  +leader(0.5)
+  +trailer(0.5)
+  +pad(0.5, 0.5, $content-cols)
+  a
+    margin: auto
+  #prev, #next
+    +columns(1, $content-cols)
+  .date
+    +columns(6, $content-cols)
+    text-align: center
+  h3
+    margin: 0
+  #next
+    +omega($content-cols)
+    text-align: right
+
 // Week ------------------------------------------------------
 
 .week
@@ -282,7 +302,7 @@ body.home .user.week
     opacity: 1
 
 body.home .weeklist
-  +leader
+  //+leader
   .week
     margin-top: ($base-line-height/2)*$px2em
     top: 0
@@ -296,7 +316,7 @@ body.home .month
   +columns($content-cols - 1, $content-cols)
   +height(3)
   +horizontal-list($gutter-width / 2)
-  margin-left: ($col-width + $gutter-width) / 2
+  margin-left: $half-col-width
   overflow: visible
   //position: relative
   //z-index: 20
@@ -339,6 +359,7 @@ body.home .month
   z-index: 50
   min-width: 12em
   max-width: 23em
+  max-height: 23em
   padding: (($base-line-height / 2) - 1px) * $px2em
   border: 1px solid
   +border-radius(1em)
@@ -357,12 +378,6 @@ body.home .month
 
 .month
 
-  .test
-    float: left
-    width: 62px
-    height: 62px
-    border: 1px solid white
-    margin-right: 10px
 
 // Other modules --------------------------------------------------
 $image-height: 18

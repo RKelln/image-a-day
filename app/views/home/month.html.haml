@@ -1,13 +1,12 @@
 - content_for(:comment_notices) do
   = link_to "Upload today's image", upload_path, :class => "control-link"
 
-.controls
-  = link_to "Previous", month_path(:year=>@prev_date.year, :month=>@prev_date.month)
-  = link_to "Next", month_path(:year=>@next_date.year, :month=>@next_date.month) if @next_date
+= render('shared/time_controls',
+  :description => "month",
+  :title => "#{@current_month} | #{current_user.nickname}",
+  :prev_link => @prev_date ? month_path(:year=>@prev_date.year, :month=>@prev_date.month) : nil,
+  :next_link => @next_date ? month_path(:year=>@next_date.year, :month=>@next_date.month) : nil)
 
 .month.user
-  %h2
-    MONTH VIEW
-    
   - for week in @weeks
     = render 'weekly', :images => week

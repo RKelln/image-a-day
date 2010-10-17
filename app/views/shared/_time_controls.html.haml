@@ -1,0 +1,10 @@
+- description ||= ""
+.time.controls
+  #prev
+    = link_to("← Prev", prev_link, :class => "control-link") if prev_link
+  .date
+    - if title
+      %h3
+        = title
+  #next
+    = link_to("Next →", next_link, :class => "control-link") if next_link

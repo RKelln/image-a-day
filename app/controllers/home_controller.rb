@@ -15,13 +15,13 @@ class HomeController < ApplicationController
     if params[:end_date]
         @date = Date.parse(params[:end_date])
         if @date < Date.today
-            @next_date = @date + 7.days
+            @next_date = @date + 1.week
             @next_date = Date.today if @next_date > Date.today
         end
     else
         @date = Date.today
     end
-    @prev_date = @date - 7.days
+    @prev_date = @date - 1.week
     
     @user = current_user
     @weekly_images = Array.new
@@ -49,6 +49,7 @@ class HomeController < ApplicationController
       date = Date.today
     end
     @prev_date = date - 1.month
+    @current_month = date.strftime('%B %Y')
     
     @weeks = Array.new
     for week in weeks_in_month(date)

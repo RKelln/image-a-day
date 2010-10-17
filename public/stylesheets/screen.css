@@ -873,7 +873,7 @@ body html > body {
   font-size: 16px;
 }
 
-/* line 36, ../../app/stylesheets/screen.sass */
+/* line 37, ../../app/stylesheets/screen.sass */
 #header {
   clear: both;
   height: 3em;
@@ -881,7 +881,7 @@ body html > body {
   z-index: 100;
 }
 
-/* line 42, ../../app/stylesheets/screen.sass */
+/* line 43, ../../app/stylesheets/screen.sass */
 #title {
   display: inline;
   float: left;
@@ -895,7 +895,7 @@ body html > body {
   left: 16px;
 }
 
-/* line 51, ../../app/stylesheets/screen.sass */
+/* line 52, ../../app/stylesheets/screen.sass */
 #nav {
   display: inline;
   float: left;
@@ -908,12 +908,12 @@ body html > body {
   margin-top: 1.5em;
 }
 
-/* line 56, ../../app/stylesheets/screen.sass */
+/* line 57, ../../app/stylesheets/screen.sass */
 #secondary-nav {
   clear: both;
 }
 
-/* line 60, ../../app/stylesheets/screen.sass */
+/* line 61, ../../app/stylesheets/screen.sass */
 #nav ul, #secondary-nav ul {
   margin: 0;
   padding: 0;
@@ -941,44 +941,45 @@ body html > body {
 #nav ul li:last-child, #nav ul li.last, #secondary-nav ul li:last-child, #secondary-nav ul li.last {
   padding-right: 0px;
 }
-/* line 62, ../../app/stylesheets/screen.sass */
+/* line 63, ../../app/stylesheets/screen.sass */
 #nav ul li, #secondary-nav ul li {
   width: 4em;
   text-align: center;
   padding-right: 0;
 }
-/* line 66, ../../app/stylesheets/screen.sass */
+/* line 67, ../../app/stylesheets/screen.sass */
 #nav ul li.wide, #secondary-nav ul li.wide {
   text-align: left;
   width: 8em;
 }
-/* line 69, ../../app/stylesheets/screen.sass */
+/* line 70, ../../app/stylesheets/screen.sass */
 #nav ul #user, #secondary-nav ul #user {
   width: auto;
   float: right;
   text-align: right;
   margin-right: 1em;
 }
-/* line 74, ../../app/stylesheets/screen.sass */
+/* line 75, ../../app/stylesheets/screen.sass */
 #nav ul #user .control-link, #nav ul #user .ad-gallery .ad-slideshow-start, .ad-gallery #nav ul #user .ad-slideshow-start, #nav ul #user .ad-gallery .ad-slideshow-stop, .ad-gallery #nav ul #user .ad-slideshow-stop, #nav ul #user .ad-gallery .ad-thumbs li a img, .ad-gallery .ad-thumbs li a #nav ul #user img, #secondary-nav ul #user .control-link, #secondary-nav ul #user .ad-gallery .ad-slideshow-start, .ad-gallery #secondary-nav ul #user .ad-slideshow-start, #secondary-nav ul #user .ad-gallery .ad-slideshow-stop, .ad-gallery #secondary-nav ul #user .ad-slideshow-stop, #secondary-nav ul #user .ad-gallery .ad-thumbs li a img, .ad-gallery .ad-thumbs li a #secondary-nav ul #user img {
   margin-left: 1em;
 }
 
-/* line 77, ../../app/stylesheets/screen.sass */
+/* line 78, ../../app/stylesheets/screen.sass */
 #main {
   clear: both;
   margin-right: 1.639%;
   margin-left: 1.639%;
   overflow: hidden;
   *zoom: 1;
+  min-height: 650px;
 }
-/* line 81, ../../app/stylesheets/screen.sass */
+/* line 83, ../../app/stylesheets/screen.sass */
 #main #flash {
   width: 97%;
   position: absolute;
   z-index: 90;
 }
-/* line 86, ../../app/stylesheets/screen.sass */
+/* line 88, ../../app/stylesheets/screen.sass */
 #main #flash div {
   -moz-border-radius: 0.2em;
   -webkit-border-radius: 0.2em;
@@ -989,16 +990,16 @@ body html > body {
   padding-left: 1em;
   padding-right: 1em;
 }
-/* line 90, ../../app/stylesheets/screen.sass */
+/* line 92, ../../app/stylesheets/screen.sass */
 #main #flash p {
   text-align: center;
   margin: 0;
 }
-/* line 93, ../../app/stylesheets/screen.sass */
+/* line 95, ../../app/stylesheets/screen.sass */
 #main #content {
   clear: both;
 }
-/* line 96, ../../app/stylesheets/screen.sass */
+/* line 98, ../../app/stylesheets/screen.sass */
 #main #content .full {
   display: inline;
   float: left;
@@ -1006,21 +1007,21 @@ body html > body {
   margin-right: 1.695%;
   margin-bottom: 1.5em;
 }
-/* line 99, ../../app/stylesheets/screen.sass */
+/* line 101, ../../app/stylesheets/screen.sass */
 #main #content.with-comments {
   display: inline;
   float: left;
   width: 66.102%;
   margin-right: 1.695%;
 }
-/* line 101, ../../app/stylesheets/screen.sass */
+/* line 103, ../../app/stylesheets/screen.sass */
 #main #content.with-comments .full {
   display: inline;
   float: left;
   width: 100%;
   margin-right: 2.564%;
 }
-/* line 103, ../../app/stylesheets/screen.sass */
+/* line 105, ../../app/stylesheets/screen.sass */
 #main #wall {
   display: inline;
   float: left;
@@ -1031,19 +1032,19 @@ body html > body {
   margin-right: 0;
   #margin-left: -1em;
 }
-/* line 106, ../../app/stylesheets/screen.sass */
+/* line 108, ../../app/stylesheets/screen.sass */
 #main #wall .notices {
   height: 3em;
 }
 
-/* line 109, ../../app/stylesheets/screen.sass */
+/* line 111, ../../app/stylesheets/screen.sass */
 #footer {
   clear: both;
   margin-top: 1.5em;
   margin-left: 1.639%;
 }
 
-/* line 114, ../../app/stylesheets/screen.sass */
+/* line 116, ../../app/stylesheets/screen.sass */
 #about {
   display: inline;
   float: left;
@@ -1052,7 +1053,7 @@ body html > body {
   margin-top: 1.5em;
 }
 
-/* line 118, ../../app/stylesheets/screen.sass */
+/* line 120, ../../app/stylesheets/screen.sass */
 #special_notice {
   clear: both;
   border-style: solid;
@@ -1060,17 +1061,17 @@ body html > body {
   padding: 1.438em;
   margin-bottom: 1.5em;
 }
-/* line 122, ../../app/stylesheets/screen.sass */
+/* line 124, ../../app/stylesheets/screen.sass */
 #special_notice p:last-child {
   margin-bottom: 0;
 }
-/* line 124, ../../app/stylesheets/screen.sass */
+/* line 126, ../../app/stylesheets/screen.sass */
 #special_notice em {
   font-weight: bold;
   font-style: normal;
 }
 
-/* line 131, ../../app/stylesheets/screen.sass */
+/* line 133, ../../app/stylesheets/screen.sass */
 #login, #signup {
   display: inline;
   float: left;
@@ -1083,7 +1084,7 @@ body html > body {
   margin-bottom: 3em;
 }
 
-/* line 137, ../../app/stylesheets/screen.sass */
+/* line 139, ../../app/stylesheets/screen.sass */
 #login {
   display: inline;
   float: right;
@@ -1091,47 +1092,47 @@ body html > body {
   #margin-left: -1em;
 }
 
-/* line 140, ../../app/stylesheets/screen.sass */
+/* line 142, ../../app/stylesheets/screen.sass */
 #signup {
   margin-left: 25.424%;
 }
 
-/* line 144, ../../app/stylesheets/screen.sass */
+/* line 146, ../../app/stylesheets/screen.sass */
 .registrations #content > *, .passwords #main > * {
   display: inline;
   float: left;
   width: 49.153%;
   margin-right: 1.695%;
 }
-/* line 146, ../../app/stylesheets/screen.sass */
+/* line 148, ../../app/stylesheets/screen.sass */
 .registrations #content i, .passwords #main i {
   font-size: 0.75em;
   line-height: 2em;
 }
 
-/* line 150, ../../app/stylesheets/screen.sass */
+/* line 152, ../../app/stylesheets/screen.sass */
 .comments label {
   position: relative;
   bottom: -0.4em;
   left: 3px;
 }
 
-/* line 155, ../../app/stylesheets/screen.sass */
+/* line 157, ../../app/stylesheets/screen.sass */
 .input_prompt {
   margin-bottom: 0;
 }
 
-/* line 158, ../../app/stylesheets/screen.sass */
+/* line 160, ../../app/stylesheets/screen.sass */
 .new_comment {
   clear: both;
 }
-/* line 160, ../../app/stylesheets/screen.sass */
+/* line 162, ../../app/stylesheets/screen.sass */
 .new_comment .controls {
   clear: both;
   margin-bottom: 1.5em;
   text-align: right;
 }
-/* line 164, ../../app/stylesheets/screen.sass */
+/* line 166, ../../app/stylesheets/screen.sass */
 .new_comment input {
   font-size: 0.75em;
   line-height: 2em;
@@ -1141,20 +1142,20 @@ body html > body {
   box-sizing: border-box;
 }
 
-/* line 168, ../../app/stylesheets/screen.sass */
+/* line 170, ../../app/stylesheets/screen.sass */
 .comment, summary {
   clear: both;
   border-bottom-style: solid;
   border-bottom-width: 0.063em;
   padding-bottom: -0.063em;
 }
-/* line 171, ../../app/stylesheets/screen.sass */
+/* line 173, ../../app/stylesheets/screen.sass */
 .comment p, summary p {
   clear: both;
   margin-bottom: 0em;
   padding-left: 1em;
 }
-/* line 175, ../../app/stylesheets/screen.sass */
+/* line 177, ../../app/stylesheets/screen.sass */
 .comment .info, summary .info {
   clear: both;
   margin: 0;
@@ -1185,49 +1186,49 @@ body html > body {
 .comment .info li:last-child, .comment .info li.last, summary .info li:last-child, summary .info li.last {
   padding-right: 0px;
 }
-/* line 180, ../../app/stylesheets/screen.sass */
+/* line 182, ../../app/stylesheets/screen.sass */
 .comment .info .user, summary .info .user {
   font-weight: bold;
 }
-/* line 182, ../../app/stylesheets/screen.sass */
+/* line 184, ../../app/stylesheets/screen.sass */
 .comment .info .date, summary .info .date {
   font-style: italic;
 }
-/* line 184, ../../app/stylesheets/screen.sass */
+/* line 186, ../../app/stylesheets/screen.sass */
 .comment .info .edit, .comment .info .delete, summary .info .edit, summary .info .delete {
   float: right;
 }
-/* line 186, ../../app/stylesheets/screen.sass */
+/* line 188, ../../app/stylesheets/screen.sass */
 .comment .info .edit, summary .info .edit {
   margin-right: 0.5em;
 }
 
-/* line 192, ../../app/stylesheets/screen.sass */
+/* line 194, ../../app/stylesheets/screen.sass */
 .images h2.date, .users h2.date {
   clear: both;
   margin: 0;
 }
-/* line 195, ../../app/stylesheets/screen.sass */
+/* line 197, ../../app/stylesheets/screen.sass */
 .images .image, .users .image {
   clear: both;
 }
-/* line 197, ../../app/stylesheets/screen.sass */
+/* line 199, ../../app/stylesheets/screen.sass */
 .images .image > div, .users .image > div {
   clear: both;
 }
-/* line 199, ../../app/stylesheets/screen.sass */
+/* line 201, ../../app/stylesheets/screen.sass */
 .images .image > details, .users .image > details {
   clear: both;
   margin-bottom: 1.5em;
 }
-/* line 204, ../../app/stylesheets/screen.sass */
+/* line 206, ../../app/stylesheets/screen.sass */
 .images .image.icon > a, .images .image.thumb > a, .users .image.icon > a, .users .image.thumb > a {
   display: inline;
   float: left;
   width: 10.256%;
   margin-right: 2.564%;
 }
-/* line 206, ../../app/stylesheets/screen.sass */
+/* line 208, ../../app/stylesheets/screen.sass */
 .images .image.icon > details, .images .image.thumb > details, .users .image.icon > details, .users .image.thumb > details {
   display: inline;
   float: left;
@@ -1240,18 +1241,18 @@ body html > body {
   clear: none;
 }
 
-/* line 211, ../../app/stylesheets/screen.sass */
+/* line 213, ../../app/stylesheets/screen.sass */
 .image details a[data-method=delete] {
   float: right;
 }
 
-/* line 214, ../../app/stylesheets/screen.sass */
+/* line 216, ../../app/stylesheets/screen.sass */
 .image.icon img {
   width: 2em;
   height: 2em;
 }
 
-/* line 217, ../../app/stylesheets/screen.sass */
+/* line 219, ../../app/stylesheets/screen.sass */
 .image.thumb img {
   max-width: 4em;
   max-height: 4em;
@@ -1260,33 +1261,33 @@ body html > body {
   margin-right: auto;
 }
 
-/* line 224, ../../app/stylesheets/screen.sass */
+/* line 226, ../../app/stylesheets/screen.sass */
 .container {
   position: relative;
   z-index: 1;
 }
 
-/* line 231, ../../app/stylesheets/screen.sass */
+/* line 233, ../../app/stylesheets/screen.sass */
 .notices {
   text-align: center;
 }
-/* line 233, ../../app/stylesheets/screen.sass */
+/* line 235, ../../app/stylesheets/screen.sass */
 .notices a {
   font-size: 1em;
   line-height: 3em;
   padding: 0.3em 1em;
 }
 
-/* line 238, ../../app/stylesheets/screen.sass */
+/* line 240, ../../app/stylesheets/screen.sass */
 #content .users {
   clear: both;
 }
-/* line 240, ../../app/stylesheets/screen.sass */
+/* line 242, ../../app/stylesheets/screen.sass */
 #content .users ul {
   clear: both;
   height: 2.25em;
 }
-/* line 243, ../../app/stylesheets/screen.sass */
+/* line 245, ../../app/stylesheets/screen.sass */
 #content .users ul li {
   display: inline;
   float: left;
@@ -1294,41 +1295,81 @@ body html > body {
   margin-right: 1.695%;
   text-align: center;
 }
-/* line 246, ../../app/stylesheets/screen.sass */
+/* line 248, ../../app/stylesheets/screen.sass */
 #content .users ul li a.control-link, #content .users ul li .ad-gallery a.ad-slideshow-start, .ad-gallery #content .users ul li a.ad-slideshow-start, #content .users ul li .ad-gallery a.ad-slideshow-stop, .ad-gallery #content .users ul li a.ad-slideshow-stop {
   display: block;
   width: 80%;
   height: 80%;
   margin-top: 10%;
 }
-/* line 251, ../../app/stylesheets/screen.sass */
+/* line 253, ../../app/stylesheets/screen.sass */
 #content .users ul li.short {
   display: inline;
   float: left;
   width: 6.78%;
   margin-right: 1.695%;
 }
-/* line 253, ../../app/stylesheets/screen.sass */
+/* line 255, ../../app/stylesheets/screen.sass */
 #content .users ul li.long {
   display: inline;
   float: left;
   width: 23.729%;
   margin-right: 1.695%;
 }
-/* line 255, ../../app/stylesheets/screen.sass */
+/* line 257, ../../app/stylesheets/screen.sass */
 #content .users ul li:last {
   display: inline;
   float: right;
   margin-right: 0;
   #margin-left: -1em;
 }
-/* line 258, ../../app/stylesheets/screen.sass */
+/* line 260, ../../app/stylesheets/screen.sass */
 #content .users .create_user {
   border: 1px solid #1a1a1a;
   background-color: #1a1a1a;
 }
 
 /* line 264, ../../app/stylesheets/screen.sass */
+.time.controls {
+  clear: both;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+  padding-left: 7.692%;
+  padding-right: 7.692%;
+}
+/* line 269, ../../app/stylesheets/screen.sass */
+.time.controls a {
+  margin: auto;
+}
+/* line 271, ../../app/stylesheets/screen.sass */
+.time.controls #prev, .time.controls #next {
+  display: inline;
+  float: left;
+  width: 10.256%;
+  margin-right: 2.564%;
+}
+/* line 273, ../../app/stylesheets/screen.sass */
+.time.controls .date {
+  display: inline;
+  float: left;
+  width: 74.359%;
+  margin-right: 2.564%;
+  text-align: center;
+}
+/* line 276, ../../app/stylesheets/screen.sass */
+.time.controls h3 {
+  margin: 0;
+}
+/* line 278, ../../app/stylesheets/screen.sass */
+.time.controls #next {
+  display: inline;
+  float: right;
+  margin-right: 0;
+  #margin-left: -1em;
+  text-align: right;
+}
+
+/* line 284, ../../app/stylesheets/screen.sass */
 .week {
   display: inline;
   float: left;
@@ -1337,7 +1378,7 @@ body html > body {
   position: relative;
   z-index: auto;
 }
-/* line 268, ../../app/stylesheets/screen.sass */
+/* line 288, ../../app/stylesheets/screen.sass */
 .week .label {
   display: block;
   font-size: 1.875em;
@@ -1347,32 +1388,28 @@ body html > body {
   z-index: -1;
 }
 
-/* line 279, ../../app/stylesheets/screen.sass */
+/* line 299, ../../app/stylesheets/screen.sass */
 body.home .user.week {
   opacity: 0.6;
 }
-/* line 281, ../../app/stylesheets/screen.sass */
+/* line 301, ../../app/stylesheets/screen.sass */
 body.home .user.week:hover {
   opacity: 1;
 }
 
-/* line 284, ../../app/stylesheets/screen.sass */
-body.home .weeklist {
-  margin-top: 1.5em;
-}
-/* line 286, ../../app/stylesheets/screen.sass */
+/* line 306, ../../app/stylesheets/screen.sass */
 body.home .weeklist .week {
   margin-top: 0.75em;
   top: 0;
   opacity: 1;
 }
 
-/* line 292, ../../app/stylesheets/screen.sass */
+/* line 312, ../../app/stylesheets/screen.sass */
 body.home .month .week {
   margin-top: 0.75em;
 }
 
-/* line 295, ../../app/stylesheets/screen.sass */
+/* line 315, ../../app/stylesheets/screen.sass */
 .image-list {
   display: inline;
   float: left;
@@ -1407,24 +1444,24 @@ body.home .month .week {
 .image-list li:last-child, .image-list li.last {
   padding-right: 0px;
 }
-/* line 304, ../../app/stylesheets/screen.sass */
+/* line 324, ../../app/stylesheets/screen.sass */
 .image-list li {
   white-space: inherit;
 }
-/* line 309, ../../app/stylesheets/screen.sass */
+/* line 329, ../../app/stylesheets/screen.sass */
 .image-list > .image {
   margin-top: 0.3em;
 }
-/* line 311, ../../app/stylesheets/screen.sass */
+/* line 331, ../../app/stylesheets/screen.sass */
 .image-list > .image a {
   vertical-align: middle;
 }
-/* line 313, ../../app/stylesheets/screen.sass */
+/* line 333, ../../app/stylesheets/screen.sass */
 .image-list div.image.thumb {
   width: 4em;
   height: 4em;
 }
-/* line 316, ../../app/stylesheets/screen.sass */
+/* line 336, ../../app/stylesheets/screen.sass */
 .image-list .image.absent {
   display: block;
   width: 3.875em;
@@ -1435,7 +1472,7 @@ body.home .month .week {
   font-size: 1em;
   line-height: 1.5em;
 }
-/* line 324, ../../app/stylesheets/screen.sass */
+/* line 344, ../../app/stylesheets/screen.sass */
 .image-list .image.absent a {
   display: none;
   padding-top: 0.313em;
@@ -1443,18 +1480,19 @@ body.home .month .week {
   height: 3.563em;
 }
 
-/* line 332, ../../app/stylesheets/screen.sass */
+/* line 352, ../../app/stylesheets/screen.sass */
 .user .image-list .image.absent a {
   display: block;
 }
 
-/* line 336, ../../app/stylesheets/screen.sass */
+/* line 356, ../../app/stylesheets/screen.sass */
 .pop-up {
   position: absolute;
   margin-left: -20000px;
   z-index: 50;
   min-width: 12em;
   max-width: 23em;
+  max-height: 23em;
   padding: 0.688em;
   border: 1px solid;
   -moz-border-radius: 1em;
@@ -1468,28 +1506,19 @@ body.home .month .week {
   -o-box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px 0;
   box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px 0;
 }
-/* line 346, ../../app/stylesheets/screen.sass */
+/* line 367, ../../app/stylesheets/screen.sass */
 .pop-up textarea {
   min-width: 23em;
 }
 
-/* line 350, ../../app/stylesheets/screen.sass */
+/* line 371, ../../app/stylesheets/screen.sass */
 .image.thumb:hover > .pop-up {
   margin-left: 0;
 }
 
-/* line 353, ../../app/stylesheets/screen.sass */
+/* line 374, ../../app/stylesheets/screen.sass */
 .pop-up:hover {
   margin-left: -30px;
-}
-
-/* line 360, ../../app/stylesheets/screen.sass */
-.month .test {
-  float: left;
-  width: 62px;
-  height: 62px;
-  border: 1px solid white;
-  margin-right: 10px;
 }
 
 /* line 10, ../../app/stylesheets/partials/_gallery.sass */
@@ -1721,13 +1750,13 @@ body.home .month .week {
   top: -9000px;
 }
 
-/* line 372, ../../app/stylesheets/screen.sass */
+/* line 387, ../../app/stylesheets/screen.sass */
 #gallery .description {
   clear: both;
   margin-bottom: 0.75em;
   margin-top: 0.75em;
 }
-/* line 376, ../../app/stylesheets/screen.sass */
+/* line 391, ../../app/stylesheets/screen.sass */
 #gallery .comments {
   clear: both;
   margin-bottom: 1.5em;
@@ -1736,7 +1765,7 @@ body.home .month .week {
   height: 7.5em;
 }
 
-/* line 381, ../../app/stylesheets/screen.sass */
+/* line 396, ../../app/stylesheets/screen.sass */
 .paginate {
   clear: both;
 }

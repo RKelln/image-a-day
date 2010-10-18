@@ -57,3 +57,10 @@ Then /^(?:|I )should not see the date "([^"]*)"(?: within "([^"]*)")?$/ do |date
   
   assert !found
 end
+
+When /^(?:|I )follow \/([^\/]*)\/(?: within "([^"]*)")?$/ do |link_regexp, selector|
+  regexp = Regexp.new(link_regexp)
+  with_scope(selector) do
+    find('a', :text => regexp).click
+  end
+end

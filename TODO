@@ -1,5 +1,5 @@
 = TODO
-last updated: 9 Oct 2010
+last updated: 18 Oct 2010
 
 == For 0.2 release
 
@@ -19,14 +19,11 @@ last updated: 9 Oct 2010
 
 == For 0.1.1 release
 
-* Month view to display a month of images for the current user
-* easy navigation through time in week and month views
 * font for paginate text and other numbers
 * line up and/or tweak "Edit" and "Delete Image" buttons
 * image description details formatting and location?
 * paginate through time
   * wall comments
-  * week, month views
 * validation of uploaded images to require an image
 
 == Wishlist

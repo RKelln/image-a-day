@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
+gem 'rails', '~> 3'
 
 gem 'pg'
 
@@ -47,8 +47,7 @@ group :test do
   gem 'database_cleaner'
   gem 'cucumber-rails'
   gem 'cucumber'
-#  gem 'rspec-rails'
-  gem 'rspec-rails', '>= 2.0.0.beta'
+  gem 'rspec-rails'
   gem 'factory_girl', :require => nil
   gem 'factory_girl_rails'
   gem 'cucumber_factory'

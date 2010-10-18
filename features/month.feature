@@ -18,7 +18,7 @@ Feature: Month Page
         And   I should see the date "2009-12-28"
         And   I should not see the date "2010-02-01"
         And   I should not see the date "2010-12-27"
-        Then  I follow "Previous"
+        Then  I follow /Prev/
         Then  I should see the date "2009-12-1"
         And   I should see the date "2010-12-31"
         And   I should see the date "2010-01-03"

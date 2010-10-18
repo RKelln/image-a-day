@@ -17,7 +17,7 @@ Feature: Week Page
         And   I should see the date "2010-12-26"
         And   I should not see the date "2010-01-02"
         And   I should not see the date "2010-12-25"
-        Then  I follow "Previous"
+        Then  I follow /Prev/
         Then  I should see the date "2010-12-25"
         And   I should see the date "2010-12-19"
         And   I should not see the date "2010-12-26"

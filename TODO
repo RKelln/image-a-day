@@ -15,6 +15,7 @@ last updated: 18 Oct 2010
 * name, date, etc in details (don't need user for your own, need image date, etc)
 * password reset on admin page
   * forgot password functionality accessible and working
+* Edit image description on Today page
 
 
 == For 0.1.1 release

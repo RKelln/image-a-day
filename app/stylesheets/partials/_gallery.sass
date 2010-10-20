@@ -8,14 +8,16 @@ $ad-arrow_offset: 3px + $base-line-height/2
 $base-z-index: 10 !default
 
 .ad-gallery
-  width: 100%
+  +full($content-cols)
+  //width: 100%
   margin: 0
   padding: 0
   div, p
     margin: 0
     padding: 0
   .ad-image-wrapper
-    width: 100%
+    +full($content-cols)
+    //width: 100%
     +height($image-height)
     margin-bottom: 0
     position: relative
@@ -92,7 +94,8 @@ $base-z-index: 10 !default
 
 .ad-gallery
   .ad-description-title:after
-    content: ": "
+    content: ":"
+    margin-right: 0.5em
   .ad-controls
     +full($content-cols)
     +height(1)

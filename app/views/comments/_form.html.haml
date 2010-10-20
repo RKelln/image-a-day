@@ -24,7 +24,7 @@
         // clear textarea
         $(this).children("textarea").val("");
         
-        // add comment
-        var comment = $(status).insertAfter($(this));
+        // add comment in front of the first comment following the "add" form
+        var comment = $(status).insertBefore($(this).nextAll('.comment:first'));
         //blink(comment); // RK: not fading back for some reason??
       });

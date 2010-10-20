@@ -118,6 +118,7 @@ class ImagesController < ApplicationController
     match_params.delete(:controller)
     match_params.delete(:action)
     match_params.delete(:page)
+    match_params.delete(:wall_page)
 
     match_params[:user_id]=current_user.id unless match_params[:user_id]
 

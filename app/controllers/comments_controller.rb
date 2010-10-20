@@ -3,9 +3,10 @@ class CommentsController < ApplicationController
   respond_to :html, :xml, :js
 
   # GET /comments
+  # NOTE: this is only called for AJAX-paginated wall comments, so is not truly an index
   def index
-    @comments = Comment.all
-    # TODO: paginate and more comments button???
+    @comments = Comment.where(:image_id => nil).reverse.paginate(:per_page => 15, :page => params[:wall_page])
+
     respond_with @comments
   end
 

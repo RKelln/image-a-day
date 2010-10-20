@@ -23,6 +23,11 @@
   :javascript
     DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images
     
+-# Override the :end_scripts DEBUG before reaching the :javascripts
+- if Rails.env == 'development'
+  :javascript
+    DEBUG = true
+
 -#  Append your own using content_for :javascripts
 = yield :javascripts
 -# RK: I always forget the last s
@@ -30,4 +35,4 @@
 
 -# yui profiler and profileviewer
 -# if Rails.env == 'development'
-  = javascript_include_tag 'profiling/yahoo-profiling.min', 'profiling/config'
+  =# javascript_include_tag 'profiling/yahoo-profiling.min', 'profiling/config'

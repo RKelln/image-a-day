@@ -25,6 +25,6 @@
         $(this).children("textarea").val("");
         
         // add comment in front of the first comment following the "add" form
-        var comment = $(status).insertBefore($(this).nextAll('.comment:first'));
+        var comment = $(status).prependTo($(this).parents('.comments').find('.comment_list:first'));
         //blink(comment); // RK: not fading back for some reason??
       });

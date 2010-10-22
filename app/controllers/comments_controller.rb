@@ -2,10 +2,9 @@ class CommentsController < ApplicationController
   before_filter :authenticate_user!
   respond_to :html, :xml, :js
 
-  # GET /comments
-  # NOTE: this is only called for AJAX-paginated wall comments, so is not truly an index
-  def index
-    @comments = Comment.where(:image_id => nil).reverse.paginate(:per_page => 15, :page => params[:wall_page])
+  # GET /comments/wall
+  def wall
+    @comments = CommentsHelper.wall_comments(params[:wall_page])
 
     respond_with @comments
   end

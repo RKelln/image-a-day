@@ -1,0 +1,30 @@
+- comments = CommentsHelper.wall_comments(params[:wall_page])
+- comment_resource = Comment.new
+-# name is mandatory so we can tell the comment sections apart, turns into an id
+  ex: id="new_comment_<name>"  See _form.html.html for details
+
+- if comment_resource
+  = render 'comments/form', {:comment_resource => comment_resource, :name => :wall}
+
+-# NOTE: :template is the only option that finds wall.html.haml instead of _wall...
+= render :template => 'comments/wall', :locals => {:comments => comments}
+
+- content_for(:javascripts) do
+  :javascript
+    function wall_ajax_href(href) {
+      return "#{wall_comments_path}" + '?' + href.split('?')[1];
+    };
+    function wall_pagination_js(link) {
+      log(link);
+      $(link)
+        .attr('data-remote', 'true')
+        .bind("ajax:success", function(xhr, data, status) {
+          // NOTE: xhr => js Object, data => rendered HTML content, status => 'success'
+          $('#wall_everything').replaceWith(data);
+          $('.wall_pagination a').each(function() {wall_pagination_js(this)});
+        });
+      link
+        .href = wall_ajax_href(link.href);
+    };
+    $('.wall_pagination a').each(function() {wall_pagination_js(this)});
+

@@ -1,0 +1,10 @@
+- comments ||= @comments
+
+#wall_everything
+  = will_paginate comments, :class => :wall_pagination, :param_name => :wall_page
+
+  .comment_list
+    - comments.each do |comment|
+      = render comment
+
+  = will_paginate comments, :class => :wall_pagination, :param_name => :wall_page

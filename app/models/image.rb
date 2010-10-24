@@ -1,4 +1,4 @@
-class Image < ActiveRecord::Base
+﻿class Image < ActiveRecord::Base
   belongs_to :user
   has_many :comments, :dependent => :destroy
   # TODO: unique constraint by user/date
@@ -7,6 +7,7 @@ class Image < ActiveRecord::Base
   #validates :date, :presence => true
 
   has_attached_file :data, :styles => { :thumb => '64x64>', :icon => '32x32#', :display => '976x976>' },
+          :convert_options => {:all => '-auto-orient'},
           :path => ':rails_root/assets/images/:year_month_day:opt_style/:user_id_:year_:yday.:extension',
           :url => '/images/data/:user_id/:year/:month/:day/:style'
   validates :data_file_name, :presence => true

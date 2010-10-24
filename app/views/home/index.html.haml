@@ -10,7 +10,7 @@
       %ul.ad-thumb-list
         - for image in @images do
           %li
-            %a(href="#{image.data.url}" data-image-id="#{image.id}")
+            %a(href="#{image.data.url(:display)}" data-image-id="#{image.id}")
               %img(src="#{image.data.url(:icon)}"
                    longdesc="#{image_path(image)}"
                    alt="#{image.description}"

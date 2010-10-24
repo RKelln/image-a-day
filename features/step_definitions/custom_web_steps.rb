@@ -33,7 +33,7 @@ Then /^no "([^"]*)" field(?: within "([^"]*)")? should contain "([^"]*)"$/ do |f
 end
 
 Given /^today is "([^\"]*)"$/ do |date|
-  Timecop.freeze(Date.parse(date))
+  Timecop.travel(Date.parse(date))
 end
 
 Then /^(?:|I )should see the date "([^"]*)"(?: within "([^"]*)")?$/ do |date, selector|

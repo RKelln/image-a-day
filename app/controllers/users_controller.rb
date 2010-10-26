@@ -20,8 +20,15 @@ class UsersController < ApplicationController
 
     if params[:id] and current_user.admin?
       @user = User.find(params[:id])
-    else
+    elsif current_user.id == params[:id]
       @user = current_user
+    else
+      # non-admins not authorized to update other users
+      flash[:error] = "ERROR: You are not an admin.  You cannot modify this user."
+      
+      # TODO: this is such a cop-out.  Isn't there a _real_ way to do this?
+      redirect_to :back unless request.xhr?
+      return
     end
 
     if @user.update_attributes(params[:user])

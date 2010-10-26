@@ -10,4 +10,5 @@ Factory.define :admin, :class => User do |u|
     u.sequence(:nickname) {|n| "Admin#{n}"}
     u.name 'Default Admin'
     u.password 'password'
+    u.admin true
 end

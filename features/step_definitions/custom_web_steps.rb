@@ -64,3 +64,8 @@ When /^(?:|I )follow \/([^\/]*)\/(?: within "([^"]*)")?$/ do |link_regexp, selec
     find('a', :text => regexp).click
   end
 end
+
+Given /^I will confirm all javascript dialogs on this page$/ do
+  page.evaluate_script("window.alert = function(msg) { return true; }")
+  page.evaluate_script("window.confirm = function(msg) { return true; }")
+end

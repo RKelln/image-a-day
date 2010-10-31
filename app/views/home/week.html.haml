@@ -6,7 +6,7 @@
   - title += " to #{short_date(@next_date - 1)}"
 - else
   - title += " to #{short_date(Date.today)}"
-= render('shared/time_controls', 
+= render('shared/time_controls',
   :description => "week",
   :title => title,
   :prev_link => @prev_date ? week_path(:end_date=>@prev_date) : nil,
@@ -16,6 +16,6 @@
   = render('weekly',
     :label => @user.nickname,
     :images => @user.weekly_images(@date),
-    :classes => "user")
+    :classes => ["user", "current"])
   - for week in @weekly_images
     = render 'weekly', :label => week[:user].nickname, :images => week[:images]

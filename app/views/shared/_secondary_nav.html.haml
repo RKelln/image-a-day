@@ -1,7 +1,7 @@
 %nav#secondary-nav
   %ul
     %li.wide
-      = link_to "My Images", images_path
+      = link_to "My Images", current_user
     %li.wide
       = link_to "Artist List", users_path
     = render :partial => "shared/common_nav"

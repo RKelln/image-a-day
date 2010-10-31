@@ -1,5 +1,6 @@
 - label ||= nil
 - classes ||= nil
+- image_classes ||= nil
 .week{:class => classes }
   - if not label.nil?
     %h2.label
@@ -10,4 +11,4 @@
         - if image.class == Image::AbsentImage
           = render 'images/absent', :absent_image => image
         - else
-          = render image, :size => :thumb, :details => false
+          = render image, :size => :thumb, :details => false, :image_classes => image_classes

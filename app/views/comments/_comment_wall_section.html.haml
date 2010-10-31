@@ -21,10 +21,10 @@
         .bind("ajax:success", function(xhr, data, status) {
           // NOTE: xhr => js Object, data => rendered HTML content, status => 'success'
           $('#wall_everything').replaceWith(data);
-          $('.wall_pagination a').each(function() {wall_pagination_js(this)});
+          $('#wall_everything .pagination a').each(function() {wall_pagination_js(this)});
         });
       link
         .href = wall_ajax_href(link.href);
     };
-    $('.wall_pagination a').each(function() {wall_pagination_js(this)});
+    $('#wall_everything .pagination a').each(function() {wall_pagination_js(this)});
 

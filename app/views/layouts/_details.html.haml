@@ -6,8 +6,10 @@
 
 %ul.info
   %li.user<
-    = link_to subject.user.nickname, subject.user 
+    = link_to subject.user.nickname, subject.user
   %li.date(title="#{long_date(subject.date)}")<
+    - if not current_day?(subject.date)
+      = short_date(subject.date)
     (#{time_ago_in_words(subject.date)} ago)
   - if current_user.admin? or subject.user_id == current_user.id
     - if delete
@@ -19,7 +21,7 @@
                   :class => 'control-link')
     %li.edit<
       = link_to('Edit', edit_subject_path(subject), :remote => true, :class => 'control-link')
-    
+
   = yield(:info_content)
 %p
   = subject.text if subject.has_attribute?('text')

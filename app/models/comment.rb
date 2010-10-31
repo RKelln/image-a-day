@@ -6,10 +6,12 @@ class Comment < ActiveRecord::Base
   #validates :user_id, :presence => true
   validates_presence_of :text
 
+  scope :by_user, lambda {|user| where(:user_id => user.id)}
+
   def to_s
     "Comment[#{id}, #{user_id}]: #{created_at} \"#{text}\""
   end
-  
+
   def date
     created_at
   end

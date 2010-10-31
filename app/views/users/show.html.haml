@@ -1,6 +1,28 @@
-%h2 
+- content_for(:side_title) do
   = @user.nickname
-  Images
+
+%h2
+  = @user.nickname
+
+.stats
+  %dl
+    %dt Full Name:
+    %dd= @user.name
+    %dt Email:
+    %dd= @user.email
+    %dt Joined:
+    %dd= long_date(@user.created_at)
+    / %dt Last login:
+    / %dd Last login
+    %dt Images uploaded:
+    %dd= @image_count
+    %dt Missing images:
+    %dd= @missing_count
+    %dt Comments:
+    %dd= @comment_count
+
+= link_to "#{@user.nickname}'s month view", month_path(:id => @user.id), :class => "control-link"
+%h3 Latest images
 
 .paginate
   %p

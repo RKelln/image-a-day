@@ -1,5 +1,11 @@
-%h2.date
-  = @image.long_date
+- content_for(:side_title) do
+  = @user.nickname
+
+= render('shared/time_controls',
+      :title => long_date(@image.date),
+      :prev_link => @prev_image ? image_path(@prev_image) : nil,
+      :next_link => @next_image ? image_path(@next_image) : nil)
+
 = render @image
 
 .comments

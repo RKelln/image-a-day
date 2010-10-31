@@ -14,8 +14,13 @@
 
   scope :today, where(:date => Time.now)
   scope :yesterday, where(:date => 1.day.ago)
-  scope :by_date, order(:date).reverse_order # backwards through time by default
+  scope :by_date, order("date DESC") # backwards through time by default
+  # TODO: latest to use user time zone!?
   scope :latest, by_date.where("date <= ?", Time.zone.now).limit(1) # can't use .first() here
+  scope :since,  lambda {|date| where("date > ?", date) }
+  scope :before, lambda {|date| where("date < ?", date) }
+  scope :next,   lambda {|image| since(image.date).where(:user_id => image.user_id).order(:date).limit(1)}
+  scope :prev,   lambda {|image| before(image.date).where(:user_id => image.user_id).by_date.limit(1)}
 
   def to_s
     "Image: #{user.nickname} [#{date}]: #{data_file_name}"
@@ -48,8 +53,24 @@
 
   # NOTE: named scope here doesn't work, define a class method instead
   #scope :recent, scoped.find_by_sql("SELECT * FROM images WHERE date >= 'yesterday' AND date = (SELECT date FROM images AS recent_images WHERE recent_images.user_id = images.user_id ORDER BY date DESC LIMIT 1);")
-  def self.recent
-      return find_by_sql("SELECT * FROM images WHERE date >= 'yesterday' AND date = (SELECT date FROM images AS recent_images WHERE recent_images.user_id = images.user_id ORDER BY date DESC LIMIT 1);")
+  def self.recent(today="today")
+    if today == "today"
+      yesterday = "yesterday"
+    else
+      yesterday = today - 1.day
+    end
+    #return find_by_sql("SELECT * FROM images WHERE date >= #{yesterday} AND date <= #{today} AND date = (SELECT date FROM images AS recent_images WHERE recent_images.user_id = images.user_id ORDER BY date DESC LIMIT 1);")
+    image_range = Image.where(:date => yesterday..today)
+
+    # for each user get their most recent image within the date range
+    users_in_range = image_range.select('DISTINCT user_id')
+
+    # create a list of the most recent images for each user in range
+    recent_images_per_user = []
+    for image in users_in_range
+      recent_images_per_user += image_range.where("user_id = #{image.user_id}").by_date.take(1)
+    end
+    recent_images_per_user
   end
 
   def short_date
@@ -77,6 +98,10 @@
 
     def long_date
       @upload_date.strftime('%d %B %Y')
+    end
+
+    def date
+      @upload_date
     end
   end
 

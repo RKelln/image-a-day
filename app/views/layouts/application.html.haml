@@ -6,16 +6,19 @@
     .container
       %header#header
         = render :partial => 'layouts/header'
-        
+
       %section#main
         = render :partial => 'layouts/flashes'
         %article#content{:class => content_for?(:comments) ? "with-comments" : nil}
           = content_for?(:content) ? yield(:content) : yield
         = yield(:comments)
-        
+
       %footer#footer
         = render :partial => 'layouts/footer'
-        
+      - if content_for?(:side_title)
+        #side_title
+          %h3
+            = yield(:side_title)
     .debug
     -# Javascript at the bottom for fast page loading
     = render :partial => 'layouts/javascripts'

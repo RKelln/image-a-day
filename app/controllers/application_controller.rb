@@ -29,6 +29,17 @@ class ApplicationController < ActionController::Base
     object
   end
 
+  def helper
+    #Helper.instance.params = self.params
+    Helper.instance
+  end
+
+  class Helper
+    include Singleton
+    include ActionView::Helpers::TextHelper
+    include ApplicationHelper
+  end
+
   protected
 
     def specify_layout
@@ -36,5 +47,5 @@ class ApplicationController < ActionController::Base
       # change layout for devise (login, etc) to a public facing page
       # TODO: add any other public facing controllers
       devise_controller? ? "public" : "comments"
-    end 
+    end
 end

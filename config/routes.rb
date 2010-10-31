@@ -35,6 +35,7 @@ ImageADay::Application.routes.draw do
     resources :images do
         match "date/:year(/:month(/:day))" => :index, :constraints => {:year => /\d{4}/}, :on => :collection
     end
+    match 'month' => 'home#month'
   end
 
 

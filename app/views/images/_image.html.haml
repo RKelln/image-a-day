@@ -2,10 +2,16 @@
   if size = nil then use the full size image
 - current_page?(image) ? size ||= :display : size ||= :icon
 
+- image_classes ||= []
+- image_classes << size.to_s unless image_classes.include? size.to_s
+-# add classes that indicate whether the image is in the current day, week, or month
+- date ||= @date || Date.today
+- image_classes += get_image_classes(image, date)
+
 -# default to visible details
 - details = true if details.nil?
 
-.image(class="#{size.to_s}")
+.image{:class => image_classes}
   - if size.nil?
     %img(src="#{image.data.url}")
   - else

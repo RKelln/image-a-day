@@ -7,7 +7,6 @@ class ImagesController < ApplicationController
   # GET (/user/:user_id)/images?start_date=:start_date&end_date=:end_date
   def index
     @images = Image.by_date.where(params_where).paginate(:page => params[:page])
-
     respond_with @images
   end
 
@@ -15,6 +14,11 @@ class ImagesController < ApplicationController
   def show
     @image = Image.find(params[:id])
     @image_comments = @image.comments.reverse
+    @user = User.find_by_id(@image.user_id)
+    # find the users next image
+    @next_image = Image.next(@image).first
+    @prev_image = Image.prev(@image).first
+
     respond_with @image
   end
 

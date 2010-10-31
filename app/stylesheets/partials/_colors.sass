@@ -37,11 +37,17 @@ select, input, textarea
     background-color: $splash-color
     color: $base-color
 
+#side_title
+  color: $base-color
+
 .ad-image-wrapper, .ad-nav, .create_user, #login, #signup
   border-color: $border-color
   +fuzzy-border($border-color)
 
-.date, .input_prompt, .control-link-inactive, .ad-controls, label, .label, #main > h1, #main > h2, #content > h1, #content > h2, footer
+.date, .input_prompt, .control-link-inactive, .ad-controls, label, .label, #main > h1, #main > h2, #content > h1, #content > h2, #content > h3, dt, footer
+  color: transparentize($font-color, 0.4)
+
+.pagination em
   color: transparentize($font-color, 0.4)
 
 .disabled
@@ -76,11 +82,21 @@ a
 .control-link-inactive
   background-color: $base-color
   border-color: $border-color
+  +box-shadow
+  &:focus, &:hover, &:active
+    +box-shadow
+    color: $font-color
+
+.previous_page, .next_page
+  @extend .control-link
+
+.previous_page.disabled, .next_page.disabled
+  @extend .control-link-inactive
 
 .image.absent
   background-color: $border-color
 
-.user .image-list .image.absent
+.user.current .image-list .image.absent
   background-color: $error-color !important
   a
     color: $font-color

@@ -11,7 +11,10 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @images = @user.images.by_date.paginate(:page => params[:page])
-
+    @joined = @user.created_at.to_date
+    @image_count = @user.images.count
+    @missing_count = [0, @image_count - (Date.today - @joined).to_i].max
+    @comment_count = Comment.by_user(@user).count
     respond_with @user
   end
 

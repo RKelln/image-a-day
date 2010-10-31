@@ -79,7 +79,7 @@ body
   +full
   +clearfix
   min-height: 650px
-  //overflow: visible
+  overflow: visible
   #flash
     // FIXME: evil hack to get flash the right size
     width: 97%
@@ -110,8 +110,26 @@ body
 
 #footer
   +full($total-cols)
-  +leader
   +alpha
+  +padding-leader
+
+#side_title
+  position: absolute
+  top: 3em
+  left: -80px
+  width: 80px
+  height: 100%
+  z-index: 100
+  h3
+    +rotate(-90deg, 300px, 300px)
+    +adjust-font-size-to(80px)
+    //letter-spacing: 1em
+    margin: 0
+    width: 600px
+    text-align: right
+    line-height: 1em
+    position: relative
+    left: 0.15em
 
 #about
   +columns(6, $total-cols)
@@ -161,7 +179,6 @@ body
   +full(4)
   .controls
     +full(4)
-    +trailer
     text-align: right
   input
     +adjust-font-size-to(12px)
@@ -191,7 +208,7 @@ body
 // Images controller //////////////////////////////////////////
 
 .images, .users
-  h2.date
+  h2
     +full($content-cols)
     margin: 0
   .image
@@ -201,6 +218,8 @@ body
     & > details
       +full($content-cols)
       +trailer
+  h3
+    +full($content-cols)
 
   .image.icon, .image.thumb
     & > a
@@ -297,20 +316,16 @@ body
 
 // handle week view differntly in different locations
 body.home .user.week
-  opacity: 0.6
+  +opacity(0.6)
   &:hover
-    opacity: 1
+    +opacity(1)
 
 body.home .weeklist
   //+leader
   .week
     margin-top: ($base-line-height/2)*$px2em
     top: 0
-    opacity: 1
-
-body.home .month
-  .week
-    margin-top: ($base-line-height/2)*$px2em
+    +opacity(1)
 
 .image-list
   +columns($content-cols - 1, $content-cols)
@@ -347,7 +362,8 @@ body.home .month
       width: 100%
       height: ($thumb-size - 7px) * $px2em
 
-.user .image-list .image.absent
+
+.user.current .image-list .image.absent
   @extend .control
   a
     display: block
@@ -368,16 +384,54 @@ body.home .month
     min-width: 23em
 
 
-.image.thumb:hover > .pop-up
-  margin-left: 0
+.image.thumb:hover
+  +opacity(1)
+  & > .pop-up
+    margin-left: 0
 
 .pop-up:hover
   margin-left: -30px
 
 // Month ----------------------------------------------------------
 
-//.month
+body.home .month
+  .week
+    margin-top: ($base-line-height/2)*$px2em
+  // make images not of the current month different
+  .image img
+    +opacity(0.5)
+  .image.tmonth img, .image:hover img
+    +opacity(1)
+  .image.absent
+    +opacity(0.5)
+    +scale(0.8)
+    &.tmonth
+      +opacity(0.75)
+      +scale(1)
+  &.user.current .image.absent
+    &.tday
+      +opacity(1)
+      +box-glow
+    &:hover, &:focus
+      +opacity(1)
+      +scale(1)
 
+// Users ///////////////////////////////////////////////////////////
+
+.stats
+  +full($content-cols)
+  +clearfix
+  dl
+    +full($content-cols)
+    margin: 0
+    dt
+      +columns(2, $content-cols)
+      text-align: right
+      margin-top: 0
+    dd
+      +columns($content-cols - 2, $content-cols)
+      +omega($content-cols)
+      padding: 0
 
 // Other modules --------------------------------------------------
 $image-height: 18
@@ -393,7 +447,6 @@ $image-height: 18
     +trailer
     +heights(false, 5)
 
-.paginate
-  +full($content-cols)
-
+.pagination
+  text-align: center
 

@@ -7,22 +7,29 @@ class HomeController < ApplicationController
   end
 
   def index
+    if params[:date]
+      @date = Date.parse(params[:date])
+    else
+      @date = Date.today
+    end
+    # TODO: use user's timezone/day
+    @prev_date = @date - 1.day
+    @next_date = @date + 1.day
+
     @user = current_user
-    @images = Image.recent
+    @images = Image.recent(@date)
   end
 
   def week
     if params[:end_date]
         @date = Date.parse(params[:end_date])
         if @date < Date.today
-            @next_date = @date + 1.week
-            @next_date = Date.today if @next_date > Date.today
+            @next_date = @date + 1.day
         end
     else
         @date = Date.today
     end
     @prev_date = @date - 1.week
-    
     @user = current_user
     @weekly_images = Array.new
     for user in User.only_active
@@ -31,29 +38,33 @@ class HomeController < ApplicationController
       end
     end
     # TODO: sort by relationship / priority / user ordering
-
-    # TODO: place current_user first
-    #@my_weekly_images.insert(0, {:user => @user, :images => @user.weekly_images})
+    # sort by number of weekly images and alphebetically
+    @weekly_images = @weekly_images.sort_by { |x| [-count_images_in(x[:images]), x[:user].nickname] }
   end
 
   def month
     # an entire month of images for one user, that includes the images for
     # previous and next months that would show on the same month calendar
 
+    # current user unless specified
+    @user = params[:id] ? User.find(params[:id]) : current_user
+
     # find all the weeks in the month and then get the weekly images for each week
     if params[:month] and params[:year]
-      date = Date.new(params[:year].to_i, params[:month].to_i) # NOTE: Date.new fails on string parameters
-      @next_date = date + 1.month
+      @date = Date.new(params[:year].to_i, params[:month].to_i) # NOTE: Date.new fails on string parameters
+      # if the date is within the current moth then set the day to the current day (otherwise defaults to the 1st of the month)
+      @date = Date.new(params[:year].to_i, params[:month].to_i, Date.today.day) if helper.current_month?(@date)
+      @next_date = @date >> 1 # add 1 month
       @next_date = nil if @next_date > Date.today
     else
-      date = Date.today
+      @date = Date.today
     end
-    @prev_date = date - 1.month
-    @current_month = date.strftime('%B %Y')
-    
+    @prev_date = @date << 1 # subtract 1 month
+    @current_month = @date.strftime('%B %Y')
+
     @weeks = Array.new
-    for week in weeks_in_month(date)
-      @weeks << Image.where(:user_id => current_user).week(week)
+    for week in weeks_in_month(@date)
+      @weeks << Image.where(:user_id => @user).week(week)
     end
 
   end
@@ -80,5 +91,10 @@ class HomeController < ApplicationController
         weeks << (d..(d + 6.days))
       }
       weeks
+    end
+  
+    # counts how many images (not Absent images) in range
+    def count_images_in(images)
+      (images.select {|image| image.is_a? Image and not image.is_a? Image::AbsentImage }).length
     end
 end

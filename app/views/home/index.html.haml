@@ -1,7 +1,17 @@
 - content_for(:comment_notices) do
   = link_to "Upload today's image", upload_path, :class => "control-link"
 
-= render 'weekly', {:images => @user.weekly_images, :classes => "user"}
+- content_for(:side_title) do
+  = short_date(@date)
+
+= render 'weekly', {:images => @user.weekly_images, :classes => ["user", "current"]}
+
+=# TODO: use user timezone/day
+= render('shared/time_controls',
+  :title => long_date(@date),
+  :prev_link => root_path(:date => @prev_date),
+  :next_link => root_path(:date => @next_date))
+
 #gallery.ad-gallery
   .ad-image-wrapper
   .ad-controls

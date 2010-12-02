@@ -13,7 +13,8 @@ class ImagesController < ApplicationController
   # GET /images/:id
   def show
     @image = Image.find(params[:id])
-    @image_comments = @image.comments.reverse
+
+    @image_comments = @image.comments.order('created_at DESC')
     @user = User.find_by_id(@image.user_id)
     # find the users next image
     @next_image = Image.next(@image).first

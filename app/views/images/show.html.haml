@@ -10,7 +10,7 @@
 
 .comments
   = render('comments/comment_section',
-            {:comments => @image.comments,
+            {:comments => @image.comments.order('created_at DESC'),
              :comment_resource => [@image, @image.comments.build],
              :name => "image-#{@image.id}"})
 

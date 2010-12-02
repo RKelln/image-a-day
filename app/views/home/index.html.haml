@@ -30,7 +30,7 @@
     - for image in @images do
       %div.comments(data-image-id="#{image.id}")
         = render('comments/comment_section',
-              {:comments => image.comments.reverse,
+              {:comments => image.comments.order('created_at DESC'),
                :comment_resource => [image, image.comments.build],
                :name => "image-#{image.id}"})
 

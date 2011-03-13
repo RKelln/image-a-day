@@ -1,3 +1,4 @@
+
 - form_for @image, :html => { :method => :post, :multipart => true } do |f|
   -if @image.errors.any?
     #errorExplanation
@@ -6,10 +7,42 @@
         - @image.errors.full_messages.each do |msg|
           %li= msg
   = f.hidden_field :date, :value => @image.date
-  
+
   .full
     = f.file_field :data
+  %p.picup(style="display: none;")
+    To upload images from iPhone/iPad you need to install <a href="http://picupapp.com/index.html">Picup</a> from
+    the <a href="http://itunes.apple.com/us/app/picup/id354101378?mt=8">App store</a>.
   .full
     = f.label :description
-    = f.text_area :description  
+    = f.text_area :description
     = f.submit 'Upload', :class => "control-link"
+
+- content_for(:javascripts) do
+  = include_javascripts :iphone
+
+  :javascript
+
+    $(document).ready( function() {
+      if (isiPhone()) {
+        $(".picup").show();
+        $('body').addClass('iphone');
+
+        // We'll check the hash when the page loads in-case it was opened in a new page
+        // due to memory constraints
+        Picup.checkHash();
+
+        // Set some starter params
+        var picupParams = {
+        'callbackURL' : escape('http://image-a-day.com/images/upload'),
+        'referrername' : escape('Image-A-Day'),
+        'referrerfavicon' : escape('http://image-a-day.com/favicon.ico'),
+        'purpose' : escape('Select an image to upload to Image-A-Day.'),
+        'postURL': escape('http://image-a-day.com/images'),
+        'postImageParam': 'image',
+        'debug' : 'true'
+        };
+
+        Picup.convertFileInput( $('#image_data'), picupParams);
+      } // isiPhone()
+    }); // document.observe

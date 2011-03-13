@@ -9,7 +9,7 @@
 
 -# fall back to local jQuery if necessary
 :javascript
-  !window.jQuery && document.write(unescape('%3Cscript src="/javascripts/jquery-1.4.2.min.js"%3E%3C/script%3E'))
+  !window.jQuery && document.write(unescape('%3Cscript src="/javascripts/jquery.min.js"%3E%3C/script%3E'))
 
 -# Jammit javascript packaging
 = include_javascripts :end_scripts
@@ -22,7 +22,7 @@
   = javascript_include_tag 'dd_belatedpng'
   :javascript
     DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images
-    
+
 -# Override the :end_scripts DEBUG before reaching the :javascripts
 - if Rails.env == 'development'
   :javascript

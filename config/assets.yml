@@ -11,22 +11,23 @@ gzip_assets: on # (on, off)
 javascript_compressor: yui # (yui, closure)
 #compressor_options:
 #  compilation_level: ADVANCED_OPTIMIZATIONS
-  
+
 javascripts:
 # head scripts are required in the head, all others should be at the end of the page
 # modernizer provides html5 support checking, etc
 # jquery is loaded from google, or in the old rails style if that fails
   head_scripts:
     - public/javascripts/modernizer.js
-    
-# NOTE: application.js before the other non-rails js libs (so you can call log() etc)    
+
+# NOTE: application.js before the other non-rails js libs (so you can call log() etc)
   end_scripts:
     - public/javascripts/rails.js
     - public/javascripts/application.js
     - public/javascripts/jquery.form.js
     - public/javascripts/gallery/jquery.ad-gallery.js
 #    - public/javascripts/jquery.create.js
-
+  iphone:
+    - public/javascripts/picup.js
 stylesheets:
   screen:
     - public/stylesheets/screen.css

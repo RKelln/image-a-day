@@ -88,3 +88,12 @@ $(document).ajaxComplete(function(event, request, options) {
 	// log(msg);
 	display_flash(request.getResponseHeader('X-Flash'));
 });
+
+function isiPhone() {
+  return (
+      (navigator.platform.indexOf("iPhone") != -1) ||
+      (navigator.platform.indexOf("iPod") != -1) ||
+      (navigator.userAgent.match(/iPhone/i)) ||
+      (navigator.userAgent.match(/iPod/i))
+  );
+}

@@ -23,7 +23,7 @@
       = link_to('Edit', edit_subject_path(subject), :remote => true, :class => 'control-link')
 
   = yield(:info_content)
-%p
-  = subject.text if subject.has_attribute?('text')
-  = subject.description if subject.has_attribute?('description')
-  = yield(:details_content)
+
+= simple_format(subject.text) if subject.has_attribute?('text')
+= simple_format(subject.description) if subject.has_attribute?('description')
+= yield(:details_content)

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* line 27, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/html5-boilerplate-0.2.4/stylesheets/html5-boilerplate/_reset.scss */
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -189,7 +190,7 @@ html > body {
 .clearfix {
   *zoom: 1;
 }
-/* line 22, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 22, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .clearfix:after {
   content: "\0020";
   display: block;
@@ -501,7 +502,7 @@ textarea:focus {
 .clearfix {
   *zoom: 1;
 }
-/* line 22, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 22, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .clearfix:after {
   content: "\0020";
   display: block;
@@ -526,7 +527,7 @@ html {
   width: 61em;
   max-width: 100%;
 }
-/* line 22, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 22, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
 .container:after {
   content: "\0020";
   display: block;
@@ -959,7 +960,7 @@ body html > body {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 51, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+/* line 57, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
 #nav ul li, #secondary-nav ul li {
   list-style-image: none;
   list-style-type: none;
@@ -970,13 +971,13 @@ body html > body {
   padding-left: 1em;
   padding-right: 1em;
 }
-/* line 43, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+/* line 45, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
 #nav ul li:first-child, #nav ul li.first, #secondary-nav ul li:first-child, #secondary-nav ul li.first {
-  padding-left: 0px;
+  padding-left: 0;
 }
-/* line 44, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+/* line 46, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
 #nav ul li:last-child, #nav ul li.last, #secondary-nav ul li:last-child, #secondary-nav ul li.last {
-  padding-right: 0px;
+  padding-right: 0;
 }
 /* line 63, ../../app/stylesheets/screen.sass */
 #nav ul li, #secondary-nav ul li {
@@ -1220,8 +1221,9 @@ body html > body {
   clear: both;
   margin-bottom: 0em;
   padding-left: 1em;
+  margin-bottom: 1em;
 }
-/* line 194, ../../app/stylesheets/screen.sass */
+/* line 195, ../../app/stylesheets/screen.sass */
 .comment .info, summary .info {
   clear: both;
   margin: 0;
@@ -1233,7 +1235,7 @@ body html > body {
   font-size: 0.75em;
   line-height: 2em;
 }
-/* line 51, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+/* line 57, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
 .comment .info li, summary .info li {
   list-style-image: none;
   list-style-type: none;
@@ -1244,61 +1246,61 @@ body html > body {
   padding-left: 0.25em;
   padding-right: 0.25em;
 }
-/* line 43, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+/* line 45, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
 .comment .info li:first-child, .comment .info li.first, summary .info li:first-child, summary .info li.first {
-  padding-left: 0px;
+  padding-left: 0;
 }
-/* line 44, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+/* line 46, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
 .comment .info li:last-child, .comment .info li.last, summary .info li:last-child, summary .info li.last {
-  padding-right: 0px;
+  padding-right: 0;
 }
-/* line 199, ../../app/stylesheets/screen.sass */
+/* line 200, ../../app/stylesheets/screen.sass */
 .comment .info .user, summary .info .user {
   font-weight: bold;
 }
-/* line 201, ../../app/stylesheets/screen.sass */
+/* line 202, ../../app/stylesheets/screen.sass */
 .comment .info .date, summary .info .date {
   font-style: italic;
 }
-/* line 203, ../../app/stylesheets/screen.sass */
+/* line 204, ../../app/stylesheets/screen.sass */
 .comment .info .edit, .comment .info .delete, summary .info .edit, summary .info .delete {
   float: right;
 }
-/* line 205, ../../app/stylesheets/screen.sass */
+/* line 206, ../../app/stylesheets/screen.sass */
 .comment .info .edit, summary .info .edit {
   margin-right: 0.5em;
 }
 
-/* line 211, ../../app/stylesheets/screen.sass */
+/* line 212, ../../app/stylesheets/screen.sass */
 .images h2, .users h2 {
   clear: both;
   margin: 0;
 }
-/* line 214, ../../app/stylesheets/screen.sass */
+/* line 215, ../../app/stylesheets/screen.sass */
 .images .image, .users .image {
   clear: both;
 }
-/* line 216, ../../app/stylesheets/screen.sass */
+/* line 217, ../../app/stylesheets/screen.sass */
 .images .image > div, .users .image > div {
   clear: both;
 }
-/* line 218, ../../app/stylesheets/screen.sass */
+/* line 219, ../../app/stylesheets/screen.sass */
 .images .image > details, .users .image > details {
   clear: both;
   margin-bottom: 1.5em;
 }
-/* line 221, ../../app/stylesheets/screen.sass */
+/* line 222, ../../app/stylesheets/screen.sass */
 .images h3, .users h3 {
   clear: both;
 }
-/* line 225, ../../app/stylesheets/screen.sass */
+/* line 226, ../../app/stylesheets/screen.sass */
 .images .image.icon > a, .images .image.thumb > a, .users .image.icon > a, .users .image.thumb > a {
   display: inline;
   float: left;
   width: 10.256%;
   margin-right: 2.564%;
 }
-/* line 227, ../../app/stylesheets/screen.sass */
+/* line 228, ../../app/stylesheets/screen.sass */
 .images .image.icon > details, .images .image.thumb > details, .users .image.icon > details, .users .image.thumb > details {
   display: inline;
   float: left;
@@ -1311,18 +1313,18 @@ body html > body {
   clear: none;
 }
 
-/* line 232, ../../app/stylesheets/screen.sass */
+/* line 233, ../../app/stylesheets/screen.sass */
 .image details a[data-method=delete] {
   float: right;
 }
 
-/* line 235, ../../app/stylesheets/screen.sass */
+/* line 236, ../../app/stylesheets/screen.sass */
 .image.icon img {
   width: 2em;
   height: 2em;
 }
 
-/* line 238, ../../app/stylesheets/screen.sass */
+/* line 239, ../../app/stylesheets/screen.sass */
 .image.thumb img {
   max-width: 4em;
   max-height: 4em;
@@ -1331,33 +1333,33 @@ body html > body {
   margin-right: auto;
 }
 
-/* line 245, ../../app/stylesheets/screen.sass */
+/* line 246, ../../app/stylesheets/screen.sass */
 .container {
   position: relative;
   z-index: 1;
 }
 
-/* line 252, ../../app/stylesheets/screen.sass */
+/* line 253, ../../app/stylesheets/screen.sass */
 .notices {
   text-align: center;
 }
-/* line 254, ../../app/stylesheets/screen.sass */
+/* line 255, ../../app/stylesheets/screen.sass */
 .notices a {
   font-size: 1em;
   line-height: 3em;
   padding: 0.3em 1em;
 }
 
-/* line 259, ../../app/stylesheets/screen.sass */
+/* line 260, ../../app/stylesheets/screen.sass */
 #content .users {
   clear: both;
 }
-/* line 261, ../../app/stylesheets/screen.sass */
+/* line 262, ../../app/stylesheets/screen.sass */
 #content .users ul {
   clear: both;
   height: 2.25em;
 }
-/* line 264, ../../app/stylesheets/screen.sass */
+/* line 265, ../../app/stylesheets/screen.sass */
 #content .users ul li {
   display: inline;
   float: left;
@@ -1365,41 +1367,41 @@ body html > body {
   margin-right: 1.695%;
   text-align: center;
 }
-/* line 267, ../../app/stylesheets/screen.sass */
+/* line 268, ../../app/stylesheets/screen.sass */
 #content .users ul li a.control-link, #content .users ul li a.previous_page, #content .users ul li a.next_page, #content .users ul li .ad-gallery a.ad-slideshow-start, .ad-gallery #content .users ul li a.ad-slideshow-start, #content .users ul li .ad-gallery a.ad-slideshow-stop, .ad-gallery #content .users ul li a.ad-slideshow-stop {
   display: block;
   width: 80%;
   height: 80%;
   margin-top: 10%;
 }
-/* line 272, ../../app/stylesheets/screen.sass */
+/* line 273, ../../app/stylesheets/screen.sass */
 #content .users ul li.short {
   display: inline;
   float: left;
   width: 6.78%;
   margin-right: 1.695%;
 }
-/* line 274, ../../app/stylesheets/screen.sass */
+/* line 275, ../../app/stylesheets/screen.sass */
 #content .users ul li.long {
   display: inline;
   float: left;
   width: 23.729%;
   margin-right: 1.695%;
 }
-/* line 276, ../../app/stylesheets/screen.sass */
+/* line 277, ../../app/stylesheets/screen.sass */
 #content .users ul li:last {
   display: inline;
   float: right;
   margin-right: 0;
   #margin-left: -1em;
 }
-/* line 279, ../../app/stylesheets/screen.sass */
+/* line 280, ../../app/stylesheets/screen.sass */
 #content .users .create_user {
   border: 1px solid #1a1a1a;
   background-color: #1a1a1a;
 }
 
-/* line 283, ../../app/stylesheets/screen.sass */
+/* line 284, ../../app/stylesheets/screen.sass */
 .time.controls {
   clear: both;
   margin-top: 0.75em;
@@ -1407,18 +1409,18 @@ body html > body {
   padding-left: 7.692%;
   padding-right: 7.692%;
 }
-/* line 288, ../../app/stylesheets/screen.sass */
+/* line 289, ../../app/stylesheets/screen.sass */
 .time.controls a {
   margin: auto;
 }
-/* line 290, ../../app/stylesheets/screen.sass */
+/* line 291, ../../app/stylesheets/screen.sass */
 .time.controls #prev, .time.controls #next {
   display: inline;
   float: left;
   width: 10.256%;
   margin-right: 2.564%;
 }
-/* line 292, ../../app/stylesheets/screen.sass */
+/* line 293, ../../app/stylesheets/screen.sass */
 .time.controls .date {
   display: inline;
   float: left;
@@ -1426,11 +1428,11 @@ body html > body {
   margin-right: 2.564%;
   text-align: center;
 }
-/* line 295, ../../app/stylesheets/screen.sass */
+/* line 296, ../../app/stylesheets/screen.sass */
 .time.controls h3 {
   margin: 0;
 }
-/* line 297, ../../app/stylesheets/screen.sass */
+/* line 298, ../../app/stylesheets/screen.sass */
 .time.controls #next {
   display: inline;
   float: right;
@@ -1439,7 +1441,7 @@ body html > body {
   text-align: right;
 }
 
-/* line 303, ../../app/stylesheets/screen.sass */
+/* line 304, ../../app/stylesheets/screen.sass */
 .week {
   display: inline;
   float: left;
@@ -1448,7 +1450,7 @@ body html > body {
   position: relative;
   z-index: auto;
 }
-/* line 307, ../../app/stylesheets/screen.sass */
+/* line 308, ../../app/stylesheets/screen.sass */
 .week .label {
   display: block;
   font-size: 1.875em;
@@ -1458,20 +1460,20 @@ body html > body {
   z-index: -1;
 }
 
-/* line 318, ../../app/stylesheets/screen.sass */
+/* line 319, ../../app/stylesheets/screen.sass */
 body.home .user.week {
   opacity: 0.6;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
 }
-/* line 320, ../../app/stylesheets/screen.sass */
+/* line 321, ../../app/stylesheets/screen.sass */
 body.home .user.week:hover {
   opacity: 1;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
 }
 
-/* line 325, ../../app/stylesheets/screen.sass */
+/* line 326, ../../app/stylesheets/screen.sass */
 body.home .weeklist .week {
   margin-top: 0.75em;
   top: 0;
@@ -1480,7 +1482,7 @@ body.home .weeklist .week {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
 }
 
-/* line 330, ../../app/stylesheets/screen.sass */
+/* line 331, ../../app/stylesheets/screen.sass */
 .image-list {
   display: inline;
   float: left;
@@ -1496,7 +1498,7 @@ body.home .weeklist .week {
   margin-left: 2.5em;
   overflow: visible;
 }
-/* line 51, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+/* line 57, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
 .image-list li {
   list-style-image: none;
   list-style-type: none;
@@ -1507,32 +1509,32 @@ body.home .weeklist .week {
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
-/* line 43, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+/* line 45, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
 .image-list li:first-child, .image-list li.first {
-  padding-left: 0px;
+  padding-left: 0;
 }
-/* line 44, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
+/* line 46, ../../../../../../usr/local/lib/ruby/gems/1.9.1/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/lists/_horizontal-list.scss */
 .image-list li:last-child, .image-list li.last {
-  padding-right: 0px;
+  padding-right: 0;
 }
-/* line 339, ../../app/stylesheets/screen.sass */
+/* line 340, ../../app/stylesheets/screen.sass */
 .image-list li {
   white-space: inherit;
 }
-/* line 344, ../../app/stylesheets/screen.sass */
+/* line 345, ../../app/stylesheets/screen.sass */
 .image-list > .image {
   margin-top: 0.3em;
 }
-/* line 346, ../../app/stylesheets/screen.sass */
+/* line 347, ../../app/stylesheets/screen.sass */
 .image-list > .image a {
   vertical-align: middle;
 }
-/* line 348, ../../app/stylesheets/screen.sass */
+/* line 349, ../../app/stylesheets/screen.sass */
 .image-list div.image.thumb {
   width: 4em;
   height: 4em;
 }
-/* line 351, ../../app/stylesheets/screen.sass */
+/* line 352, ../../app/stylesheets/screen.sass */
 .image-list .image.absent {
   display: block;
   width: 3.875em;
@@ -1543,7 +1545,7 @@ body.home .weeklist .week {
   font-size: 1em;
   line-height: 1.5em;
 }
-/* line 359, ../../app/stylesheets/screen.sass */
+/* line 360, ../../app/stylesheets/screen.sass */
 .image-list .image.absent a {
   display: none;
   padding-top: 0.313em;
@@ -1551,12 +1553,12 @@ body.home .weeklist .week {
   height: 3.563em;
 }
 
-/* line 368, ../../app/stylesheets/screen.sass */
+/* line 369, ../../app/stylesheets/screen.sass */
 .user.current .image-list .image.absent a {
   display: block;
 }
 
-/* line 372, ../../app/stylesheets/screen.sass */
+/* line 373, ../../app/stylesheets/screen.sass */
 .pop-up {
   position: absolute;
   margin-left: -20000px;
@@ -1577,44 +1579,44 @@ body.home .weeklist .week {
   -o-box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px 0;
   box-shadow: rgba(0, 0, 0, 0.6) 1px 1px 5px 0;
 }
-/* line 383, ../../app/stylesheets/screen.sass */
+/* line 384, ../../app/stylesheets/screen.sass */
 .pop-up textarea {
   min-width: 23em;
 }
 
-/* line 387, ../../app/stylesheets/screen.sass */
+/* line 388, ../../app/stylesheets/screen.sass */
 .image.thumb:hover {
   opacity: 1;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
 }
-/* line 389, ../../app/stylesheets/screen.sass */
+/* line 390, ../../app/stylesheets/screen.sass */
 .image.thumb:hover > .pop-up {
   margin-left: 0;
 }
 
-/* line 392, ../../app/stylesheets/screen.sass */
+/* line 393, ../../app/stylesheets/screen.sass */
 .pop-up:hover {
   margin-left: -30px;
 }
 
-/* line 398, ../../app/stylesheets/screen.sass */
+/* line 399, ../../app/stylesheets/screen.sass */
 body.home .month .week {
   margin-top: 0.75em;
 }
-/* line 401, ../../app/stylesheets/screen.sass */
+/* line 402, ../../app/stylesheets/screen.sass */
 body.home .month .image img {
   opacity: 0.5;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
 }
-/* line 403, ../../app/stylesheets/screen.sass */
+/* line 404, ../../app/stylesheets/screen.sass */
 body.home .month .image.tmonth img, body.home .month .image:hover img {
   opacity: 1;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
 }
-/* line 405, ../../app/stylesheets/screen.sass */
+/* line 406, ../../app/stylesheets/screen.sass */
 body.home .month .image.absent {
   opacity: 0.5;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
@@ -1624,7 +1626,7 @@ body.home .month .image.absent {
   -o-transform: scale(0.8);
   transform: scale(0.8);
 }
-/* line 408, ../../app/stylesheets/screen.sass */
+/* line 409, ../../app/stylesheets/screen.sass */
 body.home .month .image.absent.tmonth {
   opacity: 0.75;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=75);
@@ -1634,7 +1636,7 @@ body.home .month .image.absent.tmonth {
   -o-transform: scale(1);
   transform: scale(1);
 }
-/* line 412, ../../app/stylesheets/screen.sass */
+/* line 413, ../../app/stylesheets/screen.sass */
 body.home .month.user.current .image.absent.tday {
   opacity: 1;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
@@ -1644,7 +1646,7 @@ body.home .month.user.current .image.absent.tday {
   -o-box-shadow: #607890 0 0 0.5em 0;
   box-shadow: #607890 0 0 0.5em 0;
 }
-/* line 415, ../../app/stylesheets/screen.sass */
+/* line 416, ../../app/stylesheets/screen.sass */
 body.home .month.user.current .image.absent:hover, body.home .month.user.current .image.absent:focus {
   opacity: 1;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
@@ -1655,18 +1657,18 @@ body.home .month.user.current .image.absent:hover, body.home .month.user.current
   transform: scale(1);
 }
 
-/* line 421, ../../app/stylesheets/screen.sass */
+/* line 422, ../../app/stylesheets/screen.sass */
 .stats {
   clear: both;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 424, ../../app/stylesheets/screen.sass */
+/* line 425, ../../app/stylesheets/screen.sass */
 .stats dl {
   clear: both;
   margin: 0;
 }
-/* line 427, ../../app/stylesheets/screen.sass */
+/* line 428, ../../app/stylesheets/screen.sass */
 .stats dl dt {
   display: inline;
   float: left;
@@ -1675,7 +1677,7 @@ body.home .month.user.current .image.absent:hover, body.home .month.user.current
   text-align: right;
   margin-top: 0;
 }
-/* line 431, ../../app/stylesheets/screen.sass */
+/* line 432, ../../app/stylesheets/screen.sass */
 .stats dl dd {
   display: inline;
   float: left;
@@ -1918,13 +1920,13 @@ body.home .month.user.current .image.absent:hover, body.home .month.user.current
   top: -9000px;
 }
 
-/* line 441, ../../app/stylesheets/screen.sass */
+/* line 442, ../../app/stylesheets/screen.sass */
 #gallery .description {
   clear: both;
   margin-bottom: 0.75em;
   margin-top: 0.75em;
 }
-/* line 445, ../../app/stylesheets/screen.sass */
+/* line 446, ../../app/stylesheets/screen.sass */
 #gallery .comments {
   clear: both;
   margin-bottom: 1.5em;
@@ -1933,7 +1935,7 @@ body.home .month.user.current .image.absent:hover, body.home .month.user.current
   height: 7.5em;
 }
 
-/* line 450, ../../app/stylesheets/screen.sass */
+/* line 451, ../../app/stylesheets/screen.sass */
 .pagination {
   text-align: center;
 }

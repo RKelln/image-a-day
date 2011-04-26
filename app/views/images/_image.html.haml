@@ -1,6 +1,12 @@
 -# default to icon size unless we are on the image's page
   if size = nil then use the full size image
-- current_page?(image) ? size ||= :display : size ||= :icon
+- if current_page?(image)
+  - size ||= :display
+  - link ||= image.data.url
+- else
+  - size ||= :icon
+  - link ||= image
+
 
 - image_classes ||= []
 - image_classes << size.to_s unless image_classes.include? size.to_s
@@ -15,10 +21,11 @@
   - if size.nil?
     %img(src="#{image.data.url}")
   - else
-    = link_to image do
+    = link_to link do
       %img(src="#{image.data.url(size)}" class="#{size.to_s}")
   %details[image]{:class => details ? nil : "pop-up"}
     = render :partial => 'images/description', :locals => {:image => image}
+    = link_to("Download Image", image.data.url, :class => "control-link")
     = link_to("Delete Image", image,
             :confirm => 'Are you sure you want to delete your image?',
             :method => :delete,

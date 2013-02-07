@@ -1,0 +1,21 @@
+# very simple reminder for how to deploy
+# TODO: use capistrano, etc
+
+# on local
+# merge to master
+# push to master github
+git checkout master
+git merge <topic_branch>
+git push
+
+# on remote
+ssh image
+cd httpdocs/image-a-day
+git pull
+bundle install --deployment --without development test
+
+# add the production database password
+nano config/databases.yml
+
+# restart passenger
+touch tmp/restart.txt

@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3'
+gem 'rails', '= 3.0.20'
 
 gem 'pg'
 
@@ -37,7 +37,7 @@ group :development do
   gem 'compass', '>= 0.10.5'
   gem 'compass-susy-plugin'
   gem 'html5-boilerplate'
-  
+
   # rails console luxury (colors, tab completion)
   gem 'wirble'
 end

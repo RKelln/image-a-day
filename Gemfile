@@ -28,16 +28,13 @@ gem 'will_paginate', '~> 3.0.pre2'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 
+# Compass/sass/and other css frameworks
+gem 'compass', '>= 0.10.5'
+gem 'compass-susy-plugin'
+gem 'html5-boilerplate'
+
 group :development, :test do
   gem 'ruby-debug19'
-end
-
-group :development do
-  # Compass/sass/and other css frameworks
-  gem 'compass', '>= 0.10.5'
-  gem 'compass-susy-plugin'
-  gem 'html5-boilerplate'
-
   # rails console luxury (colors, tab completion)
   gem 'wirble'
 end

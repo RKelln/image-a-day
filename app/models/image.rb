@@ -10,6 +10,12 @@
           :convert_options => {:all => '-auto-orient'},
           :path => ':rails_root/assets/images/:year_month_day:opt_style/:user_id_:year_:yday.:extension',
           :url => '/images/data/:user_id/:year/:month/:day/:style'
+
+  validates_attachment :data, :presence => true,
+    :content_type => { :content_type => /\Aimage/ },
+    :file_name => { :matches => [/png\Z/, /jpe?g\Z/, /gif\Z/] },
+    :size => { :in => 0..10.megabytes }
+
   validates :data_file_name, :presence => true
 
   scope :today, where(:date => Time.now)

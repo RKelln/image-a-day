@@ -6,7 +6,12 @@ tmp/
 releases/*
 public/system
 public/system/***
-assets/***
+
+assets/
+
+# ignore generated css
+public/stylesheets/*.css
+public/assets/***
 
 # IDE settings files
 .loadpath

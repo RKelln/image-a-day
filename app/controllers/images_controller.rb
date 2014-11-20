@@ -40,6 +40,7 @@ class ImagesController < ApplicationController
   # GET /images/upload/:year/:month/:day
   def upload
     @image = Image.new
+    puts @image.inspect
     if params[:year]
       @image.date = Time.utc(params[:year], params[:month], params[:day])
     else

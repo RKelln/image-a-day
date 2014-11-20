@@ -1,0 +1,14 @@
+# backup steps/tips
+
+# database:
+
+ssh image
+pg_dump image-a-day_production -U image_a_day | gzip > db_backup.gz
+
+scp image:dbback.gz .
+
+# image files
+
+# (on local machine)
+
+rsync -azhP --ignore-existing image:httpdocs/image-a-day/assets/images/ assets/images

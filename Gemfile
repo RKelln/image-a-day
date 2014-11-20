@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '= 3.0.20'
+gem 'rails', '~> 3.0'
 
 gem 'pg'
 
@@ -17,7 +17,7 @@ gem 'paperclip'
 gem 'jammit'
 
 # pagination
-gem 'will_paginate', '~> 3.0.pre2'
+gem 'will_paginate'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -34,9 +34,11 @@ gem 'compass-susy-plugin'
 gem 'html5-boilerplate'
 
 group :development, :test do
-  gem 'ruby-debug19'
+  #gem 'ruby-debug19'
   # rails console luxury (colors, tab completion)
   gem 'wirble'
+
+  gem 'thin'
 end
 
 group :test do

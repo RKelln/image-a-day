@@ -87,12 +87,12 @@ class HomeController < ApplicationController
       date = Date.today unless date
       first_of_week = date.beginning_of_month.beginning_of_week
       weeks = Array.new
-      first_of_week.step(date.end_of_month, 1.week) { |d|
+      first_of_week.step(date.end_of_month, 7) { |d|
         weeks << (d..(d + 6.days))
       }
       weeks
     end
-  
+
     # counts how many images (not Absent images) in range
     def count_images_in(images)
       (images.select {|image| image.is_a? Image and not image.is_a? Image::AbsentImage }).length

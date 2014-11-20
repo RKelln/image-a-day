@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   layout :specify_layout
-  after_filter :flash_to_headers
+  #after_filter :flash_to_headers
 
   # RK: this is fun
   # After each request, if it is an ajax request then discard the flash msg
@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   # See application.js#flash()
   def flash_to_headers
     return unless request.xhr?
-    flash.each_pair {|type, msg|
+    flash.each {|type, msg|
       response.headers["X-Flash"] = "[#{type}]#{msg}" unless msg.blank?
     }
     flash.discard  # don't want the flash to appear when you reload page

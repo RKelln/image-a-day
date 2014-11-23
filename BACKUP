@@ -3,9 +3,9 @@
 # database:
 
 ssh image
-pg_dump image-a-day_production -U image_a_day | gzip > db_backup.gz
+pg_dump image-a-day_production -U image-a-day | gzip > db_backup.gz
 
-scp image:dbback.gz .
+scp image:db_backup.gz .
 
 # image files
 

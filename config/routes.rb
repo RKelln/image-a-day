@@ -1,10 +1,15 @@
 ImageADay::Application.routes.draw do
-  devise_for :users, :controllers => {:registrations => 'registrations'}
+
+  devise_for :users, :skip => [:registrations]
+  as :user do
+    get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'
+    put 'users' => 'devise/registrations#update', :as => 'user_registration'
+  end
 
   root :to => 'home#index'
 
   get 'home/index'
-  
+
   match 'week' => 'home#week'
   match 'month' => 'home#month'
   match 'admin' => 'home#admin'
@@ -18,19 +23,19 @@ ImageADay::Application.routes.draw do
         # named route provided by custom helper
 
         match "data/:user_id/:year/:month/:day/:style" => :data
-        
+
         get :week
       end
-      
+
       resources :comments, :only => [:new, :create]
   end
-  
+
   resources :comments, :only => [:new, :create, :edit, :update, :destroy] do
       collection do
         get :wall
       end
   end
-  
+
   resources :users, :only => [:index, :show, :create, :update] do
     resources :images do
         match "date/:year(/:month(/:day))" => :index, :constraints => {:year => /\d{4}/}, :on => :collection

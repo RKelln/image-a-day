@@ -1,14 +1,13 @@
-# backup steps/tips
+# backup/restore steps/tips
 
-# database:
+# database dump:
+pg_dump -v -U image-a-day -F c -f pgdb.dump image-a-day_production
 
-ssh image
-pg_dump image-a-day_production -U image-a-day | gzip > db_backup.gz
+# database restore:
+pg_restore -v -i -U image-a-day -d image-a-day_production pgdb.dump
 
-scp image:db_backup.gz .
-
-# image files
-
-# (on local machine)
-
+# backup images:
 rsync -azhP --ignore-existing image:httpdocs/image-a-day/assets/images/ assets/images
+
+# restore images:
+rsync -e ssh -varuzP ~/www/image-a-day/assets/images deploy@linode:sites/image-a-day/assets/images

@@ -46,6 +46,9 @@ production:
   adapter: postgresql
   encoding: unicode
   database: image-a-day_production
+  # force TCP connection by setting host so password is used, or change pg_hba.conf
+  # http://stackoverflow.com/questions/15306770/pg-peer-authentication-failed
+  host: localhost
   pool: 5
   username: image-a-day
   password:

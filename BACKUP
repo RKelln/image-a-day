@@ -1,13 +1,21 @@
 # backup/restore steps/tips
 
+# http://stackoverflow.com/questions/18723675/how-to-backup-restore-rails-db-with-postgres
+
 # database dump:
-pg_dump -v -U image-a-day -F c -f pgdb.dump image-a-day_production
+pg_dump -v -U image-a-day -F c -f image-a-day.dump image-a-day_production
 
 # database restore:
-pg_restore -v -i -U image-a-day -d image-a-day_production pgdb.dump
+#   pg_restore -c -C -F c -v -U image-a-day -W -d image-a-day_production image-a-day.dump
+#   sudo -u postgres pg_restore -c -C -F c -v -U image-a-day image-a-day.dump
+# this is complicated, what needed to be done to get it working was:
+bundle exec rake db:drop
+bundle exec rake db:create
+bundle exec rake db:migrate
+sudo -u postgres pg_restore -d image-a-day_production -a -c -Fc -v image-a-day.dump
 
 # backup images:
 rsync -azhP --ignore-existing image:httpdocs/image-a-day/assets/images/ assets/images
 
 # restore images:
-rsync -e ssh -varuzP ~/www/image-a-day/assets/images deploy@linode:sites/image-a-day/assets/images
+rsync -e ssh -varuzP ~/www/image-a-day/assets/images deploy@linode:sites/image-a-day.com/assets/images

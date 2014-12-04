@@ -12,8 +12,8 @@
           :url => '/images/data/:user_id/:year/:month/:day/:style'
 
   validates_attachment :data, :presence => true,
-    :content_type => { :content_type => /\Aimage/ },
-    :file_name => { :matches => [/png\Z/, /jpe?g\Z/, /gif\Z/] },
+    :content_type => { :content_type => /\Aimage/i },
+    :file_name => { :matches => [/png\Z/i, /jpe?g\Z/i, /gif\Z/i] },
     :size => { :in => 0..10.megabytes }
 
   validates :data_file_name, :presence => true
